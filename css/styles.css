@@ -107,7 +107,6 @@ nav.open {
 }
 
 .section { width: 100%; }
-.shadow { box-shadow: 0 4px 8px rgba(0,0,0,.28); }
 
 .nav-bg {
     border: 3px solid #9e9e9e;
@@ -170,6 +169,7 @@ nav.open {
     background:         linear-gradient(to left bottom, #E53935, #E53935 50%, #00E5FF 50%, #00E5FF);
     margin: 16px auto;
     display: inline-block;
+    box-shadow: 0 4px 8px rgba(0,0,0,.28);
 }
 
 .head {
@@ -199,7 +199,7 @@ nav.open {
 a {
   outline: none;
   border: none;
-  color: #E53935;
+  color: rgb(229, 57, 53);
   text-decoration: none;
   background-color: transparent;
 }
@@ -253,6 +253,7 @@ a:hover, a:focus, a:active {
         margin-bottom: 0;
         border-bottom-left-radius: 3px;
         border-bottom-right-radius: 3px;
+        box-shadow: 0 4px 8px rgba(0,0,0,.28);
     }
 
     .nav-bg { border: 0; }
