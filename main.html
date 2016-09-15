@@ -4,49 +4,51 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="X-UA-Compatible" content="IE=9" />
+    <meta name="format-detection" content="telephone=no">
 		<link href='https://fonts.googleapis.com/css?family=Dosis:700,300,400' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="http://normalize-css.googlecode.com/svn/trunk/normalize.css"/>
+    <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.18.1/build/cssnormalize/cssnormalize-min.css">
     <link rel="stylesheet" type="text/css" href="css/styles.css">
-    <script src="js/jquery-1.11.3.js"></script>
-  	<script src="js/script.js"></script>
+    <link rel="icon" type="image/x-icon" href="img/trout.ico">
+    <script src="js/production.min.js"></script>
     <title>Kyle Trout</title>
-</head>
+  </head>
 <body>
 <div class="menu">
 	<img class="" id="menu-button" src="img/down48.png" alt="Image to open the menu.">
 </div>
 <nav>
-	<div class="nav-icon-container">
+	<div class="nav-icon-container shadow">
 		<div class="nav-row-2">
 			<div class="nav-row-top">
 				<div class="nav-bg">
-					<a><img class="nav-icon" id="icon-home" src="img/home48.png" alt="Home icon."></a>
+					<a><img class="nav-icon" id="home" src="img/home48.png" alt="Home icon."></a>
 				</div>
 				<p class="caption">Home</p>
 			</div>
 			<div class="nav-row-top">
 				<div class="nav-bg">
-					<a><img class="nav-icon" id="icon-edu" src="img/edu48.png" alt="Education icon."></a>
+					<a><img class="nav-icon" id="work" src="img/work.png" alt="Work experience icon."></a>
 				</div>
-				<p class="caption">Education</p>
-			</div>		
+				<p class="caption">Work Experience</p>
+			</div>
 		</div>
 		<div class="nav-row-3">
 			<div class="nav-row-bot">
 				<div class="nav-bg">
-					<a><img class="nav-icon" id="icon-work" src="img/work48.png" alt="Work experience icon."></a>
+					<a><img class="nav-icon" id="proj" src="img/proj48.png" alt="Projects icon."></a>
 				</div>
-				<p class="caption">Work Experience</p>
+				<p class="caption">Projects</p>
 			</div>
 			<div class="nav-row-bot">
 				<div class="nav-bg">
-					<a><img class="nav-icon" id="icon-about" src="img/about48.png" alt="About icon."></a>
+					<a href="files/Trout_Resume_2016.pdf" target="_blank"><img class="nav-icon" id="resume" src="img/resume48.png" alt="Resume icon."></a>
 				</div>
-				<p class="caption">About</p>
+				<p class="caption">Resume</p>
 			</div>
 			<div class="nav-row-bot">
 				<div class="nav-bg">
-					<a><img class="nav-icon" id="icon-contact" src="img/contact48.png" alt="Contact icon."></a>
+					<a><img class="nav-icon" id="contact" src="img/contact48.png" alt="Contact icon."></a>
 				</div>
 				<p class="caption">Contact</p>
 			</div>
@@ -56,22 +58,19 @@
 		<hr>
 	</div>
 </nav>
-<div id="landing" class="section">
+<div class="section">
 	<div class="center">
-		<div class="border">
-			<img class="head box-sizing" src="http://placehold.it/700x700" alt="Kyle Trout header image.">
+		<div class="border shadow">
+			<img class="head box-sizing" src="img/head.png" alt="Kyle Trout">
 		</div>
 		<h1>Kyle Trout</h1>
 	</div>
 	<div class="description">
-		<h3 class="left">Welcome</h3>
-		<p>LOLOLOL...Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
 	</div>
 </div>
 
-<div id="contact-page">
+<div id="contact-page2">
 	<form id="contact">
 		<label for="first">First Name: </label>
 			<div class="margin padding-trans">
@@ -91,5 +90,34 @@
 			</div>
 	</form>
 </div>
+
+<div id="home-page">
+  <h3 class="left">Welcome</h3>
+  <p>I am currently a third year Computer Science major at the University of Cincinnati, Class of 2019. For now,
+    this site will serve as a main hub where I can document my experiences and further experiment with web technologies.
+    Though still exploring opportunities in the field, I have taken a keen interest in web development. I have spent most time with front-end in particular, but
+    I am looking to build off of my current knowledge to gain a better understanding of full stack developement as a whole. During my free time, I can be found competing
+    out on the volleyball court or shopping around to enhance my personal style.</p>
+</div>
+
+<div id="work-page">
+  <h3 class="left">Positions</h3>
+  <p>Coming soon...</p>
+</div>
+
+<div id="proj-page">
+  <h3 class="left">Projects</h3>
+  <p>Coming soon...</p>
+</div>
+
+<div id="contact-page">
+	<h3 class="left">Contact</h3>
+	<p>Interested in connecting with me? Feel free to start a conversation.</p>
+  <p>Email: <a href="mailto:troutkt@mail.uc.edu" target="_top">troutkt@mail.uc.edu</a></p>
+  <p>Phone: <a href="tel:15134139805">(513) 413-9805</a></p>
+</div>
+
+
+
 </body>
 </html>
