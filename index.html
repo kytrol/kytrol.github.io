@@ -4,13 +4,15 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta http-equiv="X-UA-Compatible" content="IE=9" />
-    <meta name="format-detection" content="telephone=no">
-		<link href='https://fonts.googleapis.com/css?family=Dosis:700,300,400' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.18.1/build/cssnormalize/cssnormalize-min.css">
+		<link href="https://fonts.googleapis.com/css?family=Dosis:300,400" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/normalize.css">
     <link rel="stylesheet" type="text/css" href="css/styles.css">
     <link rel="icon" type="image/x-icon" href="img/trout.ico">
-    <script src="js/production.min.js"></script>
+    <script async src="js/production.min.js"></script>
+    <script type="text/javascript">
+      var host = "kyletrout.io";
+      if ((host == window.location.host) && (window.location.protocol != "https:")) window.location.protocol = "https";
+    </script>
     <title>Kyle Trout</title>
   </head>
 <body>
@@ -70,32 +72,11 @@
 	</div>
 </div>
 
-<div id="contact-page2">
-	<form id="contact">
-		<label for="first">First Name: </label>
-			<div class="margin padding-trans">
-				<input id="first" type="text" name="fname">
-			</div>
-		<label for="last">Last Name:  </label>
-			<div class="margin padding-trans">
-				<input id="last" type="text" name="lname">
-			</div>
-		<label for="email">Email:      </label>
-			<div class="margin padding-trans">
-				<input id="email" type="email" name="email">
-			</div>
-		<label for"comment">Comments:   </label>
-			<div class="margin padding-trans">
-				<textarea id="comment"></textarea>
-			</div>
-	</form>
-</div>
-
 <div id="home-page">
   <h3 class="left">Welcome</h3>
   <p>I am currently a third year Computer Science major at the University of Cincinnati, Class of 2019. For now,
     this site will serve as a main hub where I can document my experiences and further experiment with web technologies.
-    Though still exploring opportunities in the field, I have taken a keen interest in web development. I have spent most time with front-end in particular, but
+    Though still exploring opportunities in the field, I have taken a keen interest in web development. My main focus has been with front-end in particular, but
     I am looking to build off of my current knowledge to gain a better understanding of full stack developement as a whole. During my free time, I can be found competing
     out on the volleyball court or shopping around to enhance my personal style.</p>
 </div>
@@ -114,7 +95,6 @@
 	<h3 class="left">Contact</h3>
 	<p>Interested in connecting with me? Feel free to start a conversation.</p>
   <p>Email: <a href="mailto:troutkt@mail.uc.edu" target="_top">troutkt@mail.uc.edu</a></p>
-  <p>Phone: <a href="tel:15134139805">(513) 413-9805</a></p>
 </div>
 
 
