@@ -4,11 +4,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<link href="https://fonts.googleapis.com/css?family=Dosis:300,400" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="css/normalize.css">
-    <link rel="stylesheet" type="text/css" href="css/styles.css">
-    <link rel="icon" type="image/x-icon" href="img/trout.ico">
-    <script async src="js/production.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="resources/css/build/min/production.min.css">
+    <link rel="icon" type="image/x-icon" href="resources/img/trout.ico">
+    <script async src="resources/js/build/min/production.min.js"></script>
     <script type="text/javascript">
       var host = "kyletrout.io";
       if ((host == window.location.host) && (window.location.protocol != "https:")) window.location.protocol = "https";
@@ -17,20 +15,20 @@
   </head>
 <body>
 <div class="menu">
-	<img class="" id="menu-button" src="img/down48.png" alt="Image to open the menu.">
+	<img class="" id="menu-button" src="resources/img/navigation/down48.png" alt="Image to open the menu.">
 </div>
 <nav>
 	<div class="nav-icon-container shadow">
 		<div class="nav-row-2">
 			<div class="nav-row-top">
 				<div class="nav-bg">
-					<a><img class="nav-icon" id="home" src="img/home48.png" alt="Home icon."></a>
+					<a><img class="nav-icon" id="home" src="resources/img/navigation/home48.png" alt="Home icon."></a>
 				</div>
 				<p class="caption">Home</p>
 			</div>
 			<div class="nav-row-top">
 				<div class="nav-bg">
-					<a><img class="nav-icon" id="work" src="img/work48.png" alt="Work experience icon."></a>
+					<a><img class="nav-icon" id="work" src="resources/img/navigation/work48.png" alt="Work experience icon."></a>
 				</div>
 				<p class="caption">Work Experience</p>
 			</div>
@@ -38,19 +36,19 @@
 		<div class="nav-row-3">
 			<div class="nav-row-bot">
 				<div class="nav-bg">
-					<a><img class="nav-icon" id="proj" src="img/proj48.png" alt="Projects icon."></a>
+					<a><img class="nav-icon" id="proj" src="resources/img/navigation/proj48.png" alt="Projects icon."></a>
 				</div>
 				<p class="caption">Projects</p>
 			</div>
 			<div class="nav-row-bot">
 				<div class="nav-bg">
-					<a href="files/Trout_Resume_2016.pdf" target="_blank"><img class="nav-icon" id="resume" src="img/resume48.png" alt="Resume icon."></a>
+					<a href="resources/data/Trout_Resume_2016.pdf" target="_blank"><img class="nav-icon" id="resume" src="resources/img/navigation/resume48.png" alt="Resume icon."></a>
 				</div>
 				<p class="caption">Resume</p>
 			</div>
 			<div class="nav-row-bot">
 				<div class="nav-bg">
-					<a><img class="nav-icon" id="contact" src="img/contact48.png" alt="Contact icon."></a>
+					<a><img class="nav-icon" id="contact" src="resources/img/navigation/contact48.png" alt="Contact icon."></a>
 				</div>
 				<p class="caption">Contact</p>
 			</div>
@@ -63,7 +61,7 @@
 <div class="section">
 	<div class="center">
 		<div class="border shadow">
-			<img class="head box-sizing" src="img/head.png" alt="Kyle Trout">
+			<img class="head box-sizing" src="resources/img/head.png" alt="Kyle Trout">
 		</div>
 		<h1>Kyle Trout</h1>
 	</div>
@@ -96,15 +94,15 @@
 	<form class="box-sizing" action="https://formspree.io/troutkt@mail.uc.edu" method="POST">
     <div class="field">
       <label for="name">Name </label>
-  		<input class="box-sizing" type="text" name="name" placeholder="First Last">
+  		<input class="box-sizing" type="text" name="name" placeholder="First Last" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" required>
     </div>
 		<div class="field">
       <label for="email">Email      </label>
-  		<input class="box-sizing" type="email" name="email" placeholder="email@example.com">
+  		<input class="box-sizing" type="email" name="email" placeholder="email@example.com" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" required>
 		</div>
 		<div class="field">
       <label for="message">Message   </label>
-  		<textarea class="box-sizing" name="message" placeholder="Start typing here..."></textarea>
+  		<textarea class="box-sizing" name="message" placeholder="Start typing here..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" required></textarea>
 		</div>
     <div class="center">
       <input id="submit" class="box-sizing" type="submit" value="Submit">

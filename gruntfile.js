@@ -7,25 +7,25 @@ module.exports = function(grunt) {
         concat: {
           dist: {
             src: [
-            'js/jquery-1.11.3.js',
-            'js/script.js'
+            'vendors/jquery/jquery-1.11.3.js',
+            'resources/js/script.js'
             ],
-            dest: 'js/production.js',
+            dest: 'resources/js/build/production.js',
           }
         },
         uglify: {
           build: {
-            src: 'js/production.js',
-            dest: 'js/production.min.js'
+            src: 'resources/js/build/production.js',
+            dest: 'resources/js/build/min/production.min.js'
           }
         },
         imagemin: {
           dynamic: {
             files: [{
               expand: true,
-              cwd: 'img/',
+              cwd: 'resources/img/',
               src: ['*.{png,jpg,gif,ico}'],
-              dest: 'img/',
+              dest: 'resources/img/',
             }]
           }
         },
@@ -45,15 +45,34 @@ module.exports = function(grunt) {
             files: [{
               expand: true,
               src: ['head*.{png,jpg,gif}'],
-              cwd: 'img/',
-              dest: 'img/'
+              cwd: 'resources/img/',
+              dest: 'resources/img/'
+            }]
+          }
+        },
+        cssmin: {
+          target: {
+            files: [
+              {'resources/css/build/production.css': ['vendors/normalize-css/normalize.css', 'resources/css/styles.css', 'vendors/google-font/dosis.css']}, {
+              expand: true,
+              cwd: 'resources/css/build',
+              src: ['*.css'],
+              dest: 'resources/css/build/min',
+              ext: '.min.css'
             }]
           }
         },
         watch: {
-          scripts: {
-            files: ['js/*.js'],
+          js: {
+            files: ['resources/js/*.js'],
             tasks: ['concat', 'uglify'],
+            options: {
+              spawn: false,
+            },
+          },
+          css: {
+            files: ['resources/css/*.css'],
+            tasks: ['cssmin'],
             options: {
               spawn: false,
             },
@@ -66,6 +85,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-imagemin');
     grunt.loadNpmTasks('grunt-responsive-images');
+    grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-contrib-watch');
 
     // 4. Where we tell Grunt what to do when we type "grunt" into the terminal.
