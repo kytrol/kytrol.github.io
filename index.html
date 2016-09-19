@@ -92,9 +92,24 @@
 </div>
 
 <div id="contact-page">
-	<h3 class="left">Contact</h3>
-	<p>Interested in connecting with me? Feel free to start a conversation.</p>
-  <p>Email: <a href="mailto:troutkt@mail.uc.edu" target="_top">troutkt@mail.uc.edu</a></p>
+  <p class="center">Interested in connecting with me? Feel free to start a conversation.</p>
+	<form class="box-sizing" action="https://formspree.io/troutkt@mail.uc.edu" method="POST">
+    <div class="field">
+      <label for="name">Name </label>
+  		<input class="box-sizing" type="text" name="name" placeholder="First Last">
+    </div>
+		<div class="field">
+      <label for="email">Email      </label>
+  		<input class="box-sizing" type="email" name="email" placeholder="email@example.com">
+		</div>
+		<div class="field">
+      <label for="message">Message   </label>
+  		<textarea class="box-sizing" name="message" placeholder="Start typing here..."></textarea>
+		</div>
+    <div class="center">
+      <input id="submit" class="box-sizing" type="submit" value="Submit">
+    </div>
+	</form>
 </div>
 
 
