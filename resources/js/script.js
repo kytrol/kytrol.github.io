@@ -33,7 +33,7 @@ function setNavigation() {
 }
 
 function dpiChange() {
-	if (window.devicePixelRatio == 2) { $('.head').attr('src', 'img/head_x2.png'); }
+	if (window.devicePixelRatio == 2) { $('.head').attr('src', 'resources/img/header/head_x2.png'); }
 }
 
 function loadSection() {
