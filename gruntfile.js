@@ -53,7 +53,7 @@ module.exports = function(grunt) {
         cssmin: {
           target: {
             files: [
-              {'resources/css/build/production.css': ['vendors/normalize-css/normalize.css', 'resources/css/styles.css', 'vendors/google-font/dosis.css']}, {
+              {'resources/css/build/production.css': ['vendors/normalize-css/normalize.css', 'resources/css/styles.css']}, {
               expand: true,
               cwd: 'resources/css/build',
               src: ['*.css'],
