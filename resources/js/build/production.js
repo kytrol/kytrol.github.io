@@ -10354,14 +10354,9 @@ $(document).ready(function() {
 	/* Menu and Navigation */
 	setNavigation();
 
-	/* Change Header Image Source Based on DPI */
-	dpiChange();
-
 	/* Load Section with Nav */
 	freshLoadSection();
 	loadSection();
-
-	/* Contact Form */
 
 });
 
@@ -10375,17 +10370,13 @@ function setNavigation() {
 		menu.toggleClass('open');
 		menu.bind('transitionend webkitTransitionEnd oTransitionEnd MSTransitionEnd', function() {
 			if (menu.hasClass('open')) {
-				$('hr').css('width', '100%');
+				$('.hline hr').css('width', '100%');
 			}
 			else {
-				$('hr').css('width', '5%');
+				$('.hline hr').css('width', '5%');
 			}
 		});
 	});
-}
-
-function dpiChange() {
-	if (window.devicePixelRatio == 2) { $('.head').attr('src', 'resources/img/header/head_x2.png'); }
 }
 
 function loadSection() {
@@ -10409,4 +10400,9 @@ function freshLoadSection() {
 	var container = $('.description');
 	container.append($('#home-page').clone());
 	container.children().fadeIn(250);
+}
+
+function responsiveHeight() {
+	var jobWidth = $('.job-box').width();
+	$('.job-box').css({'height': jobWidth+'px'});
 }

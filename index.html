@@ -97,7 +97,7 @@
 <div class="section">
 	<div class="center">
 		<div class="border shadow">
-			<img class="head box-sizing" src="resources/img/header/head.png" alt="Kyle Trout">
+			<img class="head box-sizing" src="resources/img/header/head.png" srcset="resources/img/header/head.png 1x, resources/img/header/head_x2.png 2x" alt="Kyle Trout">
 		</div>
 		<h1>Kyle Trout</h1>
 	</div>
@@ -106,7 +106,7 @@
 	</div>
 </div>
 
-<div id="home-page">
+<div id="home-page" class="section">
   <h3 class="left">Welcome</h3>
   <p>I am currently a third year Computer Science major at the University of Cincinnati, Class of 2019. For now,
     this site will serve as a main hub where I can document my experiences and further experiment with web technologies.
@@ -115,17 +115,50 @@
     out on the volleyball court or shopping around to enhance my personal style.</p>
 </div>
 
-<div id="work-page">
-  <h3 class="left">Positions</h3>
-  <p>Coming soon...</p>
+<div id="work-page" class="section">
+  <div class="section center">
+    <div class="job">
+      <div class="job-box">
+        <img id="siemens" class="logo box-sizing" src="resources/img/work/siemens.svg" alt="Siemens PLM Software">
+        <div class="job-desc">
+          <h4>{ Co-op }</h4>
+          <p>I spent the summer of 2016 working at Siemens PLM Software in Milford, Ohio. The team that I was added to was tasked with working
+            with one of Siemen's software programs called NX. The majority of the semester was split between functional testing of NX and
+            examining error logs and call stacks. Functional testing was performed by navigating the interface of NX looking to find a flaw.
+            Once a flaw was found, an error log was generated and the next step was to use the log to determine the source of the error.
+            Though there were still occasions when a log was presented to me, and I needed to reproduce the error. I also worked on a project
+            with another co-op to write C++ autotests for a number of test cases. These test cases were added to the already existing library of
+            tests and were used to ensure regressions were not encountered.
+        </div>
+      </div>
+    </div>
+    <div class="job center">
+      <div class="job-box">
+        <img id="assurex" class="logo" src="resources/img/work/assurex.png" alt="Assurex Health">
+        <div class="job-desc">
+          <h4>{ Co-op }</h4>
+          <p>My first co-op position was at Assurex Health in Mason, Ohio. This was the first time I experienced a real working environment
+          along with being assigned real world projects. My responsibilities for this rotation were split between Quality Assurance and
+          Product Development. I spent the first half of the semester in Quality Assurance where I was to write C# autotests. These autotests
+          were then run in combination with NUnit to ensure that regressions were not accidentally added back in to the production website.
+          Automating test cases relieved the strain of manual testing from the QA team and allowed them to shift their focus to other matters.</p>
+
+          <p>I spent the second half of the semester working in the Product Development team. For this portion, my responsibilities shifted and
+          I mainly dealt with implementing fixes on the production web portal. This required me to become more familiar with the C# codebase and how to
+          properly use CSS and JavaScript in a professional environment. I also spent a decent amount of time working on a project with another
+          co-op to implement logic to recognize customer orders that were associated to each other.</p>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 
-<div id="proj-page">
+<div id="proj-page" class="section">
   <h3 class="left">Projects</h3>
   <p>Coming soon...</p>
 </div>
 
-<div id="contact-page">
+<div id="contact-page" class="section">
   <p class="center">Interested in connecting with me? Feel free to start a conversation.</p>
 	<form class="box-sizing" action="https://formspree.io/troutkt@mail.uc.edu" method="POST">
     <div class="field">
