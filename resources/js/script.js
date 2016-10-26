@@ -4,7 +4,8 @@ $(document).ready(function() {
 
 	/* Load Section with Nav */
 	freshLoadSection();
-	loadSection();
+	loadSectionFromImg();
+	loadSectionFromCaption();
 
 });
 
@@ -27,20 +28,32 @@ function setNavigation() {
 	});
 }
 
-function loadSection() {
-	$('.nav-bg').click(function() {
-		var tag = $(this).find('img').attr('id');
-		if (tag != 'resume') {
-			var container = $('.description');
-			var currTag = container.children().first().attr('id').split("-")[0];
-			if (tag != currTag) {
-				container.children().fadeOut(250, function() {
-					container.empty();
-					container.append($('#' + tag + '-page').clone());
-					container.children().fadeIn(250);
-				});
-			}
-		}
+function loadSection(tag) {
+	var container = $('.description');
+	var currTag = container.children().last().attr('id').split("-")[0];
+	if (tag != currTag) {
+		container.children().fadeOut(250, function() {
+			container.empty();
+			container.append($('#' + tag + '-page').clone());
+			container.children().fadeIn(250);
+		});
+	}
+}
+
+function loadSectionFromImg() {
+	$('.nav-img').click(function() {
+		var tag = $(this).attr('id');
+		console.log(tag);
+		if (tag !== 'resume') loadSection(tag);
+	});
+}
+
+function loadSectionFromCaption() {
+	$('.caption').click(function() {
+		var tag = $(this).siblings().attr('id');
+		console.log(tag);
+		if (tag !== 'resume') loadSection(tag);
+		else $(this).siblings()[0].click();
 	});
 }
 
@@ -48,9 +61,4 @@ function freshLoadSection() {
 	var container = $('.description');
 	container.append($('#home-page').clone());
 	container.children().fadeIn(250);
-}
-
-function responsiveHeight() {
-	var jobWidth = $('.job-box').width();
-	$('.job-box').css({'height': jobWidth+'px'});
 }
