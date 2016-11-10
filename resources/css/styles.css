@@ -1,11 +1,7 @@
 /* Custom Styles */
-* {
-  
-}
-
 body {
-    background-color: #424242;
-    color: #9e9e9e;
+    background-color: #4E342E;
+    color: #D7CCC8;
     margin: 0;
     font-family: 'Dosis', sans-serif;
 }
@@ -18,24 +14,22 @@ h1 {
 }
 
 h3 { font-size: 20px }
-
-p {
-  font-size: 18px;
-}
+p { font-size: 18px; }
 
 .hline hr,
 .section hr {
   border: none;
   height: 2px;
-  background-color: #9e9e9e;
 }
 
 .hline hr {
     width: 5%;
+    background-color: #D7CCC8;
     -webkit-transition: width 0.7s ease;
             transition: width 0.7s ease;
 }
 
+.section hr { background-color: #2E7D32; }
 .box-sizing { box-sizing: border-box; }
 
 /* Mobile Menu Transitions */
@@ -47,8 +41,6 @@ p {
 }
 
 #menu-button {
-    width: 30px;
-    height: 30px;
     opacity: 1;
     -webkit-transition: all 0.3s ease;
             transition: all 0.3s ease;
@@ -89,9 +81,7 @@ nav.open {
     text-align: center;
 }
 
-.nav-icon-container p {
-  font-size: 16px;
-}
+.nav-icon-container p { font-size: 16px; }
 
 .nav-row-2,
 .nav-row-3 {
@@ -108,6 +98,7 @@ nav.open {
   width: 66.66%;
   max-width: 400px;
 }
+
 .nav-row-3 {
   width: 100%;
   max-width: 600px;
@@ -131,23 +122,21 @@ nav.open {
 
 .section { width: 100%; }
 
-.nav-icon {
-
-}
-
 .nav-img {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  border: 3px solid #9e9e9e;
+  border: 3px solid #D7CCC8;
   border-radius: 50%;
   cursor: pointer;
+  width: 38px;
+  height: 38px;
 }
 
 .caption {
     text-transform: uppercase;
     display: none;
-    color: #424242;
+    color: #4E342E;
     cursor: pointer;
 }
 
@@ -157,9 +146,9 @@ nav.open {
 .border {
     width: 80%;
     max-width: 291px;
-    background-color: #e53935;
-    background: -webkit-linear-gradient(to left bottom, #e53935, #e53935 50%, #00e5ff 50%, #00e5ff);
-    background:         linear-gradient(to left bottom, #e53935, #e53935 50%, #00e5ff 50%, #00e5ff);
+    background-color: #33691E;
+    background: -webkit-linear-gradient(to left bottom, #2E7D32, #2E7D32 50%, #363d13 50%, #363d13);
+    background:         linear-gradient(to left bottom, #2E7D32, #2E7D32 50%, #363d13 50%, #363d13);
     margin: 16px auto;
     display: inline-block;
     box-shadow: 0 4px 8px rgba(0,0,0,.28);
@@ -190,13 +179,13 @@ nav.open {
 
 /* Contact Form Styles */
 form {
-  background-color: #9e9e9e;
+  background-color: #D7CCC8;
   padding: 7px;
   border-radius: 4px;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 16px;
-  color: #424242;
+  color: #4E342E;
   padding-bottom: 14px;
 }
 
@@ -223,7 +212,7 @@ form {
   border-radius: 4px;
   font-family: 'Dosis', sans-serif;
   background-color: #fafafa;
-  color: #424242;
+  color: #4E342E;
 }
 
 .field input {
@@ -242,7 +231,7 @@ form {
 input:active,
 textarea:active,
 input:focus,
-textarea:focus { outline-color: #e53935; }
+textarea:focus { outline-color: #2E7D32; }
 
 /* Submit Button Styles & Animations */
 #submit {
@@ -251,8 +240,8 @@ textarea:focus { outline-color: #e53935; }
   border-radius: 3px;
   width: 30%;
   height: 35px;
-  background-color: #e53935;
-  color: #00e5ff;
+  background-color: #2E7D32;
+  color: #D7CCC8;
   border: none;
   cursor: pointer;
   font-size: 14px;
@@ -260,9 +249,7 @@ textarea:focus { outline-color: #e53935; }
   transition: opacity 65ms ease-in-out;
 }
 
-#submit:focus {
-  outline: none;
-}
+#submit:focus { outline: none; }
 
 #submit:hover {
   transition: opacity 65ms ease;
@@ -280,14 +267,10 @@ textarea:focus { outline-color: #e53935; }
   display: block;
 }
 
-.job:first-of-type {
-  margin-bottom: 16px;
-}
+.job:first-of-type { margin-bottom: 16px; }
 
 .job-box {
   width: 90%;
-  /*color: #424242;
-  background-color: #9e9e9e;*/
   height: 100px;
   display: inline-block;
   height: auto;
@@ -300,21 +283,12 @@ textarea:focus { outline-color: #e53935; }
 }
 
 #siemens,
-#assurex {
-  max-width: 222px;
-}
+#assurex { max-width: 222px; }
 
-#siemens {
-  padding: 10px;
-}
+#siemens { padding: 10px; }
+#assurex { max-height: 72px; }
 
-#assurex {
-  max-height: 72px;
-}
-
-h4 {
-  margin-bottom: 0;
-}
+h4 { margin-bottom: 0; }
 
 /* Media Queries */
 @media screen and (min-width: 430px) {
@@ -339,12 +313,11 @@ h4 {
     }
 
     .border { width: 60%; }
+    .job-box { width: 65%; }
+
     form {
       width: 90%;
       max-width: 495px;
-    }
-    .job-box {
-      width: 65%;
     }
 }
 
@@ -366,7 +339,7 @@ h4 {
 
     .nav-icon-container {
         width: 100%;
-        background-color: #9e9e9e;
+        background-color: #D7CCC8;
         margin-top: 0;
         margin-bottom: 0;
         border-bottom-left-radius: 3px;
@@ -374,23 +347,18 @@ h4 {
         box-shadow: 0 4px 8px rgba(0,0,0,.28);
     }
 
-    .nav-bg { border: 0; }
+    .nav-img { border: 0; }
     .caption { display: inline; }
     .hline { display: none; }
     .border { width: 40%; }
     .head { margin: 4px; }
+    .job-box { width: 85%; }
+    .job-desc p { text-align: left; }
+
     .job {
       display: inline-block;
       width: 48%;
       vertical-align: top;
-    }
-
-    .job-box {
-      width: 85%;
-    }
-
-    .job-desc p {
-      text-align: left;
     }
 
     #siemens,
