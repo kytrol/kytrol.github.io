@@ -10414,11 +10414,19 @@ function freshLoadSection() {
 }
 
 function setProjectBar() {
+	/* Fade Icon on Click */
 	$('.proj-bar').first().find('img').click(function() {
-		var tag = $(this).attr('id');
-		$('.desc-container').first().children(':visible').fadeOut(250, function() {
-			$('#' + tag + '-desc').first().fadeIn(250);
+		$(this).removeClass('inactive');
+		$('.proj-bar').first().find('img').not(this).each(function() {
+			$(this).addClass('inactive');
 		});
-
+		/* Display section associated with icon. */
+		var tag = $(this).attr('id');
+		var currTag = $('.desc-container').children(':visible').attr('id').split('-')[0];
+		if (tag !== currTag) {
+			$('.desc-container').first().children(':visible').fadeOut(250, function() {
+				$('#' + tag + '-desc').first().fadeIn(250);
+			});
+		}
 	});
 }
