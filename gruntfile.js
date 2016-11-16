@@ -33,18 +33,18 @@ module.exports = function(grunt) {
           dev: {
             options: {
               sizes: [{
-                width: 285,
-                height: 285
+                width: 125,
+                height: 125
               },{
                 name: "dpi",
-                width: 570,
-                height: 570,
+                width: 260,
+                height: 260,
                 suffix: "_x2",
               }],
             },
             files: [{
               expand: true,
-              src: ['tree*.{png,jpg,gif}'],
+              src: ['*.{png,jpg,gif}'],
               cwd: 'resources/img/',
               dest: 'resources/img/'
             }]

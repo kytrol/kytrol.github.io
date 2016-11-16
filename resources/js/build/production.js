@@ -10358,7 +10358,6 @@ $(document).ready(function() {
 	freshLoadSection();
 	loadSectionFromImg();
 	loadSectionFromCaption();
-
 });
 
 function setNavigation() {
@@ -10388,6 +10387,7 @@ function loadSection(tag) {
 			container.empty();
 			container.append($('#' + tag + '-page').clone());
 			container.children().fadeIn(250);
+			if (tag == 'proj' && $(window).width() < 750) setProjectBar();
 		});
 	}
 }
@@ -10395,7 +10395,6 @@ function loadSection(tag) {
 function loadSectionFromImg() {
 	$('.nav-img').click(function() {
 		var tag = $(this).attr('id');
-		console.log(tag);
 		if (tag !== 'resume') loadSection(tag);
 	});
 }
@@ -10403,7 +10402,6 @@ function loadSectionFromImg() {
 function loadSectionFromCaption() {
 	$('.caption').click(function() {
 		var tag = $(this).siblings().attr('id');
-		console.log(tag);
 		if (tag !== 'resume') loadSection(tag);
 		else $(this).siblings()[0].click();
 	});
@@ -10413,4 +10411,14 @@ function freshLoadSection() {
 	var container = $('.description');
 	container.append($('#home-page').clone());
 	container.children().fadeIn(250);
+}
+
+function setProjectBar() {
+	$('.proj-bar').first().find('img').click(function() {
+		var tag = $(this).attr('id');
+		$('.desc-container').first().children(':visible').fadeOut(250, function() {
+			$('#' + tag + '-desc').first().fadeIn(250);
+		});
+
+	});
 }

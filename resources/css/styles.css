@@ -146,7 +146,7 @@ nav.open {
 .border {
     width: 80%;
     max-width: 291px;
-    background-color: #33691E;
+    background-color: #2E7D32;
     background: -webkit-linear-gradient(to left bottom, #2E7D32, #2E7D32 50%, #363d13 50%, #363d13);
     background:         linear-gradient(to left bottom, #2E7D32, #2E7D32 50%, #363d13 50%, #363d13);
     margin: 16px auto;
@@ -287,8 +287,52 @@ textarea:focus { outline-color: #2E7D32; }
 
 #siemens { padding: 10px; }
 #assurex { max-height: 72px; }
-
 h4 { margin-bottom: 0; }
+
+/* Project Page Styles */
+.proj-bar {
+  text-align: center;
+  width: 100%;
+  margin-top: 16px;
+}
+
+.proj-icon { display: inline-block; }
+
+.proj-icon img {
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
+}
+
+.proj-desc { text-align: center; }
+.proj-desc h3 { color: #2E7D32; }
+
+.proj-img {
+  display: none;
+  width: 125px;
+  height: 125px;
+}
+
+#univ {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+a {
+  text-decoration: none;
+  color: #2E7D32;
+}
+
+a:visited,
+a:hover { color: #4CAF50; }
+
+a:hover { text-decoration: underline; }
+
+/*#univ,
+#cbtb { opacity: .6 }*/
+
+#univ-desc,
+#cbtb-desc { display: none; }
 
 /* Media Queries */
 @media screen and (min-width: 430px) {
@@ -363,6 +407,18 @@ h4 { margin-bottom: 0; }
 
     #siemens,
     #assurex { height: 72px; }
+
+    .proj-bar { display: none; }
+
+    .proj-desc p {
+      text-align: left;
+      text-indent: 35px;
+    }
+
+    .proj-img { display: inline-block; }
+
+    #univ-desc,
+    #cbtb-desc { display: block; }
 }
 
 @media screen and (min-width: 1000px) {
