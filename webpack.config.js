@@ -9,7 +9,8 @@ module.exports = {
   entry: './src/js/script.js',
   output: {
     path: './build',
-    filename: 'js/bundle.js'
+    filename: 'js/bundle.js',
+    publicPath: 'build/'
   },
   module: {
     rules: [
@@ -89,6 +90,17 @@ module.exports = {
         }
       },
       {
+        test: /\.pdf$/,
+        use: {
+          loader: 'file-loader',
+          options: {
+            name: '[path][name].[ext]',
+            mimetype: 'application/pdf',
+            context: __dirname + '/src/'
+          }
+        }
+      },
+      {
         test: /\.svg$/,
         use: [{
           loader: 'file-loader',
@@ -149,7 +161,7 @@ module.exports = {
     new ExtractTextPlugin('css/bundle.css'),
     new HtmlWebpackPlugin({
       template: './src/index.pug',
-      filename: 'index.html',
+      filename: '../index.html',
       minify: false,
     })
   ]

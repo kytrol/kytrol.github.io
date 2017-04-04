@@ -27,22 +27,22 @@ section hr {
 }
 
 .hline hr {
-  width: 5%;
   background-color: $beige;
   transition: width 250ms $swift;
+  width: 5%;
 
-  &.extend {
-    width: 100%;
-  }
+  &.extend { width: 100%; }
 }
 
-
-
 hr { background-color: $green; }
+
 .box-sizing { box-sizing: border-box; }
+
 .center { text-align: center; }
 .block-center { margin: 0 auto; }
+
 .capital { text-transform: uppercase; }
+
 .no-display { display: none; }
 .hide { opacity: 0; }
 .fix-position { position: fixed; }
@@ -65,12 +65,14 @@ hr { background-color: $green; }
 }
 
 nav {
-  transform: translate(0, -200px);
+  left: 50%;
+  position: fixed;
+  transform: translate(-50%, -200px);
   transition: transform 250ms $swift;
 }
 
 nav.active {
-  transform: translate(0, 0);
+  transform: translate(-50%, 0);
 }
 
 .nav-icon-container {
@@ -84,9 +86,7 @@ nav.active {
 }
 
 .nav-row-2,
-.nav-row-3 {
-  margin: 4px auto;
-}
+.nav-row-3 { margin: 4px auto; }
 
 .nav-row-2 {
   width: 66.66%;
@@ -99,9 +99,7 @@ nav.active {
 }
 
 .nav-row-top,
-.nav-row-bot {
-  display: inline-block;
-}
+.nav-row-bot { display: inline-block; }
 
 .nav-row-top { width: 48%; }
 .nav-row-bot { width: 32%; }
@@ -128,9 +126,7 @@ nav.active {
 .nav-link { cursor: pointer; }
 
 .border,
-.head {
-  border-radius: 50%;
-}
+.head { border-radius: 50%; }
 
 .border {
   background-color: $green;
@@ -154,9 +150,7 @@ nav.active {
 #work-page,
 #proj-page,
 #resume-page,
-#contact-page {
-  transition: all 250ms $swift;
-}
+#contact-page { transition: all 250ms $swift; }
 
 @import './2-partials/_contact-page';
 @import './2-partials/_work-page';

@@ -17,7 +17,7 @@ module.exports = {
   },
   module: {
     rules: [
-      /*{
+      {
         test: /\.js$/,
         exclude: /node_modules/,
         enforce: 'pre',
@@ -27,7 +27,7 @@ module.exports = {
             configFile: './.eslintrc.js'
           }
         }
-      },*/
+      },
       {
         test: /\.js$/,
         exclude: /node_modules/,
@@ -88,6 +88,17 @@ module.exports = {
             name: '[path][name].[ext]',
             limit: 20000,
             mimetype: 'application/vnd.ms-fontobject',
+            context: __dirname + '/src/'
+          }
+        }
+      },
+      {
+        test: /\.pdf$/,
+        use: {
+          loader: 'file-loader',
+          options: {
+            name: '[path][name].[ext]',
+            mimetype: 'application/pdf',
             context: __dirname + '/src/'
           }
         }

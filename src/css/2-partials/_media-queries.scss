@@ -1,16 +1,4 @@
 @media (min-width: 430px) {
-  /*.nav-row-2 {
-    margin-left: auto;
-    margin-right: 0;
-    width: 40%;
-  }
-
-  .nav-row-3 {
-    margin-left: 0;
-    margin-right: auto;
-    width: 60%;
-  }*/
-
   .border {
     height: 292px;
     width: 292px;
@@ -22,7 +10,6 @@
     margin: 5px;
   }
 
-
   .job-box { width: 65%; }
 
   form {
@@ -33,18 +20,11 @@
 
 @media (min-width: 570px) {
   .nav-row-2,
-  .nav-row-3 {
-    display: inline-block;
-  }
+  .nav-row-3 { display: inline-block; }
 
-  .nav-row-2 {
-    width: 39.5%;
-  }
+  .nav-row-2 { width: 39.5%; }
 
-  .nav-row-3 {
-    width: 59.5%;
-  }
-
+  .nav-row-3 { width: 59.5%; }
 
   #submit { font-size: 16px; }
 }
@@ -55,6 +35,9 @@
   nav {
     position: static;
     transform: translate(0, 0);
+    transition: all 10ms $swift;
+
+    &.active { transform: translate(0, 0); }
   }
 
   .nav-icon-container {
@@ -66,9 +49,7 @@
   }
 
   .nav-row-2,
-  .nav-row-3 {
-    display: inline-block;
-  }
+  .nav-row-3 { display: inline-block; }
 
   .nav-img {
     border: 0;
@@ -76,7 +57,9 @@
   }
 
   .caption { display: inline; }
+
   .hline { display: none; }
+
   .job-box { width: 85%; }
   .job-desc p { text-align: left; }
 
@@ -93,15 +76,23 @@
 
   .proj-bar { display: none; }
 
-  .proj-desc p {
-    text-align: left;
-    text-indent: 35px;
+  .proj-desc {
+    h3 { margin-top: 4px; margin-bottom: 4px; }
+
+    p {
+      text-align: left;
+      text-indent: 35px;
+    }
   }
 
-  .proj-image { display: inline-block; }
+  .proj-img { display: inline-block; }
 
+  #udj-desc,
   #univ-desc,
-  #cbtb-desc { display: block; }
+  #cbtb-desc {
+    display: block;
+    opacity: 1;
+  }
 }
 
 @media (min-width: 1000px) {

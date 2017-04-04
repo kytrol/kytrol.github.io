@@ -4,14 +4,14 @@ html(lang='en')
   title Kyle Trout
   meta(charset='utf-8')
   meta(http-equiv='X-UA-Compatible' content='ie=edge')
-  link(rel='stylesheet' type='text/css' href='./css/bundle.css')
+  link(rel='stylesheet' type='text/css' href='build/css/bundle.css')
   meta(name='google-site-verification' content='_0rMu8TvgZUZmy7jxGKyzm0pXYqTUI7FhnNRvN9aSUk')
   meta(name='theme-color' content='#4e342e')
   link(rel='icon' type='image/png' sizes='16x16' href=require('./assets/img/favicon/favicon-16.png'))
   link(rel='icon' type='image/png' sizes='32x32' href=require('./assets/img/favicon/favicon-32.png'))
   link(rel='icon' type='image/png' sizes='32x32' href=require('./assets/img/favicon/favicon-96.png'))
   link(rel='icon' type='image/png' sizes='192x192' href=require('./assets/img/favicon/favicon-196.png'))
-  script(src='./js/bundle.js')
+  script(src='build/js/bundle.js')
   script.
     let host = 'kyletrout.io';
     if ((host == window.location.host) && (window.location.protocol != "https:")) window.location.protocol = "https";
@@ -36,7 +36,7 @@ html(lang='en')
               p.caption.capital Projects
           div.nav-row-bot.block-center
             div.nav-icon
-              a#resume(href='build/assets/file/Trout_Resume_2016.pdf' target='_blank')
+              a#resume(href=require('./assets/file/Trout_Resume_2016.pdf') target='_blank')
                 img#resume.nav-img(src=require('./assets/img/nav/resume.png') alt='Resume icon')
                 p.caption.capital Resume
           div.nav-row-bot.block-center
@@ -48,7 +48,7 @@ html(lang='en')
     section
       div.center
         div.border
-          img.head.box-sizing(src=require('./assets/img/head/tree.jpg') alt='Kyle Trout')
+          img.head.box-sizing(src=require('./assets/img/head/tree.jpg') srcset='build/assets/img/head/tree.jpg 1x, build/assets/img/head/tree-2x.jpg 2x' alt='Kyle Trout')
         h1 Kyle Trout
       div.description
         section#home-page
@@ -108,7 +108,7 @@ html(lang='en')
           div.platform
       div.desc-container
         div#udj-desc.proj-desc.center
-          i.proj-img.no-display.material-icons album
+          i.proj-img.material-icons album
           h3 RevolutionUC Hackathon
           p RevolutionUC is a student organized hackathon held at the University of Cincinnati. Personally, this was the second hackathon that I participated in.
             | My group went in with an idea in mind, and we were able to execute on our plan. The idea was to create an Internet of things jukebox, dubbed uDj, that could be accessed
@@ -119,7 +119,7 @@ html(lang='en')
             | uses Python along with RabbitMQ to handle the song queue. I created the interface for this application and contributed to handling the requests from the server.
             | I had a lot of fun over the course of this hackathon and learned a lot about implementing front-end logic to interact with the back-end.
         div#univ-desc.proj-desc.center.no-display.hide
-          img.proj-img.no-display(src=require('./assets/img/proj/universify.png') alt='Universify icon')
+          i.proj-img.material-icons format_underlined
           h3 DerbyHacks Hackathon
           p Held at the University of Louisville, DerbyHacks was the first hackathon that I experienced. I traveled to Louisville with a friend, Dom, and we hoped to find
             | other students to join up with. Miraculously, we found two other students looking to do just that. The idea we brainstormed was to create Universify. A web application
@@ -128,7 +128,7 @@ html(lang='en')
             | members coded the back-end using Python Flask. This was my first encounter with a front-end framework and how data is transmitted from the server
             | to the application.
         div#cbtb-desc.proj-desc.center.no-display.hide
-          img.proj-img.no-display(src=require('./assets/img/proj/cbtb.png') alt='Compassion by the Book icon')
+          img.proj-img(src=require('./assets/img/proj/apple.svg') alt='Compassion by the Book icon')
           h3 Compassion by the Book
           p During my second year at UC, I participated in a nonprofit organization named Compassion by the Book. Specifically, I was part of the University of Cincinnati branch of this
             | organization and met with other students on a weekly basis. Our goal was to raise money that would be donated to the Literacy Network of Greater Cincinnati. About halfway
