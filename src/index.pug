@@ -1,0 +1,152 @@
+doctype html
+html(lang='en')
+  head
+  title Kyle Trout
+  meta(charset='utf-8')
+  meta(http-equiv='X-UA-Compatible' content='ie=edge')
+  link(rel='stylesheet' type='text/css' href='./css/bundle.css')
+  meta(name='google-site-verification' content='_0rMu8TvgZUZmy7jxGKyzm0pXYqTUI7FhnNRvN9aSUk')
+  meta(name='theme-color' content='#4e342e')
+  link(rel='icon' type='image/png' sizes='16x16' href=require('./assets/img/favicon/favicon-16.png'))
+  link(rel='icon' type='image/png' sizes='32x32' href=require('./assets/img/favicon/favicon-32.png'))
+  link(rel='icon' type='image/png' sizes='32x32' href=require('./assets/img/favicon/favicon-96.png'))
+  link(rel='icon' type='image/png' sizes='192x192' href=require('./assets/img/favicon/favicon-196.png'))
+  script(src='./js/bundle.js')
+  script.
+    let host = 'kyletrout.io';
+    if ((host == window.location.host) && (window.location.protocol != "https:")) window.location.protocol = "https";
+  body
+    header
+      div.menu
+        img#menu-btn(src=require('./assets/img/nav/down.svg') alt='Arrow menu opener')
+      nav.nav-icon-container.center
+        div.nav-row-2.center
+          div.nav-row-top.block-center
+            div.nav-icon
+              img#home.nav-img(src=require('./assets/img/nav/home.png') alt='Home icon')
+              p.caption.capital Home
+          div.nav-row-top.block-center
+            div.nav-icon
+              img#work.nav-img(src=require('./assets/img/nav/work.png') alt='Work icon')
+              p.caption.capital Work Experience
+        div.nav-row-3.center
+          div.nav-row-bot.block-center
+            div.nav-icon
+              img#proj.nav-img(src=require('./assets/img/nav/proj.png') alt='Project icon')
+              p.caption.capital Projects
+          div.nav-row-bot.block-center
+            div.nav-icon
+              a#resume(href='build/assets/file/Trout_Resume_2016.pdf' target='_blank')
+                img#resume.nav-img(src=require('./assets/img/nav/resume.png') alt='Resume icon')
+                p.caption.capital Resume
+          div.nav-row-bot.block-center
+            div.nav-icon
+              img#contact.nav-img(src=require('./assets/img/nav/contact.png') alt='Contact icon')
+              p.caption.capital Contact
+        div.hline
+          hr
+    section
+      div.center
+        div.border
+          img.head.box-sizing(src=require('./assets/img/head/tree.jpg') alt='Kyle Trout')
+        h1 Kyle Trout
+      div.description
+        section#home-page
+          h3.left Welcome
+          p I am currently a third year Computer Science major at the University of Cincinnati, Class of 2019. For now,
+            | this site will serve as a main hub where I can document my experiences and further experiment with web technologies.
+            |  Though still exploring opportunities in the field, I have taken a keen interest in web development. My main focus has been with front-end in particular, but
+            |  I am looking to build off of my current knowledge to gain a better understanding of full stack developement as a whole. During my free time, I can be found competing
+            |  out on the volleyball court or shopping around to enhance my personal style.
+    section#home-page-hidden.no-display.hide
+      h3.left Welcome
+      p I am currently a third year Computer Science major at the University of Cincinnati, Class of 2019. For now,
+        |  this site will serve as a main hub where I can document my experiences and further experiment with web technologies.
+        |  Though still exploring opportunities in the field, I have taken a keen interest in web development. My main focus has been with front-end in particular, but
+        |  I am looking to build off of my current knowledge to gain a better understanding of full stack developement as a whole. During my free time, I can be found competing
+        |  out on the volleyball court or shopping around to enhance my personal style.
+    section#work-page-hidden.no-display.hide
+      hr
+      div.center
+        div.job
+          div.job-box
+            img#siemens.logo.box-sizing(src=require('./assets/img/work/siemens.svg') alt='Siemens PLM Software')
+            div.job-desc
+              h4 { Co-op }
+              p I spent the summer of 2016 working at Siemens PLM Software in Milford, Ohio. The team that I was added to was tasked with working
+                |  with one of Siemen's software programs called NX. The majority of the semester was split between functional testing of NX and
+                |  examining error logs and call stacks. Functional testing was performed by navigating the interface of NX looking to find a flaw.
+                |  Once a flaw was found, an error log was generated and the next step was to use the log to determine the source of the error.
+                |  Though there were still occasions when a log was presented to me, and I needed to reproduce the error. I also worked on a project
+                |  with another co-op to write C++ autotests for a number of test cases. These test cases were added to the already existing library of
+                |  tests and were used to ensure regressions were not encountered.
+        div.job
+          div.job-box
+            img#assurex.logo(src=require('./assets/img/work/assurex.png') alt='Assurex Health')
+            div.job-desc
+              h4 { Co-op }
+              p My first co-op position was at Assurex Health in Mason, Ohio. This was the first time I experienced a real working environment
+                | along with being assigned real world projects. My responsibilities for this rotation were split between Quality Assurance and
+                | Product Development. I spent the first half of the semester in Quality Assurance where I was to write C# autotests. These autotests
+                | were then run in combination with NUnit to ensure that regressions were not accidentally added back in to the production website.
+                | Automating test cases relieved the strain of manual testing from the QA team and allowed them to shift their focus to other matters.
+
+              p I spent the second half of the semester working in the Product Development team. For this portion, my responsibilities shifted and
+                | I mainly dealt with implementing fixes on the production web portal. This required me to become more familiar with the C# codebase and how to
+                | properly use CSS and JavaScript in a professional environment. I also spent a decent amount of time working on a project with another
+                | co-op to implement logic to recognize customer orders that were associated to each other.
+    section#proj-page-hidden.no-display.hide
+      hr
+      div.proj-bar.center
+        div.proj-icons.block-center
+          div.proj-icon
+            i#udj.material-icons album
+          div.proj-icon.inactive
+            i#univ.material-icons format_underlined
+          div.proj-icon.inactive
+            img#cbtb(src=require('./assets/img/proj/apple.svg') alt='Compassion by the Book icon')
+          div.platform
+      div.desc-container
+        div#udj-desc.proj-desc.center
+          i.proj-img.no-display.material-icons album
+          h3 RevolutionUC Hackathon
+          p RevolutionUC is a student organized hackathon held at the University of Cincinnati. Personally, this was the second hackathon that I participated in.
+            | My group went in with an idea in mind, and we were able to execute on our plan. The idea was to create an Internet of things jukebox, dubbed uDj, that could be accessed
+            | by multiple clients simultaneously through a web application. This moves the control of the song queue from an individual to the group. Multiple users can
+            | add songs to a single queue which would then combine these song requests to play back.
+
+          p This web application uses HTML, CSS, and JavaScript for the interface and jQuery to communicate to the back-end. The back-end server is coded in Node.js and
+            | uses Python along with RabbitMQ to handle the song queue. I created the interface for this application and contributed to handling the requests from the server.
+            | I had a lot of fun over the course of this hackathon and learned a lot about implementing front-end logic to interact with the back-end.
+        div#univ-desc.proj-desc.center.no-display.hide
+          img.proj-img.no-display(src=require('./assets/img/proj/universify.png') alt='Universify icon')
+          h3 DerbyHacks Hackathon
+          p Held at the University of Louisville, DerbyHacks was the first hackathon that I experienced. I traveled to Louisville with a friend, Dom, and we hoped to find
+            | other students to join up with. Miraculously, we found two other students looking to do just that. The idea we brainstormed was to create Universify. A web application
+            | where students could log in and ask questions directed at specific classes they were enrolled in. They could also log in and answer questions other students
+            | at their university had asked. I collaborated with Dom to create the interface and communication on the front-end, facilitated by AngularJS. The other two
+            | members coded the back-end using Python Flask. This was my first encounter with a front-end framework and how data is transmitted from the server
+            | to the application.
+        div#cbtb-desc.proj-desc.center.no-display.hide
+          img.proj-img.no-display(src=require('./assets/img/proj/cbtb.png') alt='Compassion by the Book icon')
+          h3 Compassion by the Book
+          p During my second year at UC, I participated in a nonprofit organization named Compassion by the Book. Specifically, I was part of the University of Cincinnati branch of this
+            | organization and met with other students on a weekly basis. Our goal was to raise money that would be donated to the Literacy Network of Greater Cincinnati. About halfway
+            | through the semester, there was an interest for a web portal we could direct students and local businesses to. I stepped up and created a static website composed of
+            | HTML, CSS, and JavaScript/jQuery located at <a href='http://uc.compassionbythebook.com' target='_blank'>uc.compassionbythebook.com</a>. This was the first website that
+            | I created and I had a lot of fun tinkering with these technologies. It was also the first time I had created a web portal for an organization and received critiques from
+            | other students involved.
+    section#contact-page-hidden.no-display.hide
+      hr
+      p.center Interested in connecting with me? Feel free to start a conversation.
+      form.box-sizing(action="https://formspree.io/troutkt@mail.uc.edu" method="POST")
+        - let fields = ['Name', 'Email', 'Message'];
+        each field in fields
+          div.field
+            label(for=field.toLowerCase())= field
+            if (field !== 'Message')
+              input.box-sizing(type="text" name=field placeholder=name autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" required)
+            else
+              textarea.box-sizing(type="text" name=field placeholder='Start typing here...' autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" required)
+        div.center
+          input#submit.capital.box-sizing(type='submit' value='Submit')

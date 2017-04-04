@@ -1,0 +1,92 @@
+.proj-bar {
+  margin-top: 16px;
+  width: 100%;
+}
+
+.proj-icons {
+  position: relative;
+  width: 191px;
+}
+
+.proj-icon {
+  display: inline-block;
+  transition: all 200ms $swift;
+  vertical-align: top;
+
+  img,
+  .material-icons {
+    transition: all 250ms $swift;
+    cursor: pointer;
+  }
+
+  img {
+    height: 48px;
+    width: 48px;
+  }
+
+  .material-icons {
+    font-size: 48px;
+  }
+
+  &:nth-child(3) {
+    font-size: 0;
+  }
+}
+
+.platform {
+  background-color: $green;
+  width: 48px;
+  height: 3px;
+  left: 0;
+  position: absolute;
+  transition: all 200ms $swift;
+}
+
+.plat-mid {
+  left: 72px;
+}
+
+.plat-right {
+  left: 141px;
+}
+
+.proj-desc {
+  transition: opacity 200ms $swift;
+  
+  h3 { color: $green; }
+
+  a {
+    color: $green;
+
+    &:visited,
+    &:hover {
+      color: $green-400;
+      text-decoration: underline;
+    }
+  }
+}
+
+.inactive {
+  opacity: .54;
+}
+
+.proj-img {
+  width: 125px;
+  height: 125px;
+}
+
+#udj,
+#univ,
+#cbtb {
+  padding-bottom: 8px;
+  transition: all 250ms ease;
+}
+
+#univ {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+* {
+  //outline: 1px solid yellow;
+}

@@ -1,0 +1,68 @@
+form {
+  background-color: $beige;
+  border-radius: 4px;
+  color: $brown;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 16px;
+  padding: 7px;
+  padding-bottom: 14px;
+}
+
+.field {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 10px;
+
+  input,
+  textarea {
+    background-color: $beige-100;
+    border: none;
+    border-radius: 4px;
+    color: $brown;
+    font-family: 'Dosis', sans-serif;
+    margin-top: 4px;
+    padding-left: 4px;
+    padding-right: 4px;
+    padding-top: 4px;
+    width: 100%;
+  }
+
+  input {
+    height: 24px;
+    margin-bottom: 4px;
+  }
+
+  textarea {
+    display: block;
+    height: 250px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    resize: none;
+  }
+
+  input:active,
+  textarea:active,
+  input:focus,
+  textarea:focus { outline-color: #2E7D32; }
+}
+
+#submit {
+  background-color: $green;
+  border: none;
+  border-radius: 3px;
+  color: $beige;
+  font-family: 'Dosis', sans-serif;
+  font-size: 14px;
+  height: 35px;
+  width: 30%;
+  opacity: .65;
+  transition: opacity 65ms ease-in-out;
+
+  &:focus { outline: none; }
+  &:hover { opacity: .75; }
+  &:active { opacity: 1; }
+
+  &:hover,
+  &:active { transition: opacity 65ms ease; }
+}
