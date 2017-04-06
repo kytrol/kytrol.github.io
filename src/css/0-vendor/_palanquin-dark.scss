@@ -1,0 +1,27 @@
+@font-face {
+  font-family: 'Palanquin Dark';
+  font-weight: 400;
+  font-style: normal;
+  src: url('../assets/font/Palanquin-Dark/Palanquin-Dark.eot');
+  src: url('../assets/font/Palanquin-Dark/Palanquin-Dark.eot?#iefix') format('embedded-opentype'),
+       local('Palanquin Dark'),
+       local('Palanquin-Dark'),
+       url('../assets/font/Palanquin-Dark/Palanquin-Dark.woff2') format('woff2'),
+       url('../assets/font/Palanquin-Dark/Palanquin-Dark.woff') format('woff'),
+       url('../assets/font/Palanquin-Dark/Palanquin-Dark.ttf') format('truetype'),
+       url('../assets/font/Palanquin-Dark/Palanquin-Dark.svg#PalanquinDark') format('svg');
+}
+
+@font-face {
+  font-family: 'Palanquin Dark';
+  font-weight: 600;
+  font-style: normal;
+  src: url('../assets/font/Palanquin-Dark-600/Palanquin-Dark-600.eot');
+  src: url('../assets/font/Palanquin-Dark-600/Palanquin-Dark-600.eot?#iefix') format('embedded-opentype'),
+       local('Palanquin Dark SemiBold'),
+       local('Palanquin-Dark-600'),
+       url('../assets/font/Palanquin-Dark-600/Palanquin-Dark-600.woff2') format('woff2'),
+       url('../assets/font/Palanquin-Dark-600/Palanquin-Dark-600.woff') format('woff'),
+       url('../assets/font/Palanquin-Dark-600/Palanquin-Dark-600.ttf') format('truetype'),
+       url('../assets/font/Palanquin-Dark-600/Palanquin-Dark-600.svg#PalanquinDark') format('svg');
+}

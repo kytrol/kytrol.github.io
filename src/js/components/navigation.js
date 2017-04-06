@@ -1,46 +1,77 @@
 'use_strict';
 
 import EleUtil from './ele-util';
-import Project from './project';
 
 // Class containing functions relating to page navigation.
 export default class Navigation {
-  static setNavigation() {
-    const menu = document.getElementById('menu-btn');
-    const nav = document.getElementsByTagName('nav')[0];
+  static bindMenu() {
+    const self = this;
+    document.getElementById('menu-btn').onclick = function () {
 
-    menu.onclick = function () {
-      EleUtil.toggleClass(nav, 'active');
-      EleUtil.toggleClass(this, 'open');
-
-      const hr = document.getElementsByClassName('hline')[0].children[0];
-
-      setTimeout(() => {
-        if (EleUtil.hasClass(this, 'open')) EleUtil.addClass(hr, 'extend');
-        else EleUtil.dropClass(hr, 'extend');
-      }, 200);
+      self.animateMenu(this);
     };
+
+    //EleUtil.addClass(document.getElementsByTagName('nav')[0], 'active');
   }
 
-  static loadSection(tag) {
-    const container = document.getElementsByClassName('description')[0];
-    const pageEle = container.firstElementChild;
-    const currTag = pageEle.id.split('-')[0];
+  static bindLinks() {
+    const menu = document.getElementById('menu-btn');
+    const isMobileView = !!menu.offsetHeight;
 
-    if (tag !== currTag) {
-      EleUtil.addClass(pageEle, 'hide');
+    const links = document.getElementsByClassName('links')[0].getElementsByTagName('a');
+    const self = this;
+    for (let i = 0; i < links.length; i++) {
+      links[i].onclick = function () {
 
-      const section = document.getElementById(`${tag}-page-hidden`).cloneNode(true);
-      const sectionId = section.id;
+        if (isMobileView) self.animateMenu(menu);
+      };
+    }
 
-      setTimeout(() => {
-        EleUtil.dropChildren(container);
-        section.id = sectionId.substring(0, sectionId.length - 7);
-        container.appendChild(section);
-        EleUtil.dropClasses(section, ['no-display', 'hide']);
+  }
 
-        if (tag === 'proj') Project.setProjectBar();
-      }, 300);
+  static animateMenu(menu) {
+    EleUtil.toggleClass(menu, 'shrink-icon');
+
+    setTimeout(() => {
+      if (menu.innerHTML === 'menu') menu.innerHTML = 'close';
+      else menu.innerHTML = 'menu';
+
+      EleUtil.toggleClass(menu, 'shrink-icon');
+    }, 100);
+
+    EleUtil.toggleClass(document.getElementsByTagName('nav')[0], 'active');
+  }
+
+  static animateArrow() {
+    const sectionIndex = getSectionInViewport();
+    const links = document.getElementsByClassName('links')[0].getElementsByTagName('a');
+    const currSectionName = links[sectionIndex].href.split('#')[1];
+
+    const arrow = document.getElementsByClassName('arrow')[0];
+    const classes = arrow.className.split(' ');
+
+    if (EleUtil.hasClass(arrow, `arrow-${currSectionName}`)) return;
+
+    for (let i = 0; i < classes.length; i++) {
+      if (classes[i] !== 'arrow' && classes[i].indexOf('arrow') >= 0) {
+        EleUtil.dropClass(arrow, classes[i]);
+      }
+    }
+
+    EleUtil.addClass(arrow, `arrow-${currSectionName}`);
+
+    function getSectionInViewport() {
+      const viewportHeight = window.innerHeight;
+      const sectionNum = document.getElementsByTagName('section').length;
+      const currPosition = document.getElementById('contact').getBoundingClientRect().top;
+
+      for (let i = 0; i < sectionNum; i++) {
+        const j = i + 1;
+
+        if (currPosition <= (sectionNum - i) * viewportHeight && currPosition >= (sectionNum - j) * viewportHeight - viewportHeight / 2) {
+          return i;
+        }
+      }
     }
   }
 }
