@@ -11,6 +11,7 @@ html(lang='en')
     link(rel='icon' type='image/png' sizes='32x32' href=require('./assets/img/favicon/favicon-32.png'))
     link(rel='icon' type='image/png' sizes='32x32' href=require('./assets/img/favicon/favicon-96.png'))
     link(rel='icon' type='image/png' sizes='192x192' href=require('./assets/img/favicon/favicon-196.png'))
+    script(src='build/js/bundle.js')
     script.
       let host = 'kyletrout.io';
       if ((host == window.location.host) && (window.location.protocol != "https:")) window.location.protocol = "https";
@@ -19,21 +20,18 @@ html(lang='en')
       div.menu
         i#menu-btn.material-icons.border-box menu
       nav
-        
         ul.links
           - let pages = ['home', 'work', 'projects', 'contact']
           for p in pages
             li.capital: a(href=`#${p}`)=p
-        div.arrow.arrow-home
-      
-    section#home.border-  
+        div.arrow.hide
+    section#home.border-box
       p I am currently a third year Computer Science major at the University of Cincinnati, Class of 2019. For now,
         | this site will serve as a main hub where I can document my experiences and further experiment with web technologies.
         |  Though still exploring opportunities in the field, I have taken a keen interest in web development. My main focus has been with front-end in particular, but
         |  I am looking to build off of my current knowledge to gain a better understanding of full stack developement as a whole. During my free time, I can be found competing
         |  out on the volleyball court or shopping around to enhance my personal style.
     section#work.border-box
-      h1.capital.center Work Experience
       p I spent the summer of 2016 working at Siemens PLM Software in Milford, Ohio. The team that I was added to was tasked with working
         |  with one of Siemen's software programs called NX. The majority of the semester was split between functional testing of NX and
         |  examining error logs and call stacks. Functional testing was performed by navigating the interface of NX looking to find a flaw.
@@ -41,6 +39,7 @@ html(lang='en')
         |  Though there were still occasions when a log was presented to me, and I needed to reproduce the error. I also worked on a project
         |  with another co-op to write C++ autotests for a number of test cases. These test cases were added to the already existing library of
         |  tests and were used to ensure regressions were not encountered.
+        
       p My first co-op position was at Assurex Health in Mason, Ohio. This was the first time I experienced a real working environment
         | along with being assigned real world projects. My responsibilities for this rotation were split between Quality Assurance and
         | Product Development. I spent the first half of the semester in Quality Assurance where I was to write C# autotests. These autotests
@@ -51,11 +50,10 @@ html(lang='en')
         | I mainly dealt with implementing fixes on the production web portal. This required me to become more familiar with the C# codebase and how to
         | properly use CSS and JavaScript in a professional environment. I also spent a decent amount of time working on a project with another
         | co-op to implement logic to recognize customer orders that were associated to each ot
-    section#projects.border-b
-      h1.capital.center Projects
-      i.proj-img.material-icons.center album
-      h2.center uDj
-      h3 RevolutionUC Hackathon
+    section#projects.border-box
+      i.proj-img.material-icons.center.no-display album
+      h2.center.no-display uDj
+      h3.no-display RevolutionUC Hackathon
       p RevolutionUC is a student organized hackathon held at the University of Cincinnati. Personally, this was the second hackathon that I participated in.
         | My group went in with an idea in mind, and we were able to execute on our plan. The idea was to create an Internet of things jukebox, dubbed uDj, that could be accessed
         | by multiple clients simultaneously through a web application. This moves the control of the song queue from an individual to the group. Multiple users can
@@ -64,10 +62,9 @@ html(lang='en')
       p This web application uses HTML, CSS, and JavaScript for the interface and jQuery to communicate to the back-end. The back-end server is coded in Node.js and
         | uses Python along with RabbitMQ to handle the song queue. I created the interface for this application and contributed to handling the requests from the server.
         | I had a lot of fun over the course of this hackathon and learned a lot about implementing front-end logic to interact with the back-end.
-        
-      i.proj-img.material-icons.center format_underlined
-      h2.center Universify
-      h3 DerbyHacks Hackathon
+      i.proj-img.material-icons.center.no-display format_underlined
+      h2.center.no-display Universify
+      h3.no-display DerbyHacks Hackathon
       p Held at the University of Louisville, DerbyHacks was the first hackathon that I experienced. I traveled to Louisville with a friend, Dom, and we hoped to find
         | other students to join up with. Miraculously, we found two other students looking to do just that. The idea we brainstormed was to create Universify. A web application
         | where students could log in and ask questions directed at specific classes they were enrolled in. They could also log in and answer questions other students
@@ -75,4 +72,3 @@ html(lang='en')
         | members coded the back-end using Python Flask. This was my first encounter with a front-end framework and how data is transmitted from the server
         | to the application.
     section#contact.border-box
-      h1.capital.center Contact

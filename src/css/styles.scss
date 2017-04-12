@@ -3,31 +3,14 @@
 @import './0-vendor/_palanquin-dark';
 @import './1-modules/_variables';
 
-$blue-100: #BBDEFB;
-$blue: #2196F3;
-$blue-900: #1565c0;
-$teal-800: #00695C;
-$teal-100: #B2DFDB;
-$teal-50: #E0F2F1;
-$teal-600: #00897B;
-
-$red-100: #FFCDD2;
-$red-500: #F44336;
-$red: #E53935;
-$red-800: #C62828;
-
-* {
-  //outline: 1px solid white;
-}
-
 html {
   font-size: 62.5%;
 }
 
 body {
-  font-family: 'Palanquin Dark', sans-serif;
   background-color: $teal-800;
   color: $teal-50;
+  font-family: 'Palanquin Dark', sans-serif;
 }
 
 .capital { text-transform: uppercase; }
@@ -46,8 +29,10 @@ body {
 }
 
 .material-icons.shrink-icon {
-  opacity: 0;
   font-size: 0;
+  margin-top: 0;
+  margin-left: 0;
+  opacity: 0;
 }
 
 .no-display {
@@ -63,20 +48,21 @@ body {
 }
 
 header {
-  font-size: 2rem;
   background-color: $teal-800;
-  width: 100%;
   display: flex;
   flex-direction: column;
+  font-size: 2rem;
   position: fixed;
+  width: 100%;
+  z-index: 1;
 }
 
 nav {
+  background-color: $teal-900;
+  height: 100vh;
+  width: 50%;
   position: fixed;
   top: 5.2rem;
-  background-color: $teal-800;
-  width: 50%;
-  height: 100vh;
   transform: translate(-30rem, 0);
   transition: transform 200ms $swift;
 
@@ -84,7 +70,7 @@ nav {
     transform: translate(0, 0);
   }
 
-  ul {
+  & > ul {
     margin-top: 0;
     margin-bottom: 0;
   }
@@ -95,9 +81,9 @@ nav {
     margin-left: .8rem;
 
     &::after {
+      background-color: $red;
       content: '';
       display: block;
-      background-color: $red;
       height: .3rem;
       width: 30%;
     }
@@ -105,26 +91,31 @@ nav {
 }
 
 .menu {
-  display: inline-block;
   background-color: $red;
+  display: inline-block;
   height: 5.2rem;
+  position: relative;
 }
 
 .material-icons {
-  display: block;
   font-size: 4.8rem;
+  margin-left: -2.4rem;
+  margin-top: -2.4rem;
   padding: .2rem;
+  position: relative;
+  top: 2.4rem;
+  left: 2.4rem;
 }
 
 .arrow {
-  display: none;
-  margin-right: .4rem;
-  margin-left: .8rem;
   border-top: 1rem solid $red;
   border-right: 1rem solid $red-800;
   border-bottom: 1rem solid $red;
+  display: none;
   height: 0;
   width: 0;
+  margin-right: .4rem;
+  margin-left: .8rem;
   transition: all 200ms $swift;
 }
 
@@ -134,9 +125,9 @@ nav {
 .arrow-contact { margin-top: 16.7rem; }
 
 section {
-  padding: .8rem;
   font-size: 2rem;
   min-height: 100vh;
+  padding: .8rem;
 
   &:first-of-type {
     padding-top: 4.5rem;
@@ -167,7 +158,7 @@ h1 {
   }
 }
 
-#menu-btn { transition: all 100ms $swift; }
+#menu-btn { transition: all 200ms $swift, opacity 150ms $swift; }
 
 @media (min-width: 560px) {
   header,

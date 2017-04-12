@@ -11,6 +11,7 @@
     <link rel="icon" type="image/png" sizes="32x32" href="build/assets/img/favicon/favicon-32.png">
     <link rel="icon" type="image/png" sizes="32x32" href="build/assets/img/favicon/favicon-96.png">
     <link rel="icon" type="image/png" sizes="192x192" href="build/assets/img/favicon/favicon-196.png">
+    <script src="build/js/bundle.js"></script>
     <script>
       let host = 'kyletrout.io';
       if ((host == window.location.host) && (window.location.protocol != "https:")) window.location.protocol = "https";
@@ -26,10 +27,10 @@
           <li class="capital"><a href="#projects">projects</a></li>
           <li class="capital"><a href="#contact">contact</a></li>
         </ul>
-        <div class="arrow arrow-home"></div>
+        <div class="arrow hide"></div>
       </nav>
     </header>
-    <section class="border-" id="home"> 
+    <section class="border-box" id="home">
       <p>I am currently a third year Computer Science major at the University of Cincinnati, Class of 2019. For now,
         this site will serve as a main hub where I can document my experiences and further experiment with web technologies.
          Though still exploring opportunities in the field, I have taken a keen interest in web development. My main focus has been with front-end in particular, but
@@ -38,7 +39,6 @@
       </p>
     </section>
     <section class="border-box" id="work">
-      <h1 class="capital center">Work Experience</h1>
       <p>I spent the summer of 2016 working at Siemens PLM Software in Milford, Ohio. The team that I was added to was tasked with working
          with one of Siemen's software programs called NX. The majority of the semester was split between functional testing of NX and
          examining error logs and call stacks. Functional testing was performed by navigating the interface of NX looking to find a flaw.
@@ -59,10 +59,9 @@
         co-op to implement logic to recognize customer orders that were associated to each ot
       </p>
     </section>
-    <section class="border-b" id="projects">
-      <h1 class="capital center">Projects</h1><i class="proj-img material-icons center">album</i>
-      <h2 class="center">uDj</h2>
-      <h3>RevolutionUC Hackathon</h3>
+    <section class="border-box" id="projects"><i class="proj-img material-icons center no-display">album</i>
+      <h2 class="center no-display">uDj</h2>
+      <h3 class="no-display">RevolutionUC Hackathon</h3>
       <p>RevolutionUC is a student organized hackathon held at the University of Cincinnati. Personally, this was the second hackathon that I participated in.
         My group went in with an idea in mind, and we were able to execute on our plan. The idea was to create an Internet of things jukebox, dubbed uDj, that could be accessed
         by multiple clients simultaneously through a web application. This moves the control of the song queue from an individual to the group. Multiple users can
@@ -71,9 +70,9 @@
       <p>This web application uses HTML, CSS, and JavaScript for the interface and jQuery to communicate to the back-end. The back-end server is coded in Node.js and
         uses Python along with RabbitMQ to handle the song queue. I created the interface for this application and contributed to handling the requests from the server.
         I had a lot of fun over the course of this hackathon and learned a lot about implementing front-end logic to interact with the back-end.
-      </p><i class="proj-img material-icons center">format_underlined</i>
-      <h2 class="center">Universify</h2>
-      <h3>DerbyHacks Hackathon</h3>
+      </p><i class="proj-img material-icons center no-display">format_underlined</i>
+      <h2 class="center no-display">Universify</h2>
+      <h3 class="no-display">DerbyHacks Hackathon</h3>
       <p>Held at the University of Louisville, DerbyHacks was the first hackathon that I experienced. I traveled to Louisville with a friend, Dom, and we hoped to find
         other students to join up with. Miraculously, we found two other students looking to do just that. The idea we brainstormed was to create Universify. A web application
         where students could log in and ask questions directed at specific classes they were enrolled in. They could also log in and answer questions other students
@@ -82,8 +81,6 @@
         to the application.
       </p>
     </section>
-    <section class="border-box" id="contact">
-      <h1 class="capital center">Contact</h1>
-    </section>
+    <section class="border-box" id="contact"></section>
   <script type="text/javascript" src="build/js/bundle.js"></script></body>
 </html>
