@@ -1,0 +1,19 @@
+#work {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.work {
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:nth-of-type(2) {
+    background-color: $teal-700;
+  }
+
+  &:last-of-type {
+    background-color: $teal-800;
+  }
+}

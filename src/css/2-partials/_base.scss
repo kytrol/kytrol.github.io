@@ -43,14 +43,13 @@ section {
   background-color: $teal-400;
   font-size: 2rem;
   min-height: 100vh;
-  padding: .8rem;
+
+  &:first-of-type {
+    padding: .8rem;
+  }
 
   &:nth-of-type(even) {
     background-color: $teal-600;
-  }
-
-  &:last-of-type {
-    padding: 0;
   }
 
   & > p {

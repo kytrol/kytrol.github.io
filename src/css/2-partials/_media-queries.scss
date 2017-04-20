@@ -1,7 +1,10 @@
 @media (min-width: 880px) {
   section {
     margin-left: 12rem;
-    padding: 1.6rem;
+
+    &:first-of-type {
+      padding: 1.6rem;
+    }
 
     & > p {
       margin: 0;
@@ -17,7 +20,7 @@
   }
 
   nav {
-    background-color: $red-400;
+    background-color: $red-600;
     display: flex;
     justify-content: flex-end;
     align-items: center;
@@ -54,5 +57,17 @@
     & > a {
       cursor: pointer;
     }
+  }
+
+  .work {
+    flex-basis: 50%;
+
+    &:first-of-type {
+      flex-basis: 100%;
+    }
+  }
+
+  button {
+    cursor: pointer;
   }
 }
