@@ -31,4 +31,28 @@
       cursor: default;
     }
   }
+
+  #projects {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .project {
+    height: 60vh;
+    width: 40vw;
+    box-shadow: $shadow;
+
+    & > .material-icons {
+      display: none;
+    }
+  }
+
+  .proj-desc {
+    width: 40vw;
+
+    & > a {
+      cursor: pointer;
+    }
+  }
 }

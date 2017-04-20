@@ -1,0 +1,96 @@
+.project {
+  width: 100%;
+  height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 1.6rem;
+  position: relative;
+
+  &:first-of-type {
+    background-color: $grey;
+
+    .proj-desc {
+      background-color: rgba($pink, .54);
+    }
+  }
+
+  &:last-of-type {
+    background-color: $deep-purple;
+
+    .proj-desc {
+      background-color: rgba($green, .54);
+    }
+  }
+
+  &:hover {
+    & > .material-icons {
+      bottom: -4rem;
+    }
+
+    .proj-desc {
+      bottom: 0;
+
+      & > h1 {
+        margin-left: 0;
+      }
+    }
+  }
+
+  & > img {
+    width: 20rem;
+    height: 20rem;
+    z-index: 2;
+  }
+
+  & > h1 {
+    position: absolute;
+  }
+
+  .material-icons {
+    font-size: 4.8rem;
+    position: absolute;
+    opacity: .54;
+    bottom: 0;
+    left: 50%;
+    margin-left: -2.4rem;
+    transition: bottom 200ms $swift;
+  }
+}
+
+.proj-desc {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 1.2rem;
+  position: absolute;
+  left: 0;
+  bottom: -15rem;
+  transition: bottom 250ms $swift;
+  width: 100vw;
+
+  & > h1 {
+    margin-top: 0;
+    margin-bottom: .8rem;
+    margin-left: -17rem;
+    transition: all 250ms $swift 150ms;
+  }
+
+  & > p {
+    margin-top: 0;
+    margin-bottom: .4rem;
+    padding-right: 2rem;
+    flex-basis: 100%;
+  }
+
+  & > a {
+    cursor: default;
+  }
+
+  img {
+    height: 4.8rem;
+    width: 4.8rem;
+    margin-right: 4rem;
+  }
+}

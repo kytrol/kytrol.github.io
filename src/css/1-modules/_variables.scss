@@ -14,11 +14,12 @@ $red-800: #c62828;
 $red-900: #b71c1c;
 
 // Project Specific
-$grey-300: #90a4ae;
-$deep-purple: #311b92;
+$grey: #37474f;
 $pink: #f50057;
+$deep-purple: #311b92;
+$green: #00e676;
 
-$shadow: rgba(0,0,0,.28);
+$shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
 
 // Transitions
 $swift: cubic-bezier(0.4, 0, 0.2, 1);
