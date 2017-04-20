@@ -4,49 +4,22 @@ import EleUtil from './ele-util';
 
 // Class containing functions relating to page navigation.
 export default class Navigation {
-  static bindMenu() {
-    const self = this;
-    document.getElementById('menu-btn').onclick = function () {
-      self.animateMenu(this);
-    };
-  }
-
   static bindLinks() {
-    const links = document.getElementsByClassName('links')[0].getElementsByTagName('a');
+    const links = EleUtil.getElementByClass('links').getElementsByTagName('a');
     const self = this;
     for (let i = 0; i < links.length; i++) {
       links[i].onclick = function () {
-        const menu = document.getElementById('menu-btn');
-        const isMobileView = !!menu.offsetHeight;
-
-        if (isMobileView) self.animateMenu(menu);
-        else self.scrollToSection(this.href.split('#')[1]);
+        self.scrollToSection(this.href.split('#')[1]);
       };
     }
   }
 
-  static animateMenu(menu) {
-    EleUtil.toggleClass(menu, 'shrink-icon');
-
-    setTimeout(() => {
-      if (menu.innerHTML === 'menu') {
-        menu.innerHTML = 'close';
-      } else {
-        menu.innerHTML = 'menu';
-      }
-
-      EleUtil.toggleClass(menu, 'shrink-icon');
-    }, 100);
-
-    EleUtil.toggleClass(document.getElementsByTagName('nav')[0], 'active');
-  }
-
   static animateArrow() {
     const sectionIndex = getSectionInViewport();
-    const links = document.getElementsByClassName('links')[0].getElementsByTagName('a');
+    const links = EleUtil.getElementByClass('links').getElementsByTagName('a');
     const currSectionName = links[sectionIndex].href.split('#')[1];
 
-    const arrow = document.getElementsByClassName('arrow')[0];
+    const arrow = EleUtil.getElementByClass('arrow');
 
     if (EleUtil.hasClass(arrow, `arrow-${currSectionName}`)) return;
 

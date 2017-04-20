@@ -23,13 +23,6 @@ body {
   opacity: 0;
 }
 
-.material-icons.shrink-icon {
-  font-size: 0;
-  margin-top: 0;
-  margin-left: 0;
-  opacity: 0;
-}
-
 .no-display {
   display: none;
 }
@@ -42,15 +35,18 @@ body {
   box-sizing: border-box;
 }
 
+a {
+  display: inline-block;
+}
+
 section {
   background-color: $teal-400;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-size: 2rem;
   min-height: 100vh;
   padding: .8rem;
-
-  &:first-of-type {
-    padding-top: 6rem;
-  }
 
   &:nth-of-type(even) {
     background-color: $teal-600;
@@ -59,10 +55,4 @@ section {
   & > p {
     line-height: 1.2em;
   }
-}
-
-h1 {
-  letter-spacing: .1em;
-  margin-top: 0;
-  margin-bottom: .4em;
 }

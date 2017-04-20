@@ -18,42 +18,23 @@ html(lang='en')
       if ((host == window.location.host) && (window.location.protocol != "https:")) window.location.protocol = "https";
   body
     header
-      img.logo(src=require('./assets/img/favicon/trout.svg') alt='trout logo')
       div.menu
-        i#menu-btn.material-icons.border-box.no-display menu
-        i.material-icons code
-        img(src=require('./assets/img/favicon/trout.svg') alt='trout logo')
-        i.material-icons work
-      nav
-        ul.links
-          - let pages = ['home', 'work', 'projects']
-          for p in pages
-            li.capital: a(href=`#${p}`)=p
-        div.arrow.hide
+        i.material-icons: a(href='#work') work
+        a(href='#home'): img(src=require('./assets/img/favicon/trout.svg') alt='trout logo')
+        i.material-icons: a(href='#projects') settings_ethernet
+    nav.right
+      img.logo(src=require('./assets/img/favicon/trout.svg') alt='trout logo')
+      ul.links
+        - let pages = ['home', 'work', 'projects']
+        for p in pages
+          li.capital: a(href=`#${p}`)= p
+      div.arrow.hide
     section#home.border-box
-      
       p I am currently a third year Computer Science major at the University of Cincinnati, Class of 2019. For now,
         | this site will serve as a main hub where I can document my experiences and further experiment with web technologies.
         |  Though still exploring opportunities in the field, I have taken a keen interest in web development. My main focus has been with front-end in particular, but
         |  I am looking to build off of my current knowledge to gain a better understanding of full stack developement as a whole. During my free time, I can be found competing
         |  out on the volleyball court or shopping around to enhance my personal style.
     section#work.border-box
-      p I spent the summer of 2016 working at Siemens PLM Software in Milford, Ohio. The team that I was added to was tasked with working
-        |  with one of Siemen's software programs called NX. The majority of the semester was split between functional testing of NX and
-        |  examining error logs and call stacks. Functional testing was performed by navigating the interface of NX looking to find a flaw.
-        |  Once a flaw was found, an error log was generated and the next step was to use the log to determine the source of the error.
-        |  Though there were still occasions when a log was presented to me, and I needed to reproduce the error. I also worked on a project
-        |  with another co-op to write C++ autotests for a number of test cases. These test cases were added to the already existing library of
-        |  tests and were used to ensure regressions were not encountered.
-        
-      p My first co-op position was at Assurex Health in Mason, Ohio. This was the first time I experienced a real working environment
-        | along with being assigned real world projects. My responsibilities for this rotation were split between Quality Assurance and
-        | Product Development. I spent the first half of the semester in Quality Assurance where I was to write C# autotests. These autotests
-        | were then run in combination with NUnit to ensure that regressions were not accidentally added back in to the production website.
-        | Automating test cases relieved the strain of manual testing from the QA team and allowed them to shift their focus to other matters.
-  
-      p I spent the second half of the semester working in the Product Development team. For this portion, my responsibilities shifted and
-        | I mainly dealt with implementing fixes on the production web portal. This required me to become more familiar with the C# codebase and how to
-        | properly use CSS and JavaScript in a professional environment. I also spent a decent amount of time working on a project with another
-        | co-op to implement logic to recognize customer orders that were associated to each ot
+
     section#projects.border-box

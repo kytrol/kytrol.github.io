@@ -6,19 +6,18 @@ import EleUtil from './components/ele-util';
 import '../css/styles.scss';
 
 document.addEventListener('DOMContentLoaded', function () {
-  Navigation.bindMenu();
 
   Navigation.bindLinks();
 
-  const arrow = document.getElementsByClassName('arrow')[0];
+  const arrow = EleUtil.getElementByClass('arrow');
 
-  if (!document.getElementById('menu-btn').offsetHeight) {
-    EleUtil.dropClass(document.getElementsByClassName('arrow')[0], 'hide');
+  if (!EleUtil.getElementByClass('menu').offsetHeight) {
+    EleUtil.dropClass(arrow, 'hide');
     Navigation.animateArrow();
   }
 
   window.onscroll = function () {
-    const isMobileView = !!document.getElementById('menu-btn').offsetHeight;
+    const isMobileView = !!EleUtil.getElementByClass('menu').offsetHeight;
     if (!isMobileView) {
       Navigation.animateArrow();
 

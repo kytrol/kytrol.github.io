@@ -55,4 +55,8 @@ export default class EleUtil {
       ele.removeChild(ele.firstChild);
     }
   }
+
+  static getElementByClass(className, index = 0) {
+    return document.getElementsByClassName(className)[index];
+  }
 }
