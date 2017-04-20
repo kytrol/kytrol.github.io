@@ -63,7 +63,7 @@ export default class Navigation {
     function getSectionInViewport() {
       const viewportHeight = window.innerHeight;
       const sectionNum = document.getElementsByTagName('section').length;
-      const currPosition = document.getElementById('contact').getBoundingClientRect().top;
+      const currPosition = document.getElementById('projects').getBoundingClientRect().top;
 
       for (let i = 0; i < sectionNum; i++) {
         const j = i + 1;

@@ -105,27 +105,29 @@ module.exports = {
       },
       {
         test: /\.svg$/,
-        use: [{
-          loader: 'file-loader',
-          options: {
-            name: '[path][name].[ext]',
-            limit: 20000,
-            mimetype: 'image/svg+xml',
-            context: __dirname + '/src/'
-          }
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[path][name].[ext]',
+              limit: 20000,
+              mimetype: 'image/svg+xml',
+              context: __dirname + '/src/'
+            }
           },
           { loader: 'img-loader?minimize' }
         ]
       },
       {
         test: /\.png$/,
-        use: [{
-          loader: 'file-loader',
-          options: {
-            name: '[path][name].[ext]',
-            mimetype: 'image/png',
-            context: __dirname + '/src'
-          }
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[path][name].[ext]',
+              mimetype: 'image/png',
+              context: __dirname + '/src'
+            }
           },
           {
             loader: 'img-loader?minimize'
@@ -134,13 +136,15 @@ module.exports = {
       },
       {
         test: /\.jpg$/,
-        use: [{
-          loader: 'file-loader',
-          options: {
-            name: '[path][name].[ext]',
-            mimetype: 'image/jpeg',
-            context: __dirname + '/src'
-          }
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[path][name].[ext]',
+              mimetype: 'image/jpeg',
+              context: __dirname + '/src',
+              publicPath: '../'
+            }
           },
           {
             loader: 'img-loader?minimize'

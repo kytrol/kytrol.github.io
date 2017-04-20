@@ -6,26 +6,26 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="google-site-verification" content="_0rMu8TvgZUZmy7jxGKyzm0pXYqTUI7FhnNRvN9aSUk">
-    <meta name="theme-color" content="#4e342e">
-    <link rel="icon" type="image/png" sizes="16x16" href="build/assets/img/favicon/favicon-16.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="build/assets/img/favicon/favicon-32.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="build/assets/img/favicon/favicon-96.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="build/assets/img/favicon/favicon-196.png">
-    <script src="build/js/bundle.js"></script>
+    <meta name="theme-color" content="#e53935">
+    <link rel="icon" type="image/png" sizes="48x48" href="build/assets/img/favicon/trout-48.png">
+    <link rel="icon" type="image/png" sizes="72x72" href="build/assets/img/favicon/trout-72.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="build/assets/img/favicon/trout-96.png">
+    <link rel="icon" type="image/png" sizes="144x144" href="build/assets/img/favicon/trout-144.png">
+    <link rel="icon" type="image/png" sizes="168x168" href="build/assets/img/favicon/trout-168.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="build/assets/img/favicon/trout-192.png">
     <script>
       let host = 'kyletrout.io';
       if ((host == window.location.host) && (window.location.protocol != "https:")) window.location.protocol = "https";
     </script>
   <link href="build/css/bundle.css" rel="stylesheet"></head>
   <body>
-    <header>
-      <div class="menu"><i class="material-icons border-box" id="menu-btn">menu</i></div>
+    <header><img class="logo" src="build/assets/img/favicon/trout.svg" alt="trout logo">
+      <div class="menu"><i class="material-icons border-box no-display" id="menu-btn">menu</i><i class="material-icons">code</i><img src="build/assets/img/favicon/trout.svg" alt="trout logo"><i class="material-icons">work</i></div>
       <nav>
         <ul class="links">
           <li class="capital"><a href="#home">home</a></li>
           <li class="capital"><a href="#work">work</a></li>
           <li class="capital"><a href="#projects">projects</a></li>
-          <li class="capital"><a href="#contact">contact</a></li>
         </ul>
         <div class="arrow hide"></div>
       </nav>
@@ -59,28 +59,6 @@
         co-op to implement logic to recognize customer orders that were associated to each ot
       </p>
     </section>
-    <section class="border-box" id="projects"><i class="proj-img material-icons center no-display">album</i>
-      <h2 class="center no-display">uDj</h2>
-      <h3 class="no-display">RevolutionUC Hackathon</h3>
-      <p>RevolutionUC is a student organized hackathon held at the University of Cincinnati. Personally, this was the second hackathon that I participated in.
-        My group went in with an idea in mind, and we were able to execute on our plan. The idea was to create an Internet of things jukebox, dubbed uDj, that could be accessed
-        by multiple clients simultaneously through a web application. This moves the control of the song queue from an individual to the group. Multiple users can
-        add songs to a single queue which would then combine these song requests to play back.
-      </p>
-      <p>This web application uses HTML, CSS, and JavaScript for the interface and jQuery to communicate to the back-end. The back-end server is coded in Node.js and
-        uses Python along with RabbitMQ to handle the song queue. I created the interface for this application and contributed to handling the requests from the server.
-        I had a lot of fun over the course of this hackathon and learned a lot about implementing front-end logic to interact with the back-end.
-      </p><i class="proj-img material-icons center no-display">format_underlined</i>
-      <h2 class="center no-display">Universify</h2>
-      <h3 class="no-display">DerbyHacks Hackathon</h3>
-      <p>Held at the University of Louisville, DerbyHacks was the first hackathon that I experienced. I traveled to Louisville with a friend, Dom, and we hoped to find
-        other students to join up with. Miraculously, we found two other students looking to do just that. The idea we brainstormed was to create Universify. A web application
-        where students could log in and ask questions directed at specific classes they were enrolled in. They could also log in and answer questions other students
-        at their university had asked. I collaborated with Dom to create the interface and communication on the front-end, facilitated by AngularJS. The other two
-        members coded the back-end using Python Flask. This was my first encounter with a front-end framework and how data is transmitted from the server
-        to the application.
-      </p>
-    </section>
-    <section class="border-box" id="contact"></section>
+    <section class="border-box" id="projects"></section>
   <script type="text/javascript" src="build/js/bundle.js"></script></body>
 </html>

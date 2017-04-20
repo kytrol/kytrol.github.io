@@ -1,0 +1,68 @@
+// Base styles and classes
+html {
+  font-size: 62.5%;
+}
+
+body {
+  color: $teal-50;
+  font-family: 'Palanquin Dark', sans-serif;
+}
+
+.capital { text-transform: uppercase; }
+
+.center { text-align: center; }
+.left { text-align: left; }
+.right { text-align: right; }
+
+.block-center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hide {
+  opacity: 0;
+}
+
+.material-icons.shrink-icon {
+  font-size: 0;
+  margin-top: 0;
+  margin-left: 0;
+  opacity: 0;
+}
+
+.no-display {
+  display: none;
+}
+
+.fix-position {
+  position: fixed;
+}
+
+.border-box {
+  box-sizing: border-box;
+}
+
+section {
+  background-color: $teal-400;
+  font-size: 2rem;
+  min-height: 100vh;
+  padding: .8rem;
+
+  &:first-of-type {
+    padding-top: 6rem;
+  }
+
+  &:nth-of-type(even) {
+    background-color: $teal-600;
+  }
+
+  & > p {
+    line-height: 1.2em;
+  }
+}
+
+h1 {
+  letter-spacing: .1em;
+  margin-top: 0;
+  margin-bottom: .4em;
+}
