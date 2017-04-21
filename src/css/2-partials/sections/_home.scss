@@ -1,36 +1,43 @@
 #home {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
   background-image: url(../assets/img/head/tree.jpg);
   background-size: cover;
   background-position: center bottom;
   background-repeat: no-repeat;
-  font-size: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.8rem;
+  height: 100vh;
 
   & > p {
     background-color: rgba($teal-800, .78);
     margin: 0;
     padding: 1.6rem;
-    transition: background-color 300ms $swift;
+    transition: background-color 250ms $swift 125ms;
   }
 }
 
 button {
   align-self: flex-end;
-  background-color: $red-900;
-  border: 0;
+  background-color: $teal-600;
+  border: .4rem solid $teal-800;
   border-radius: 0;
   color: $teal-50;
   font-family: inherit;
   font-size: 1.8rem;
-  margin: 2rem;
-  padding: .8em;
   letter-spacing: .05em;
-  transition: all 300ms $swift;
+  margin: 2rem;
+  outline: 0;
+  padding: .8em;
+  transition: box-shadow 250ms $swift, border 250ms $swift 125ms, padding 250ms $swift, background-color 250ms $swift 125ms;
 
-  &:focus {
-    outline: 1px solid $red-900;
+  &:hover {
+    border: .4rem solid $teal-600;
+    box-shadow: 0 0 0 3rem $teal-800 inset, 0 0 0 1.2rem $teal-50 inset, 0 0 0 .4rem $teal-800;
+  }
+
+  &:active {
+    box-shadow: 0 0 0 3rem $teal-800 inset, 0 0 0 1.2rem $teal-50 inset, 0 0 0 -.8rem $teal-800;
   }
 }

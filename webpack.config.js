@@ -136,14 +136,33 @@ module.exports = {
           options: {
             name: '[path][name].[ext]',
             mimetype: 'image/jpeg',
-            context: __dirname + '/src'
+            context: __dirname + '/src',
+            publicPath: '../'
           }
           },
           {
-            loader: 'img-loader?minimize'
+            loader: 'img-loader',
+            options: {
+              minimize: true,
+              mozjpeg: {
+                progressive: true,
+                quality: 80
+              }
+            }
           }
         ]
       },
+      /*{
+        test: /\.jpg$/,
+        use: {
+          loader: 'advanced-image-loader',
+          options: {
+            width: 880,
+            height: 1571,
+            quality: 100
+          }
+        }
+      },*/
       {
         test: /\.pug$/,
         use: 'pug-loader?pretty=true'
