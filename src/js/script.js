@@ -6,7 +6,6 @@ import EleUtil from './components/ele-util';
 import '../css/styles.scss';
 
 document.addEventListener('DOMContentLoaded', function () {
-
   Navigation.bindLinks();
 
   const arrow = EleUtil.getElementByClass('arrow');

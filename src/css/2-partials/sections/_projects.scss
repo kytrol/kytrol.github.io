@@ -20,7 +20,7 @@
     background-color: $deep-purple;
 
     .proj-desc {
-      background-color: rgba($green, .54);
+      background-color: rgba($green, .73);
     }
   }
 
@@ -39,8 +39,8 @@
   }
 
   & > img {
-    width: 20rem;
-    height: 20rem;
+    width: 16rem;
+    height: 16rem;
     z-index: 2;
   }
 
@@ -60,13 +60,14 @@
 }
 
 .proj-desc {
+  font-size: 1.8rem;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   padding: 1.2rem;
   position: absolute;
   left: 0;
-  bottom: -15rem;
+  bottom: -16rem;
   transition: bottom 250ms $swift;
   width: 100vw;
 
@@ -91,6 +92,6 @@
   img {
     height: 4.8rem;
     width: 4.8rem;
-    margin-right: 4rem;
+    margin-right: 4.8rem;
   }
 }

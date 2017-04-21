@@ -44,10 +44,6 @@ section {
   font-size: 2rem;
   min-height: 100vh;
 
-  &:first-of-type {
-    padding: .8rem;
-  }
-
   &:nth-of-type(even) {
     background-color: $teal-600;
   }
