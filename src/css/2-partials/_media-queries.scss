@@ -35,7 +35,7 @@
 
 @media (min-width: 880px) {
   section {
-    margin-left: 12rem;
+    margin-left: 11.9rem;
 
     & > p {
       margin: 0;
@@ -62,7 +62,7 @@
     z-index: 1;
 
     li {
-      cursor: default;
+      cursor: pointer;
     }
   }
 
@@ -75,17 +75,23 @@
 
     & > p {
       background-color: rgba($red-900, .54);
-      font-size: 2.2rem;
+      font-size: 2.4rem;
       margin-bottom: 2rem;
       margin-left: 4rem;
       width: 40%;
     }
   }
 
+  .btns {
+    width: auto;
+  }
+
   button {
     cursor: pointer;
     background-color: $red-600;
     border: .4rem solid $red-900;
+    margin-left: 2rem;
+    margin-right: 2rem;
 
     &:hover {
       border: .4rem solid $red-600;
@@ -93,8 +99,12 @@
     }
 
     &:active {
-      box-shadow: 0 0 0 3rem $red-900 inset, 0 0 0 1.2rem $teal-50 inset, 0 0 0 -.8rem $red-900;
+      box-shadow: 0 0 0 3rem $red-900 inset, 0 0 0 1.2rem $teal-50 inset, 0 0 0 -1.2rem $red-900;
     }
+  }
+
+  .work {
+    height: 50vh;
   }
 
   #projects {
@@ -116,10 +126,6 @@
 
   .proj-desc {
     width: 40vw;
-
-    & > a {
-      cursor: pointer;
-    }
   }
 
   .work {
@@ -134,19 +140,38 @@
 @media (min-width: 1030px) {
   #home p {
     font-size: 2.4rem;
-    margin-left: 12rem;
-    max-width: 42rem;
+    margin-left: 10rem;
     transition: margin 300ms $swift;
   }
 }
 
 @media (min-width: 1155px) {
   #home p {
-    //font-size: 2.6rem;
-    margin-left: 16rem;
+    font-size: 2.6rem;
+    margin-left: 12rem;
+  }
+
+  button {
+    margin-left: 4rem;
+    margin-right: 4rem;
   }
 }
 
 @media (min-width: 1220px) {
-  margin-left: 20rem;
+  #home p {
+    align-self: center;
+  }
+
+  .btns {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  button {
+    align-self: auto;
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+  }
+
 }

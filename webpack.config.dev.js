@@ -17,7 +17,7 @@ module.exports = {
   },
   module: {
     rules: [
-      {
+      /*{
         test: /\.js$/,
         exclude: /node_modules/,
         enforce: 'pre',
@@ -27,7 +27,7 @@ module.exports = {
             configFile: './.eslintrc.js'
           }
         }
-      },
+      },*/
       {
         test: /\.js$/,
         exclude: /node_modules/,
@@ -125,6 +125,7 @@ module.exports = {
             loader: 'file-loader',
             options: {
               name: '[path][name].[ext]',
+              limit: 20000,
               mimetype: 'image/png',
               context: __dirname + '/src'
             }

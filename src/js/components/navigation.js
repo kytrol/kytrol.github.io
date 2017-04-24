@@ -4,20 +4,32 @@ import EleUtil from './ele-util';
 
 // Class containing functions relating to page navigation.
 export default class Navigation {
+  static bindIcons() {
+    const icons = EleUtil.getElementByClass('menu').children;
+
+    for (let i = 0; i < icons.length; i++) {
+      icons[i].onclick = function () {
+        const sectionId = icons[i].id.split('-')[0];
+        const position = document.getElementById(sectionId).offsetTop;
+        window.scroll(0, position);
+      };
+    }
+  }
+
   static bindLinks() {
-    const links = EleUtil.getElementByClass('links').getElementsByTagName('a');
+    const links = EleUtil.getElementByClass('links').children;
     const self = this;
     for (let i = 0; i < links.length; i++) {
       links[i].onclick = function () {
-        self.scrollToSection(this.href.split('#')[1]);
+        self.scrollToSection(this.id.split('-')[0]);
       };
     }
   }
 
   static animateArrow() {
     const sectionIndex = getSectionInViewport();
-    const links = EleUtil.getElementByClass('links').getElementsByTagName('a');
-    const currSectionName = links[sectionIndex].href.split('#')[1];
+    const links = EleUtil.getElementByClass('links').children;
+    const currSectionName = links[sectionIndex].id.split('-')[0];
 
     const arrow = EleUtil.getElementByClass('arrow');
 

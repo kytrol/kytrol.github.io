@@ -71,6 +71,12 @@
   transition: bottom 250ms $swift;
   width: 100vw;
 
+  & > h1,
+  & > p,
+  & > img {
+    z-index: 2;
+  }
+
   & > h1 {
     margin-top: 0;
     margin-bottom: .8rem;

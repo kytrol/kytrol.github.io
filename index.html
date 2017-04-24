@@ -20,13 +20,13 @@
   <link href="build/css/bundle.css" rel="stylesheet"></head>
   <body>
     <header>
-      <div class="menu"><i class="material-icons"><a href="#work">work</a></i><a href="#home"><img src="build/assets/img/favicon/trout.svg" alt="trout logo"></a><i class="material-icons"><a href="#projects">settings_ethernet</a></i></div>
+      <div class="menu"><i class="material-icons" id="work-icon">work</i><img id="home-icon" src="build/assets/img/favicon/trout.svg" alt="trout logo"><i class="material-icons" id="projects-icon">settings_ethernet</i></div>
     </header>
     <nav class="right"><img class="logo" src="build/assets/img/favicon/trout.svg" alt="trout logo">
       <ul class="links">
-        <li class="capital"><a href="#home">home</a></li>
-        <li class="capital"><a href="#work">work</a></li>
-        <li class="capital"><a href="#projects">projects</a></li>
+        <li class="capital" id="home-link">home</li>
+        <li class="capital" id="work-link">work</li>
+        <li class="capital" id="projects-link">projects</li>
       </ul>
       <div class="arrow hide"></div>
     </nav>
@@ -37,26 +37,37 @@
          I am looking to build off of my current knowledge to gain a better understanding of full stack development as a whole. During my free time, I can be found competing
          out on the volleyball court or shopping around to enhance my personal style.
       </p>
-      <button class="capital">Resume</button>
-      <button class="capital">Email</button>
+      <div class="btns"> 
+        <button class="capital">Resume</button>
+        <button class="capital">Email</button>
+      </div>
     </section>
     <section class="border-box" id="work">
-      <div class="work center">
+      <div class="work center border-box">
+        <h3 class="date">2017 - Current</h3>
         <div class="work-wrap">
           <h1>Balluff</h1>
-          <h3>2017 - Current</h3>
+          <h3>Web</h3>
+          <div class="techs"><span>Node.js</span><span>JavaScript</span><span>HTML/CSS</span>
+          </div>
         </div>
       </div>
-      <div class="work center">
+      <div class="work center border-box">
+        <h3 class="date">2016</h3>
         <div class="work-wrap">
           <h1>Siemens PLM Software</h1>
-          <h3>2016</h3>
+          <h3>Software</h3>
+          <div class="techs"><span>C++</span>
+          </div>
         </div>
       </div>
-      <div class="work center">
+      <div class="work center border-box">
+        <h3 class="date">2015</h3>
         <div class="work-wrap">
           <h1>Assurex Health</h1>
-          <h3>2015</h3>
+          <h3>Web & Testing</h3>
+          <div class="techs"><span>C#</span><span>JavaScript</span>
+          </div>
         </div>
       </div>
     </section>

@@ -7,6 +7,7 @@ import '../css/styles.scss';
 
 document.addEventListener('DOMContentLoaded', function () {
   Navigation.bindLinks();
+  Navigation.bindIcons();
 
   const arrow = EleUtil.getElementByClass('arrow');
 

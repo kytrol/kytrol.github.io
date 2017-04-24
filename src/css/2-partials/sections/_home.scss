@@ -1,5 +1,5 @@
 #home {
-  background-image: url(../assets/img/head/tree.jpg);
+  background-image: url(../assets/img/head/tree-2x.jpg);
   background-size: cover;
   background-position: center bottom;
   background-repeat: no-repeat;
@@ -7,37 +7,51 @@
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  font-size: 1.8rem;
-  height: 100vh;
+  font-size: 1.6rem;
 
   & > p {
     background-color: rgba($teal-800, .78);
-    margin: 0;
+    margin: 4.8rem 0 0 0;
     padding: 1.6rem;
     transition: background-color 250ms $swift 125ms;
   }
 }
 
+.btns {
+  width: 100%;
+  margin: 2rem;
+
+  align-self: flex-end;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 button {
   align-self: flex-end;
-  background-color: $teal-600;
-  border: .4rem solid $teal-800;
+  background-color: $red-900;
+  border: .4rem solid $red-600;
   border-radius: 0;
   color: $teal-50;
   font-family: inherit;
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   letter-spacing: .05em;
-  margin: 2rem;
+  //margin: 2rem 1rem;
   outline: 0;
   padding: .8em;
   transition: box-shadow 250ms $swift, border 250ms $swift 125ms, padding 250ms $swift, background-color 250ms $swift 125ms;
 
   &:hover {
-    border: .4rem solid $teal-600;
-    box-shadow: 0 0 0 3rem $teal-800 inset, 0 0 0 1.2rem $teal-50 inset, 0 0 0 .4rem $teal-800;
+    border: .4rem solid $red-900;
+    box-shadow: 0 0 0 3rem $red-600 inset, 0 0 0 1.2rem $teal-50 inset, 0 0 0 .4rem $red-600;
   }
 
   &:active {
-    box-shadow: 0 0 0 3rem $teal-800 inset, 0 0 0 1.2rem $teal-50 inset, 0 0 0 -.8rem $teal-800;
+    box-shadow: 0 0 0 3rem $red-600 inset, 0 0 0 1.2rem $teal-50 inset, 0 0 0 -1.2rem $red-600;
   }
+}
+
+* {
+  //outline: 1px solid white;
 }

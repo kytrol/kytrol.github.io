@@ -1,14 +1,16 @@
 #work {
   display: flex;
   flex-wrap: wrap;
-  height: 100vh;
 }
 
 .work {
+  min-height: 33.33vh;
   width: 100vw;
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
+  padding: 2rem;
 
   &:nth-of-type(2) {
     background-color: $teal-700;
@@ -16,5 +18,21 @@
 
   &:last-of-type {
     background-color: $teal-800;
+  }
+}
+
+.date {
+  margin: 0 2rem 0 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.techs {
+  text-align: center;
+  width: 100%;
+
+  & > span {
+    margin: 2rem;
   }
 }
