@@ -1,3 +1,7 @@
+#projects {
+  background-color: $grey;
+}
+
 .project {
   display: flex;
   align-items: center;
@@ -128,6 +132,7 @@
 
 @media (min-width: 880px) {
   #projects {
+    background-color: $teal-600;
     display: flex;
     align-items: center;
     justify-content: space-around;

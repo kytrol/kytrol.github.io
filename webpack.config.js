@@ -1,5 +1,6 @@
 'use_strict';
 
+const path = require('path');
 const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -8,7 +9,7 @@ const autoprefixer = require('autoprefixer');
 module.exports = {
   entry: './src/js/script.js',
   output: {
-    path: './build',
+    path: path.join(__dirname, 'build'),
     filename: 'js/bundle.js',
     publicPath: 'build/'
   },
