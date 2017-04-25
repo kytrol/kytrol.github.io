@@ -5,9 +5,10 @@
 
 .work {
   min-height: 33.33vh;
-  width: 100vw;
+  width: 100%;
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   justify-content: center;
   position: relative;
   padding: 2rem;
@@ -28,11 +29,9 @@
   right: 0;
 }
 
-.techs {
-  text-align: center;
+.tech {
+  align-self: flex-end;
+  display: flex;
+  justify-content: space-around;
   width: 100%;
-
-  & > span {
-    margin: 2rem;
-  }
 }

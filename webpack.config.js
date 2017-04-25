@@ -146,7 +146,7 @@ module.exports = {
               minimize: true,
               mozjpeg: {
                 progressive: true,
-                quality: 80
+                quality: 70
               }
             }
           }

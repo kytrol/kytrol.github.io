@@ -1,5 +1,5 @@
 @media (min-width: 410px) {
-  #home,
+  #about,
   button {
     font-size: 2rem;
   }
@@ -19,6 +19,18 @@
 }
 
 @media (min-width: 585px) {
+  .work-wrap {
+    & > h3 {
+      font-size: 1.4em;
+    }
+  }
+
+  .tech {
+    & > span {
+      font-size: 1.2em;
+    }
+  }
+
   .project {
 
     &:first-of-type > img {
@@ -66,7 +78,7 @@
     }
   }
 
-  #home {
+  #about {
     align-items: flex-end;
     background-image: url(../assets/img/head/peep.jpg);
     background-position: center;
@@ -79,6 +91,7 @@
       margin-bottom: 2rem;
       margin-left: 4rem;
       width: 40%;
+      min-height: 1px;
     }
   }
 
@@ -129,16 +142,16 @@
   }
 
   .work {
-    flex-basis: 50%;
+    flex: 1 0 50%;
 
     &:first-of-type {
-      flex-basis: 100%;
+      flex: 0 1 100%;
     }
   }
 }
 
 @media (min-width: 1030px) {
-  #home p {
+  #about p {
     font-size: 2.4rem;
     margin-left: 10rem;
     transition: margin 300ms $swift;
@@ -146,7 +159,7 @@
 }
 
 @media (min-width: 1155px) {
-  #home p {
+  #about p {
     font-size: 2.6rem;
     margin-left: 12rem;
   }
@@ -158,7 +171,7 @@
 }
 
 @media (min-width: 1220px) {
-  #home p {
+  #about p {
     align-self: center;
   }
 
@@ -166,6 +179,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    align-self: flex-end;
   }
 
   button {

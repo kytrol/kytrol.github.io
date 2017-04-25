@@ -34,20 +34,51 @@ nav {
   justify-content: space-between;
   padding: .2em .4em;
 
-  & > .material-icons,
+  .material-icons,
   img {
     display: block;
     cursor: default;
+    position: relative;
+  }
+
+
+  img {
+    height: 4.8rem;
+    width: 4.8rem;
+  }
+}
+
+.icon-wrap {
+  position: relative;
+
+  & > span {
+    position: absolute;
+    z-index: -1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-15deg) scale(0.2);
+    font-size: 1.6rem;
+    color: $teal-50;
+    opacity: 0;
+    transition: all 250ms $swift;
   }
 
   & > .material-icons {
     font-size: 4.8rem;
     color: $red-900;
+    transition: all 250ms $swift 100ms;
+  }
+}
+
+.focused {
+  & + span {
+    opacity: 1;
+    z-index: 1;
+    transform: translate(-50%, -50%) rotate(-45deg) scale(1);
   }
 
-  img {
-    height: 4.8rem;
-    width: 4.8rem;
+  &.material-icons {
+    opacity: .37
   }
 }
 
@@ -62,6 +93,6 @@ nav {
   transition: all 200ms $swift;
 }
 
-.arrow-home { margin-top: -8.9rem; }
+.arrow-about { margin-top: -8.9rem; }
 .arrow-work { margin-top: .3rem; }
 .arrow-projects { margin-top: 9.6rem; }

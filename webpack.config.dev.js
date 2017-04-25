@@ -17,7 +17,7 @@ module.exports = {
   },
   module: {
     rules: [
-      /*{
+      {
         test: /\.js$/,
         exclude: /node_modules/,
         enforce: 'pre',
@@ -27,7 +27,7 @@ module.exports = {
             configFile: './.eslintrc.js'
           }
         }
-      },*/
+      },
       {
         test: /\.js$/,
         exclude: /node_modules/,
@@ -153,7 +153,7 @@ module.exports = {
               minimize: true,
               mozjpeg: {
                 progressive: true,
-                quality: 80
+                quality: 70
               }
             }
           }
