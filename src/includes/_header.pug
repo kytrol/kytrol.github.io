@@ -1,0 +1,16 @@
+header
+  div.menu
+    div.icon-wrap
+      i#work-icon.material-icons.icon work
+      span.capital Work
+    img#about-icon.icon(src=require('../assets/img/favicon/trout.svg') alt='trout logo')
+    div.icon-wrap
+      i#projects-icon.material-icons.icon settings_ethernet
+      span.capital Projects
+nav.right
+  img.logo(src=require('../assets/img/favicon/trout.svg') alt='trout logo')
+  ul.links
+    - let pages = ['about', 'work', 'projects']
+    for p in pages
+      li.capital(id=`${p}-link`)= p
+  div.arrow.hide

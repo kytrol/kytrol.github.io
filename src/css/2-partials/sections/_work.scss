@@ -4,14 +4,14 @@
 }
 
 .work {
-  min-height: 33.33vh;
-  width: 100%;
   display: flex;
   align-items: center;
   flex-wrap: wrap;
   justify-content: center;
-  position: relative;
+  min-height: 33.33vh;
   padding: 2rem;
+  position: relative;
+  width: 100%;
 
   &:nth-of-type(2) {
     background-color: $teal-700;
@@ -34,4 +34,25 @@
   display: flex;
   justify-content: space-around;
   width: 100%;
+}
+
+@media (min-width: 585px) {
+  .work-wrap > h3 {
+    font-size: 1.4em;
+  }
+
+  .tech > span {
+    font-size: 1.2em;
+  }
+}
+
+@media (min-width: 880px) {
+  .work {
+    flex: 1 0 50%;
+    height: 50vh;
+
+    &:first-of-type {
+      flex: 0 1 100%;
+    }
+  }
 }

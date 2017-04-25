@@ -1,6 +1,6 @@
 {
   "name": "kyletrout.io",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Personal website",
   "repository": {
     "type": "git",
@@ -12,8 +12,7 @@
   },
   "homepage": "https://github.com/KyTrol/kytrol.github.io#readme",
   "scripts": {
-    "build": "webpack",
-    "prod": "webpack -p",
+    "build": "webpack -p",
     "dev": "webpack-dev-server --config webpack.config.dev.js"
   },
   "devDependencies": {

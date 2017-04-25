@@ -35,6 +35,10 @@ body {
   box-sizing: border-box;
 }
 
+.ie-flex-fix {
+  display: flex;
+}
+
 a {
   display: inline-block;
 }
@@ -44,11 +48,21 @@ section {
   font-size: 2rem;
   min-height: 100vh;
 
-  &:nth-of-type(even) {
+  &:nth-of-type(odd) {
     background-color: $teal-600;
   }
 
   & > p {
     line-height: 1.2em;
+  }
+}
+
+@media (min-width: 880px) {
+  section {
+    margin-left: 11.9rem;
+
+    & > p {
+      margin: 0;
+    }
   }
 }

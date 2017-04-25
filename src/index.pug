@@ -17,72 +17,8 @@ html(lang='en')
       let host = 'kyletrout.io';
       if ((host == window.location.host) && (window.location.protocol != "https:")) window.location.protocol = "https";
   body
-    header
-      div.menu
-        div.icon-wrap
-          i#work-icon.material-icons.icon work
-          span.capital Work
-        img#about-icon.icon(src=require('./assets/img/favicon/trout.svg') alt='trout logo')
-        div.icon-wrap
-          i#projects-icon.material-icons.icon settings_ethernet
-          span.capital Projects
-    nav.right
-      img.logo(src=require('./assets/img/favicon/trout.svg') alt='trout logo')
-      ul.links
-        - let pages = ['about', 'work', 'projects']
-        for p in pages
-          li.capital(id=`${p}-link`)= p
-      div.arrow.hide
-    section#about.border-box
-      p I am currently a third year Computer Science major at the University of Cincinnati, Class of 2019. For now,
-        | this site will serve as a main hub where I can document my experiences and further experiment with web technologies.
-        |  Though still exploring opportunities in the field, I have taken a keen interest in web development. My main focus has been with front-end in particular, but
-        |  I have been digging deeper into full stack development in my most recent co-op. During my free time, I can be found competing
-        |  out on the volleyball court or shopping around to enhance my personal style.
-      div.btns  
-        a(href=require('./assets/file/Trout_Resume_2016.pdf') target='_blank'): button.capital Resume
-        a(href='mailto:troutkt@mail.uc.edu'): button.capital Email
-    section#work.border-box
-      div.work.center.border-box
-        h3.date 2017 - Current
-        div.work-wrap
-          h1 Balluff
-          h3 Web
-        div.tech
-          - let tech = ['Node.js', 'JavaScript', 'HTML/CSS'];
-          for t in tech
-            span= t
-      div.work.center.border-box
-        h3.date 2016
-        div.work-wrap
-          h1 Siemens PLM Software
-          h3 Software
-        div.tech
-          - let tech2 = ['C++'];
-          for t in tech2
-            span= t
-      div.work.center.border-box
-        h3.date 2015
-        div.work-wrap
-          h1 Assurex Health
-          h3 Web & Testing
-        div.tech
-          - let tech3 = ['C#', 'JavaScript'];
-          for t in tech3
-            span= t
-    section#projects.border-box
-      div.project.border-box
-        img(src=require('./assets/img/logo/impulse.svg') alt='impulse')
-        i.material-icons expand_less
-        div.proj-desc.border-box
-          h1 Impulse
-          a(href='https://github.com/kytrol/impulse' target='_blank'): img(src=require('./assets/img/logo/github.svg') alt='impulse github')
-          p Social media site where the popular have greater influence.
-      div.project.border-box
-        img(src=require('./assets/img/logo/udj.png') alt='udj')
-        i.material-icons expand_less
-        div.proj-desc
-          h1 uDj
-          a(href='https://github.com/mtihlenfield/udj' target='_blank'): img(src=require('./assets/img/logo/github.svg') alt='udj github')
-          p IoT jukebox allowing for collaborative music queues.
+    include includes/_header
+    
+    include includes/_sections
+    
         

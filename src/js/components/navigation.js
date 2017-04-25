@@ -29,44 +29,6 @@ export default class Navigation {
     }
   }
 
-  // Slides arrow to current section in view.
-  static animateArrow() {
-    const sectionIndex = this.getSectionInViewport();
-    const links = EleUtil.getElementByClass('links').children;
-    const currSectionName = links[sectionIndex].id.split('-')[0];
-
-    const arrow = EleUtil.getElementByClass('arrow');
-
-    // Return if the arrow is already pointing at correct section.
-    if (EleUtil.hasClass(arrow, `arrow-${currSectionName}`)) return;
-
-    const classes = arrow.className.split(' ');
-
-    // Drop previous alignment classes from arrow.
-    for (let i = 0; i < classes.length; i++) {
-      if (classes[i] !== 'arrow' && classes[i].indexOf('arrow') >= 0) {
-        EleUtil.dropClass(arrow, classes[i]);
-      }
-    }
-
-    EleUtil.addClass(arrow, `arrow-${currSectionName}`);
-  }
-
-  // Returns the index of the section currently in view.
-  static getSectionInViewport() {
-    const viewportHeight = window.innerHeight;
-    const sectionNum = document.getElementsByTagName('section').length;
-    const currPosition = document.getElementById('projects').getBoundingClientRect().top;
-
-    for (let i = 0; i < sectionNum; i++) {
-      const j = i + 1;
-
-      if (currPosition <= (sectionNum - i) * viewportHeight && currPosition >= (sectionNum - j) * viewportHeight - viewportHeight / 2) {
-        return i;
-      }
-    }
-  }
-
   /*
   * Takes in the id of the section to be scrolled to.
   * Smoothly scrolls down or up to the given section.
@@ -110,36 +72,6 @@ export default class Navigation {
       window.scroll(0, currPosition);
 
       window.requestAnimationFrame(animateScroll);
-    }
-  }
-
-  // Fade in the text overlay for the mobile navigation icons.
-  static animateIconOverlay() {
-    const sectionIndex = this.getSectionInViewport();
-
-    // Icons are ordered differently than sections, so this maps to the correct indexes.
-    const iconMap = [1, 0, 2];
-
-    const icons = EleUtil.getElementByClass('menu').getElementsByClassName('icon');
-    const currIcon = icons[iconMap[sectionIndex]];
-
-    // Return if the correct icon is already focused.
-    if (EleUtil.hasClass(currIcon, 'focused')) return;
-
-    // Unfocus other sections if landing section is in view.
-    if (currIcon.id === icons[1].id) {
-      EleUtil.dropClass(icons[0], 'focused');
-      EleUtil.dropClass(icons[2], 'focused');
-
-      return;
-    }
-
-    EleUtil.addClass(currIcon, 'focused');
-
-    for (let i = 0; i < icons.length; i++) {
-      if (icons[i] !== currIcon && icons[i].id !== 'about-icon') {
-        EleUtil.dropClass(icons[i], 'focused');
-      }
     }
   }
 }

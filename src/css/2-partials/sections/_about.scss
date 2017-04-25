@@ -1,12 +1,10 @@
 #about {
-  background-image: url(../assets/img/head/tree-2x.jpg);
+  background: url(../assets/img/head/tree-2x.jpg) no-repeat center bottom;
   background-size: cover;
-  background-position: center bottom;
-  background-repeat: no-repeat;
   display: flex;
+  align-items: center;
   flex-wrap: wrap;
   justify-content: space-between;
-  align-items: center;
   font-size: 1.5rem;
 
   & > p {
@@ -20,8 +18,8 @@
 .btns {
   align-self: flex-end;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
   width: 100%;
   margin: 2rem;
 }
@@ -47,5 +45,89 @@ button {
 
   &:active {
     box-shadow: 0 0 0 3rem $red-600 inset, 0 0 0 1.2rem $teal-50 inset, 0 0 0 -1.2rem $red-600;
+  }
+}
+
+@media (min-width: 410px) {
+  #about,
+  button {
+    font-size: 2rem;
+  }
+}
+
+@media (min-width: 880px) {
+  #about {
+    align-items: flex-end;
+    background-attachment: fixed;
+    background-image: url(../assets/img/head/peep.jpg);
+    background-position: center;
+
+    & > p {
+      background-color: rgba($red-900, .54);
+      font-size: 2.2rem;
+      margin-bottom: 2rem;
+      margin-left: 4rem;
+      width: 40%;
+    }
+  }
+
+  .btns {
+    width: auto;
+  }
+
+  button {
+    background-color: $red-600;
+    border: .4rem solid $red-900;
+    cursor: pointer;
+    margin-left: 2rem;
+    margin-right: 2rem;
+
+    &:hover {
+      border: .4rem solid $red-600;
+      box-shadow: 0 0 0 3rem $red-900 inset, 0 0 0 1.2rem $teal-50 inset, 0 0 0 .4rem $red-900;
+    }
+
+    &:active {
+      box-shadow: 0 0 0 3rem $red-900 inset, 0 0 0 1.2rem $teal-50 inset, 0 0 0 -1.2rem $red-900;
+    }
+  }
+}
+
+@media (min-width: 1030px) {
+  #about p {
+    font-size: 2.4rem;
+    margin-left: 8rem;
+    transition: margin 300ms $swift;
+  }
+}
+
+@media (min-width: 1155px) {
+  #about p {
+    font-size: 2.6rem;
+    margin-left: 10rem;
+  }
+
+  button {
+    margin-left: 4rem;
+    margin-right: 4rem;
+  }
+}
+
+@media (min-width: 1220px) {
+  #about p {
+    align-self: center;
+  }
+
+  .btns {
+    align-items: center;
+    align-self: flex-end;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  button {
+    align-self: auto;
+    margin-top: 5rem;
+    margin-bottom: 5rem;
   }
 }

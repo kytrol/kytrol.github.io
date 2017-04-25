@@ -1,5 +1,6 @@
 'use_strict';
 
+import Animator from './components/animator';
 import Navigation from './components/navigation';
 import EleUtil from './components/ele-util';
 
@@ -15,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function () {
   // If in desktop view, fade in and animate section arrow.
   if (!EleUtil.getElementByClass('menu').offsetHeight) {
     EleUtil.dropClass(arrow, 'hide');
-    Navigation.animateArrow();
+    Animator.animateArrow();
   }
 
 
@@ -24,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // If in desktop view, animate arrow on scroll.
     if (!isMobileView) {
-      Navigation.animateArrow();
+      Animator.animateArrow();
 
       // Fade arrow in on initial page load.
       if (EleUtil.hasClass(arrow, 'hide')) {
@@ -33,7 +34,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
       // Animate text overlays for mobile icons.
     } else {
-      Navigation.animateIconOverlay();
+      Animator.animateIconOverlay();
     }
   };
 });
