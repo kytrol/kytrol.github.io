@@ -57,6 +57,7 @@ nav {
     left: 50%;
     transition: all 250ms $swift-bounce;
     transform: translate(-50%, -50%) rotate(-15deg) scale(0.2);
+    user-select: none;
     z-index: -1;
   }
 
