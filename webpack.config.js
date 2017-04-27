@@ -44,10 +44,9 @@ module.exports = {
       {
         test: /\.woff$/,
         use: {
-          loader: 'url-loader',
+          loader: 'file-loader',
           options: {
             name: '[path][name].[ext]',
-            limit: 20000,
             mimetype: 'application/font-woff',
             context: __dirname + '/src/',
             publicPath: '../'
@@ -57,36 +56,36 @@ module.exports = {
       {
         test: /\.woff2$/,
         use: {
-          loader: 'url-loader',
+          loader: 'file-loader',
           options: {
             name: '[path][name].[ext]',
-            limit: 20000,
             mimetype: 'application/font-woff2',
-            context: __dirname + '/src/'
+            context: __dirname + '/src/',
+            publicPath: '../'
           }
         }
       },
       {
         test: /\.[ot]tf$/,
         use: {
-          loader: 'url-loader',
+          loader: 'file-loader',
           options: {
             name: '[path][name].[ext]',
-            limit: 20000,
             mimetype: 'application/octet-stream',
-            context: __dirname + '/src/'
+            context: __dirname + '/src/',
+            publicPath: '../'
           }
         }
       },
       {
         test: /\.eot$/,
         use: {
-          loader: 'url-loader',
+          loader: 'file-loader',
           options: {
             name: '[path][name].[ext]',
-            limit: 20000,
             mimetype: 'application/vnd.ms-fontobject',
-            context: __dirname + '/src/'
+            context: __dirname + '/src/',
+            publicPath: '../'
           }
         }
       },
@@ -107,7 +106,6 @@ module.exports = {
           loader: 'file-loader',
           options: {
             name: '[path][name].[ext]',
-            limit: 20000,
             mimetype: 'image/svg+xml',
             context: __dirname + '/src/'
           }
