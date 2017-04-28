@@ -1,14 +1,14 @@
 header
   div.menu
     div.icon-wrap
-      i#work-icon.material-icons.icon work
+      img#work-icon.icon(src=require('../assets/img/icon/work.svg') alt='work') 
       span.capital Work
-    img#about-icon.icon(src=require('../assets/img/favicon/trout.svg') alt='trout logo')
+    img#about-icon.icon(src=require('../assets/img/icon/trout.svg') alt='about')
     div.icon-wrap
-      i#projects-icon.material-icons.icon settings_ethernet
+      img#projects-icon.icon(src=require('../assets/img/icon/code.svg') alt='projects')
       span.capital Projects
 nav.right
-  img.logo(src=require('../assets/img/favicon/trout.svg') alt='trout logo')
+  img.logo.icon(src=require('../assets/img/icon/trout.svg') alt='trout logo')
   ul.links
     - let pages = ['about', 'work', 'projects']
     each p in pages

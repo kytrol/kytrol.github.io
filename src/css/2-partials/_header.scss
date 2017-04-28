@@ -10,7 +10,6 @@ header {
   position: absolute;
   top: 3.2rem;
   left: 3.6rem;
-  width: 4.8rem;
   z-index: 1;
 }
 
@@ -32,15 +31,9 @@ nav {
   justify-content: space-between;
   padding: .2em .4em;
 
-  .material-icons,
-  & > img {
+  .icon {
     cursor: default;
     display: block;
-    position: relative;
-  }
-
-  & > img {
-    @include eq-dimen(4.8);
   }
 }
 
@@ -60,9 +53,7 @@ nav {
     z-index: -1;
   }
 
-  & > .material-icons {
-    color: $red-900;
-    font-size: 4.8rem;
+  & > .icon {
     transition: all 250ms $swift;
   }
 }
@@ -74,7 +65,7 @@ nav {
     z-index: 1;
   }
 
-  &.material-icons {
+  &.icon {
     opacity: .37;
   }
 }

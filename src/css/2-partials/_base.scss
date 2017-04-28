@@ -66,6 +66,10 @@ section {
   border-radius: 50%;
 }
 
+.icon {
+  @include eq-dimen(4.8);
+}
+
 @media (min-width: 880px) {
   section {
     margin-left: 11.9rem;

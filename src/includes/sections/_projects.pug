@@ -7,10 +7,9 @@ section#projects.border-box
         if proj.name === 'uDj'
           include ../_udj-record
         else
-          img(src=require(`../../assets/img/logo/${proj.file}`) alt=proj.alt)
-        i.material-icons expand_less
+          img(src=require(`../../assets/img/icon/${proj.file}`) alt=proj.alt)
+        img.icon(src=require('../../assets/img/icon/expand.svg') alt='expand')
         figcaption.border-box
           h1= proj.name
-          a(href=`https://github.com/${proj.uri}` target='_blank'): img(src=require('../../assets/img/logo/github.svg') alt=`${proj.name} github`)
+          a(href=`https://github.com/${proj.uri}` target='_blank'): img.icon(src=require('../../assets/img/icon/github.svg') alt=`${proj.name} github`)
           p= proj.description
-          
