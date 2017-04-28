@@ -1,21 +1,25 @@
+@import '../_udj-record';
+
 #projects {
-  background-color: $grey;
+  background-color: $blue-grey;
+  flex: 0 1 100%;
 }
 
-.project {
+figure {
   display: flex;
   align-items: center;
   justify-content: center;
   height: 50vh;
   width: 100%;
+  margin: 0;
   overflow: hidden;
   padding: 1.6rem;
   position: relative;
 
   &:first-of-type {
-    background-color: $grey;
+    background-color: $blue-grey;
 
-    & > .proj-desc {
+    & > figcaption {
       background-color: rgba($pink, .54);
     }
   }
@@ -23,7 +27,7 @@
   &:last-of-type {
     background-color: $deep-purple;
 
-    & > .proj-desc {
+    & > figcaption {
       background-color: rgba($green, .73);
     }
   }
@@ -33,7 +37,7 @@
       bottom: -4rem;
     }
 
-    & > .proj-desc {
+    & > figcaption {
       bottom: 0;
 
       & > h1 {
@@ -43,9 +47,9 @@
   }
 
   & > img {
-    height: 16rem;
-    width: 16rem;
     z-index: 2;
+
+    @include eq-dimen(16);
   }
 
   & > h1 {
@@ -63,7 +67,7 @@
   }
 }
 
-.proj-desc {
+figcaption {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -93,39 +97,28 @@
 
   & > a {
     cursor: default;
+    margin-right: 4.8rem;
   }
 
   img {
-    height: 4.8rem;
-    width: 4.8rem;
-    margin-right: 4.8rem;
+    @include eq-dimen(4.8);
   }
 }
 
 @media (min-width: 410px) {
-  .project {
-    &:first-of-type > img {
+  figure {
+    & > img {
       height: 22rem;
       width: 24rem;
-    }
-
-    &:last-of-type > img {
-      height: 22rem;
-      width: 22rem;
     }
   }
 }
 
 @media (min-width: 585px) {
-  .project {
-    &:first-of-type > img {
+  figure {
+    & > img {
       height: 24rem;
       width: 26rem;
-    }
-
-    &:last-of-type > img {
-      height: 24rem;
-      width: 24rem;
     }
   }
 }
@@ -139,7 +132,7 @@
     height: 100vh;
   }
 
-  .project {
+  figure {
     box-shadow: $shadow;
     height: 55vh;
     width: 40vw;
@@ -149,7 +142,11 @@
     }
   }
 
-  .proj-desc {
+  figcaption {
     width: 40vw;
+
+    & > a {
+      cursor: pointer;
+    }
   }
 }

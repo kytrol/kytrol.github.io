@@ -8,6 +8,29 @@ body {
   font-family: 'Palanquin Dark', sans-serif;
 }
 
+main {
+  display: block;
+  margin: 0;
+}
+
+a {
+  display: inline-block;
+}
+
+section {
+  background-color: $teal-400;
+  font-size: 2rem;
+  min-height: 100vh;
+
+  &:nth-of-type(odd) {
+    background-color: $teal-600;
+  }
+
+  & > p {
+    line-height: 1.2em;
+  }
+}
+
 .capital { text-transform: uppercase; }
 
 .center { text-align: center; }
@@ -39,22 +62,8 @@ body {
   display: flex;
 }
 
-a {
-  display: inline-block;
-}
-
-section {
-  background-color: $teal-400;
-  font-size: 2rem;
-  min-height: 100vh;
-
-  &:nth-of-type(odd) {
-    background-color: $teal-600;
-  }
-
-  & > p {
-    line-height: 1.2em;
-  }
+.circle {
+  border-radius: 50%;
 }
 
 @media (min-width: 880px) {

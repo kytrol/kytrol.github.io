@@ -6,6 +6,7 @@
   flex-wrap: wrap;
   justify-content: space-between;
   font-size: 1.5rem;
+  overflow: hidden;
 
   & > p {
     background-color: rgba($teal-800, .78);
@@ -127,7 +128,7 @@ button {
   .btns {
     width: auto;
 
-    a:first-child > button {
+    a:first-child {
       margin-right: 4rem;
     }
   }
@@ -159,7 +160,7 @@ button {
 }
 
 @media (min-width: 1030px) {
-  #about p {
+  #about > p {
     font-size: 2.4rem;
     margin-left: 8rem;
     transition: margin 300ms $swift;
@@ -167,14 +168,16 @@ button {
 }
 
 @media (min-width: 1155px) {
-  #about p {
-    font-size: 2.6rem;
-    margin-left: 10rem;
-  }
+  #about {
+    & > p {
+      font-size: 2.6rem;
+      margin-left: 10rem;
+    }
 
-  button {
-    margin-left: 4rem;
-    margin-right: 4rem;
+    a {
+      margin-left: 4rem;
+      margin-right: 4rem;
+    }
   }
 
   #email {
@@ -189,8 +192,15 @@ button {
 }
 
 @media (min-width: 1220px) {
-  #about p {
-    align-self: center;
+  #about {
+    & > p {
+      align-self: center;
+    }
+
+    a {
+      margin-top: 5rem;
+      margin-bottom: 5rem;
+    }
   }
 
   .btns {
@@ -202,8 +212,6 @@ button {
 
   button {
     align-self: auto;
-    margin-top: 5rem;
-    margin-bottom: 5rem;
   }
 
   #email {

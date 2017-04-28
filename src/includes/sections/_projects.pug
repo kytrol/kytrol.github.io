@@ -1,15 +1,16 @@
 section#projects.border-box
-  div.project.border-box
-    img(src=require('../../assets/img/logo/impulse.svg') alt='impulse')
-    i.material-icons expand_less
-    div.proj-desc.border-box
-      h1 Impulse
-      a(href='https://github.com/kytrol/impulse' target='_blank'): img(src=require('../../assets/img/logo/github.svg') alt='impulse github')
-      p Social media site where the popular have greater influence.
-  div.project.border-box
-    img(src=require('../../assets/img/logo/udj.png') alt='udj')
-    i.material-icons expand_less
-    div.proj-desc
-      h1 uDj
-      a(href='https://github.com/mtihlenfield/udj' target='_blank'): img(src=require('../../assets/img/logo/github.svg') alt='udj github')
-      p IoT jukebox allowing for collaborative music queues.
+  - let projects = [];
+  - projects.push({ file: 'impulse.svg', name: 'Impulse', uri: 'kytrol/impulse', description: 'Social media site where the popular have greater influence.'});
+  - projects.push({ file: 'udj.png', name: 'uDj', uri: 'mtihlenfield/udj', description: 'IoT jukebox allowing for collaborative music queues.'});
+    each proj in projects
+      figure.border-box
+        if proj.name === 'uDj'
+          include ../_udj-record
+        else
+          img(src=require(`../../assets/img/logo/${proj.file}`) alt=proj.alt)
+        i.material-icons expand_less
+        figcaption.border-box
+          h1= proj.name
+          a(href=`https://github.com/${proj.uri}` target='_blank'): img(src=require('../../assets/img/logo/github.svg') alt=`${proj.name} github`)
+          p= proj.description
+          

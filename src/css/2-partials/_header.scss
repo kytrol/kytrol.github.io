@@ -40,8 +40,7 @@ nav {
   }
 
   & > img {
-    height: 4.8rem;
-    width: 4.8rem;
+    @include eq-dimen(4.8);
   }
 }
 
@@ -81,14 +80,14 @@ nav {
 }
 
 .arrow {
-  border-top: .9rem solid $red-600;
-  border-right: .9rem solid $red-800;
-  border-bottom: .9rem solid $red-600;
-  height: 0;
-  width: 0;
+  border-color: $red-600 $red-800 $red-600 transparent;
+  border-style: solid;
+  border-width: .9rem .9rem .9rem 0;
   margin-right: .4rem;
   margin-left: .8rem;
   transition: all 200ms $swift-bounce;
+
+  @include eq-dimen(0);
 }
 
 .arrow-about { margin-top: -8.9rem; }

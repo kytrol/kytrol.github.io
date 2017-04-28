@@ -11,6 +11,6 @@ nav.right
   img.logo(src=require('../assets/img/favicon/trout.svg') alt='trout logo')
   ul.links
     - let pages = ['about', 'work', 'projects']
-    for p in pages
+    each p in pages
       li.capital(id=`${p}-link`)= p
   div.arrow.hide

@@ -1,28 +1,14 @@
 section#work.border-box
-  div.work.center.border-box
-    h3.date 2017 - Current
-    div.work-wrap
-      h1 Balluff
-      h3 Web
-    div.tech
-      - let tech = ['Node.js', 'JavaScript', 'HTML/CSS'];
-      for t in tech
-        span= t
-  div.work.center.border-box
-    h3.date 2016
-    div.work-wrap
-      h1 Siemens PLM Software
-      h3 Software
-    div.tech
-      - let tech2 = ['C++'];
-      for t in tech2
-        span= t
-  div.work.center.border-box
-    h3.date 2015
-    div.work-wrap
-      h1 Assurex Health
-      h3 Web & Testing
-    div.tech
-      - let tech3 = ['C#', 'JavaScript'];
-      for t in tech3
-        span= t
+  - let jobs = [];
+  - jobs.push({ date: '2017 - Current', name: 'Balluff Inc.', field: 'Web', tech: ['Node.js', 'Git', 'HTML/CSS']});  
+  - jobs.push({ date: '2016', name: 'Siemens PLM Software', field: 'Software', tech: ['C++']});
+  - jobs.push({ date: '2015', name: 'Assurex Health', field: 'Web & Testing', tech: ['C#', 'JavaScript']});
+    each job in jobs
+      div.work.center.border-box
+        h3.date= job.date
+        div.work-wrap
+          h1= job.name
+          h3= job.field
+        div.tech
+          each tech in job.tech
+            span= tech
