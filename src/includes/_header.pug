@@ -1,14 +1,19 @@
 header
   div.menu
-    div.icon-wrap
-      img#work-icon.icon(src=require('../assets/img/icon/work.svg') alt='work') 
+    div#work-icon.icon-wrap
+      svg.icon
+        use(xlink:href='build/assets/img/icon/defs.svg#work')
       span.capital Work
-    img#about-icon.icon(src=require('../assets/img/icon/trout.svg') alt='about')
-    div.icon-wrap
-      img#projects-icon.icon(src=require('../assets/img/icon/code.svg') alt='projects')
+    div#about-icon.icon-wrap
+      svg.icon
+        use(xlink:href='build/assets/img/icon/defs.svg#trout')
+    div#projects-icon.icon-wrap
+      svg.icon
+        use(xlink:href='build/assets/img/icon/defs.svg#projects')
       span.capital Projects
 nav.right
-  img.logo.icon(src=require('../assets/img/icon/trout.svg') alt='trout logo')
+  svg.logo.icon
+    use(xlink:href='build/assets/img/icon/defs.svg#trout')
   ul.links
     - let pages = ['about', 'work', 'projects']
     each p in pages

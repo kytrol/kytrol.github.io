@@ -35,7 +35,7 @@ export default class Animator {
     // Icons are ordered differently than sections, so this maps to the correct indexes.
     const iconMap = [1, 0, 2];
 
-    const icons = EleUtil.getElementByClass('menu').getElementsByClassName('icon');
+    const icons = EleUtil.getElementByClass('menu').getElementsByClassName('icon-wrap');
     const currIcon = icons[iconMap[sectionIndex]];
 
     // Return if the correct icon is already focused.

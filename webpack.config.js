@@ -102,26 +102,43 @@ module.exports = {
       },
       {
         test: /\.svg$/,
-        use: [{
-          loader: 'file-loader',
-          options: {
-            name: '[path][name].[ext]',
-            mimetype: 'image/svg+xml',
-            context: __dirname + '/src/'
-          }
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[path][name].[ext]',
+              mimetype: 'image/svg+xml',
+              context: __dirname + '/src/'
+            }
           },
-          { loader: 'img-loader?minimize' }
+          {
+            loader: 'img-loader',
+            options: {
+              svgo: {
+                plugins: [
+                  { removeUselessDefs: false },
+                  { cleanupIDs: false },
+                  { removeTitle: true },
+                  { removeDesc: true },
+                  { sortAttrs: true },
+                  { removeDimensions: true },
+                  { removeAttrs: { attrs: 'stroke.*' } }
+                ]
+              }
+            }
+          }
         ]
       },
       {
         test: /\.png$/,
-        use: [{
-          loader: 'file-loader',
-          options: {
-            name: '[path][name].[ext]',
-            mimetype: 'image/png',
-            context: __dirname + '/src'
-          }
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[path][name].[ext]',
+              mimetype: 'image/png',
+              context: __dirname + '/src'
+            }
           },
           {
             loader: 'img-loader?minimize'
@@ -151,17 +168,6 @@ module.exports = {
           }
         ]
       },
-      /*{
-        test: /\.jpg$/,
-        use: {
-          loader: 'advanced-image-loader',
-          options: {
-            width: 880,
-            height: 1571,
-            quality: 100
-          }
-        }
-      },*/
       {
         test: /\.pug$/,
         use: 'pug-loader?pretty=true'
@@ -181,7 +187,10 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: './src/index.pug',
       filename: '../index.html',
-      minify: false,
+      minify: false
+    }),
+    new webpack.ProvidePlugin({
+      svg4everybody: 'imports-loader?this=>global!exports-loader?global.svg4everybody!svg4everybody'
     })
   ]
 }

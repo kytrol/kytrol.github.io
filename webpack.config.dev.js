@@ -13,7 +13,8 @@ module.exports = {
   },
   devtool: 'source-map',
   output: {
-    filename: 'js/bundle.js'
+    filename: 'js/bundle.js',
+    publicPath: 'build/'
   },
   module: {
     rules: [
@@ -110,12 +111,26 @@ module.exports = {
             loader: 'file-loader',
             options: {
               name: '[path][name].[ext]',
-              limit: 20000,
               mimetype: 'image/svg+xml',
               context: __dirname + '/src/'
             }
           },
-          { loader: 'img-loader?minimize' }
+          {
+            loader: 'img-loader',
+            options: {
+              svgo: {
+                plugins: [
+                  { removeUselessDefs: false },
+                  { cleanupIDs: false },
+                  { removeTitle: true },
+                  { removeDesc: true },
+                  { sortAttrs: true },
+                  { removeDimensions: true },
+                  { removeAttrs: { attrs: 'stroke.*' } }
+                ]
+              }
+            }
+          }
         ]
       },
       {
@@ -177,8 +192,10 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: './src/index.pug',
       filename: 'index.html',
-      minify: false,
-      //inject: true
+      minify: false
+    }),
+    new webpack.ProvidePlugin({
+      svg4everybody: 'imports-loader?this=>global!exports-loader?global.svg4everybody!svg4everybody'
     })
   ]
 }

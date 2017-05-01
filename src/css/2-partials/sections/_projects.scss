@@ -46,7 +46,7 @@ figure {
     }
   }
 
-  & > img {
+  & > svg {
     z-index: 2;
 
     @include eq-dimen(16);
@@ -99,15 +99,11 @@ figcaption {
     cursor: default;
     margin-right: 4.8rem;
   }
-
-  img {
-    @include eq-dimen(4.8);
-  }
 }
 
 @media (min-width: 410px) {
   figure {
-    & > img {
+    & > svg {
       height: 22rem;
       width: 24rem;
     }
@@ -116,7 +112,7 @@ figcaption {
 
 @media (min-width: 585px) {
   figure {
-    & > img {
+    & > svg {
       height: 24rem;
       width: 26rem;
     }

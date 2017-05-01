@@ -7,7 +7,7 @@ export default class Navigation {
 
   // Bind click event to mobile nav icons.
   static bindIcons() {
-    const icons = EleUtil.getElementByClass('menu').getElementsByClassName('icon');
+    const icons = EleUtil.getElementByClass('menu').getElementsByClassName('icon-wrap');
 
     for (let i = 0; i < icons.length; i++) {
       icons[i].onclick = function () {

@@ -1,15 +1,19 @@
 section#projects.border-box
   - let projects = [];
-  - projects.push({ file: 'impulse.svg', name: 'Impulse', uri: 'kytrol/impulse', description: 'Social media site where the popular have greater influence.'});
-  - projects.push({ file: 'udj.png', name: 'uDj', uri: 'mtihlenfield/udj', description: 'IoT jukebox allowing for collaborative music queues.'});
+  - projects.push({ name: 'Impulse', uri: 'kytrol/impulse', description: 'Social media site where the popular have greater influence.'});
+  - projects.push({ name: 'uDj', uri: 'mtihlenfield/udj', description: 'IoT jukebox allowing for collaborative music queues.'});
     each proj in projects
       figure.border-box
         if proj.name === 'uDj'
           include ../_udj-record
         else
-          img(src=require(`../../assets/img/icon/${proj.file}`) alt=proj.alt)
-        img.icon(src=require('../../assets/img/icon/expand.svg') alt='expand')
+          svg
+            use(xlink:href='build/assets/img/icon/defs.svg#impulse')
+        svg.icon
+          use(xlink:href='build/assets/img/icon/defs.svg#expand')
         figcaption.border-box
           h1= proj.name
-          a(href=`https://github.com/${proj.uri}` target='_blank'): img.icon(src=require('../../assets/img/icon/github.svg') alt=`${proj.name} github`)
+          a(href=`https://github.com/${proj.uri}` target='_blank') 
+            svg.icon
+              use(xlink:href='build/assets/img/icon/defs.svg#github')
           p= proj.description
