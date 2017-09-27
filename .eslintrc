@@ -9,6 +9,9 @@
   "parserOptions": {
     "sourceType": "module"
   },
+  "globals": {
+    svg4everybody: true
+  },
   "rules": {
     "indent": [ "error", 2],
     "quotes": ["error", "single"],

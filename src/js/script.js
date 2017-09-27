@@ -1,44 +1,39 @@
-'use_strict';
+'use strict';
 
 // Allow referencing external svgs in IE.
-svg4everybody(); // eslint-disable-line
+svg4everybody();
 
 // Import static assets for webpack.
 import '../css/styles.scss';
 import '../assets/img/icon/defs.svg';
 
-import Animator from './components/animator';
-import Navigation from './components/navigation';
-import EleUtil from './components/ele-util';
+import { animateIconOverlay, animateArrow } from './components/animator';
+import { bindLinks, bindIcons } from './components/navigation';
+import { getElementByClass, dropClass } from './components/ele-util';
 
-document.addEventListener('DOMContentLoaded', function () {
-  Navigation.bindLinks();
-  Navigation.bindIcons();
+document.addEventListener('DOMContentLoaded', () => {
+  bindLinks();
+  bindIcons();
 
-  const arrow = EleUtil.getElementByClass('arrow');
+  const arrow = getElementByClass('arrow');
 
   // If in desktop view, fade in and animate section arrow.
-  if (!EleUtil.getElementByClass('menu').offsetHeight) {
-    EleUtil.dropClass(arrow, 'hide');
-    Animator.animateArrow();
+  if (!getElementByClass('menu').offsetHeight) {
+    dropClass(arrow, 'hide');
+    animateArrow();
   }
 
-
-  window.onscroll = function () {
-    const isMobileView = !!EleUtil.getElementByClass('menu').offsetHeight;
+  window.onscroll = () => {
+    const isMobileView = !!getElementByClass('menu').offsetHeight;
 
     // Animate text overlays for mobile icons.
     if (isMobileView) {
-      Animator.animateIconOverlay();
+      animateIconOverlay();
 
-      // If in desktop view, animate arrow on scroll.
+    // If in desktop view, animate arrow on scroll.
     } else {
-      Animator.animateArrow();
-
-      // Fade arrow in on initial page load.
-      if (EleUtil.hasClass(arrow, 'hide')) {
-        EleUtil.dropClass(arrow, 'hide');
-      }
+      animateArrow();
+      dropClass(arrow, 'hide');
     }
   };
 });

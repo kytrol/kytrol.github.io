@@ -1,61 +1,53 @@
-'use_strict';
+import { addClass, dropClass, hasClass, getElementByClass, getSectionInViewport } from './ele-util';
 
-import EleUtil from './ele-util';
+// Slides arrow to current section in view.
+export const animateArrow = () => {
+  const sectionIndex = getSectionInViewport();
+  const links = getElementByClass('links').children;
+  const currSectionName = links[sectionIndex].id.split('-')[0];
 
-// Class containing functions for element animations.
-export default class Animator {
+  const arrow = getElementByClass('arrow');
 
-  // Slides arrow to current section in view.
-  static animateArrow() {
-    const sectionIndex = EleUtil.getSectionInViewport();
-    const links = EleUtil.getElementByClass('links').children;
-    const currSectionName = links[sectionIndex].id.split('-')[0];
-
-    const arrow = EleUtil.getElementByClass('arrow');
-
-    // Return if the arrow is already pointing at correct section.
-    if (EleUtil.hasClass(arrow, `arrow-${currSectionName}`)) return;
-
-    const classes = arrow.className.split(' ');
-
-    // Drop previous alignment classes from arrow.
-    for (let i = 0; i < classes.length; i++) {
-      if (classes[i] !== 'arrow' && classes[i].indexOf('arrow') >= 0) {
-        EleUtil.dropClass(arrow, classes[i]);
-      }
-    }
-
-    EleUtil.addClass(arrow, `arrow-${currSectionName}`);
+  // Return if the arrow is already pointing at correct section.
+  if (hasClass(arrow, `arrow-${currSectionName}`)) {
+    return;
   }
 
-  // Fade in the text overlay for the mobile navigation icons.
-  static animateIconOverlay() {
-    const sectionIndex = EleUtil.getSectionInViewport();
+  const classes = arrow.className.split(' ');
+  const baseClasses = classes.filter(c => c === 'arrow');
+  baseClasses.push(`arrow-${currSectionName}`);
+  arrow.setAttribute('class', baseClasses.join(' '));
+};
 
-    // Icons are ordered differently than sections, so this maps to the correct indexes.
-    const iconMap = [1, 0, 2];
+// Fade in the text overlay for the mobile navigation icons.
+export const animateIconOverlay = () => {
+  const sectionIndex = getSectionInViewport();
 
-    const icons = EleUtil.getElementByClass('menu').getElementsByClassName('icon-wrap');
-    const currIcon = icons[iconMap[sectionIndex]];
+  // Icons are ordered differently than sections, so this maps to the correct indexes.
+  const iconMap = [1, 0, 2];
 
-    // Return if the correct icon is already focused.
-    if (EleUtil.hasClass(currIcon, 'focused')) return;
+  const icons = getElementByClass('menu').getElementsByClassName('icon-wrap');
+  const currIcon = icons[iconMap[sectionIndex]];
 
-    // Unfocus other sections if landing section is in view.
-    if (currIcon.id === icons[1].id) {
-      EleUtil.dropClass(icons[0], 'focused');
-      EleUtil.dropClass(icons[2], 'focused');
+  // Return if the correct icon is already focused.
+  if (hasClass(currIcon, 'focused')) {
+    return;
+  }
 
-      return;
-    }
+  // Unfocus other sections if landing section is in view.
+  if (currIcon.id === icons[1].id) {
+    dropClass(icons[0], 'focused');
+    dropClass(icons[2], 'focused');
 
-    EleUtil.addClass(currIcon, 'focused');
+    return;
+  }
 
-    // Remove focus class from previously focused elements.
-    for (let i = 0; i < icons.length; i++) {
-      if (icons[i] !== currIcon && icons[i].id !== 'about-icon') {
-        EleUtil.dropClass(icons[i], 'focused');
-      }
+  addClass(currIcon, 'focused');
+
+  // Remove focus class from previously focused elements.
+  for (let i = 0; i < icons.length; i++) {
+    if (icons[i] !== currIcon && icons[i].id !== 'about-icon') {
+      dropClass(icons[i], 'focused');
     }
   }
-}
+};

@@ -1,4 +1,4 @@
-'use_strict';
+'use strict';
 
 const path = require('path');
 const webpack = require('webpack');
@@ -12,7 +12,6 @@ const buildPath = path.join(__dirname, 'build');
 const nodeEnv = process.env.NODE_ENV;
 const isProduction = nodeEnv === 'production';
 
-// TODO: Figure out paths for dev & prod
 const baseOpts = {
   context: srcPath,
   name: '[path][name].[ext]',
