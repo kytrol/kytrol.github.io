@@ -6,191 +6,200 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const autoprefixer = require('autoprefixer');
 
+const srcPath = path.join(__dirname, 'src');
+const buildPath = path.join(__dirname, 'build');
+
+const nodeEnv = process.env.NODE_ENV;
+const isProduction = nodeEnv === 'production';
+
+// TODO: Figure out paths for dev & prod
+const baseOpts = {
+  context: srcPath,
+  name: '[path][name].[ext]',
+  publicPath: isProduction ? '../' : ''
+};
+
+const cssAssetOpts = mimetype => Object.assign({}, baseOpts, {
+  mimetype
+});
+
+const htmlAssetOpts = mimetype => Object.assign({}, baseOpts, {
+  mimetype,
+  publicPath: ''
+});
+
+const rules = [{
+  test: /\.js$/,
+  exclude: /node_modules/,
+  enforce: 'pre',
+  loader: 'eslint-loader',
+},
+{
+  test: /\.js$/,
+  exclude: /node_modules/,
+  use: {
+    loader: 'babel-loader',
+    query: {
+      presets: [
+        ['env', {
+          targets: {
+            ie: 11
+          }
+        }]
+      ]
+    }
+  }
+},
+{
+  test: /\.woff2?$/,
+  use: {
+    loader: 'file-loader',
+    options: cssAssetOpts('application/font-[ext]')
+  }
+},
+{
+  test: /\.[ot]tf$/,
+  use: {
+    loader: 'file-loader',
+    options: cssAssetOpts('application/octet-stream')
+  }
+},
+{
+  test: /\.eot$/,
+  use: {
+    loader: 'file-loader',
+    options: cssAssetOpts('application/vnd.ms-fontobject')
+  }
+},
+{
+  test: /\.pdf$/,
+  use: {
+    loader: 'file-loader',
+    options: htmlAssetOpts('application/pdf')
+  }
+},
+{
+  test: /\.svg$/,
+  use: [{
+    loader: 'file-loader',
+    options: htmlAssetOpts('image/svg+xml')
+  },
+  {
+    loader: 'img-loader',
+    options: {
+      svgo: {
+        plugins: [
+          { removeUselessDefs: false },
+          { cleanupIDs: false },
+          { removeTitle: true },
+          { removeDesc: true },
+          { sortAttrs: true },
+          { removeDimensions: true },
+          { removeAttrs: { attrs: 'stroke.*' } }
+        ]
+      }
+    }
+  }]
+},
+{
+  test: /\.png$/,
+  use: [{
+    loader: 'file-loader',
+    options: htmlAssetOpts('image/png')
+  },
+  {
+    loader: 'img-loader?minimize'
+  }]
+},
+{
+  test: /\.jpg$/,
+  use: [{
+    loader: 'file-loader',
+    options: cssAssetOpts('image/jpeg')
+  },
+  {
+    loader: 'img-loader',
+    options: {
+      minimize: true,
+      mozjpeg: {
+        progressive: true,
+        quality: 70
+      }
+    }
+  }]
+},
+{
+  test: /\.pug$/,
+  use: 'pug-loader?pretty=true'
+}];
+
+const plugins = [
+  new HtmlWebpackPlugin({
+    template: path.join(srcPath, 'index.pug'),
+    filename: '../index.html',
+    minify: false
+  }),
+  new webpack.ProvidePlugin({
+    svg4everybody: 'imports-loader?this=>global!exports-loader?global.svg4everybody!svg4everybody'
+  }),
+  new webpack.ProgressPlugin()
+];
+
+if (isProduction) {
+  rules.push({
+    test: /\.scss$/,
+    exclude: /node_modules/,
+    use: ExtractTextPlugin.extract({
+      use: [{
+        loader: 'css-loader?minimize'
+      },
+      {
+        loader: 'postcss-loader',
+        options: {
+          plugins: [autoprefixer()]
+        }
+      },
+      {
+        loader: 'sass-loader'
+      }]
+    })
+  });
+
+  plugins.push(
+    new webpack.optimize.UglifyJsPlugin(),
+    new ExtractTextPlugin('css/bundle.css')
+  );
+} else {
+  rules.push({
+    test: /\.scss$/,
+    exclude: /node_modules/,
+    use: [
+      { loader: 'style-loader?sourceMap' },
+      { loader: 'css-loader?sourceMap' },
+      { loader: 'sass-loader?sourceMap' }
+    ]
+  });
+
+  plugins.push(
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.NamedModulesPlugin()
+  );
+}
+
 module.exports = {
-  entry: './src/js/script.js',
+  entry: path.join(srcPath, 'js', 'script.js'),
+  devServer: {
+    inline: true,
+    hot: true,
+    port: 3001,
+  },
   output: {
-    path: path.join(__dirname, 'build'),
-    filename: 'js/bundle.js',
+    path: buildPath,
+    filename: path.join('js', 'bundle.js'),
     publicPath: 'build/'
   },
   module: {
-    rules: [
-      {
-        test: /\.js$/,
-        exclude: /node_modules/,
-        enforce: 'pre',
-        use: {
-          loader: 'eslint-loader',
-          query: {
-            configFile: './.eslintrc.js'
-          }
-        }
-      },
-      {
-        test: /\.js$/,
-        exclude: /node_modules/,
-        use: {
-          loader: 'babel-loader',
-          query: {
-            presets: ['es2015']
-          }
-        }
-      },
-      {
-        test: /\.scss$/,
-        exclude: /node_modules/,
-        use: ExtractTextPlugin.extract({ use: ['css-loader', 'postcss-loader', 'sass-loader'] })
-      },
-      {
-        test: /\.woff$/,
-        use: {
-          loader: 'file-loader',
-          options: {
-            name: '[path][name].[ext]',
-            mimetype: 'application/font-woff',
-            context: __dirname + '/src/',
-            publicPath: '../'
-          }
-        }
-      },
-      {
-        test: /\.woff2$/,
-        use: {
-          loader: 'file-loader',
-          options: {
-            name: '[path][name].[ext]',
-            mimetype: 'application/font-woff2',
-            context: __dirname + '/src/',
-            publicPath: '../'
-          }
-        }
-      },
-      {
-        test: /\.[ot]tf$/,
-        use: {
-          loader: 'file-loader',
-          options: {
-            name: '[path][name].[ext]',
-            mimetype: 'application/octet-stream',
-            context: __dirname + '/src/',
-            publicPath: '../'
-          }
-        }
-      },
-      {
-        test: /\.eot$/,
-        use: {
-          loader: 'file-loader',
-          options: {
-            name: '[path][name].[ext]',
-            mimetype: 'application/vnd.ms-fontobject',
-            context: __dirname + '/src/',
-            publicPath: '../'
-          }
-        }
-      },
-      {
-        test: /\.pdf$/,
-        use: {
-          loader: 'file-loader',
-          options: {
-            name: '[path][name].[ext]',
-            mimetype: 'application/pdf',
-            context: __dirname + '/src/'
-          }
-        }
-      },
-      {
-        test: /\.svg$/,
-        use: [
-          {
-            loader: 'file-loader',
-            options: {
-              name: '[path][name].[ext]',
-              mimetype: 'image/svg+xml',
-              context: __dirname + '/src/'
-            }
-          },
-          {
-            loader: 'img-loader',
-            options: {
-              svgo: {
-                plugins: [
-                  { removeUselessDefs: false },
-                  { cleanupIDs: false },
-                  { removeTitle: true },
-                  { removeDesc: true },
-                  { sortAttrs: true },
-                  { removeDimensions: true },
-                  { removeAttrs: { attrs: 'stroke.*' } }
-                ]
-              }
-            }
-          }
-        ]
-      },
-      {
-        test: /\.png$/,
-        use: [
-          {
-            loader: 'file-loader',
-            options: {
-              name: '[path][name].[ext]',
-              mimetype: 'image/png',
-              context: __dirname + '/src'
-            }
-          },
-          {
-            loader: 'img-loader?minimize'
-          }
-        ]
-      },
-      {
-        test: /\.jpg$/,
-        use: [{
-          loader: 'file-loader',
-          options: {
-            name: '[path][name].[ext]',
-            mimetype: 'image/jpeg',
-            context: __dirname + '/src',
-            publicPath: '../'
-          }
-          },
-          {
-            loader: 'img-loader',
-            options: {
-              minimize: true,
-              mozjpeg: {
-                progressive: true,
-                quality: 70
-              }
-            }
-          }
-        ]
-      },
-      {
-        test: /\.pug$/,
-        use: 'pug-loader?pretty=true'
-      }
-    ]
+    rules
   },
-  plugins: [
-    new webpack.optimize.UglifyJsPlugin(),
-    new webpack.LoaderOptionsPlugin({
-      options: {
-        postcss: [
-          autoprefixer()
-        ]
-      }
-    }),
-    new ExtractTextPlugin('css/bundle.css'),
-    new HtmlWebpackPlugin({
-      template: './src/index.pug',
-      filename: '../index.html',
-      minify: false
-    }),
-    new webpack.ProvidePlugin({
-      svg4everybody: 'imports-loader?this=>global!exports-loader?global.svg4everybody!svg4everybody'
-    })
-  ]
-}
+  plugins
+};

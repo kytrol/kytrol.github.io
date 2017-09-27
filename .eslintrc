@@ -1,8 +1,9 @@
-module.exports = {
+{
   "env": {
     "browser": true,
     "commonjs": true,
-    "es6": true
+    "es6": true,
+    "node": true
   },
   "extends": "eslint:recommended",
   "parserOptions": {
@@ -18,4 +19,4 @@ module.exports = {
     "lines-around-comment": ["error", { "beforeLineComment": true, "beforeBlockComment": true }],
     "space-before-function-paren": ["error", { "anonymous": "always", "named": "never", "asyncArrow": "never" }]
   }
-};
+}
