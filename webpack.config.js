@@ -4,6 +4,7 @@ const path = require('path');
 const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 const autoprefixer = require('autoprefixer');
 
 const srcPath = path.join(__dirname, 'src');
@@ -141,7 +142,26 @@ const plugins = [
   new webpack.ProvidePlugin({
     svg4everybody: 'imports-loader?this=>global!exports-loader?global.svg4everybody!svg4everybody'
   }),
-  new webpack.ProgressPlugin()
+  new webpack.ProgressPlugin(),
+  new FaviconsWebpackPlugin({
+    logo: path.join(srcPath, 'assets', 'img', 'favicon', 'trout.png'),
+    prefix: path.join('assets', 'img', 'favicon', 'favicon-'),
+    emitStats: false,
+    inject: true,
+    persistentCache: false,
+    icons: {
+      android: false,
+      appleIcon: false,
+      appleStartup: false,
+      coast: false,
+      favicons: true,
+      firefox: false,
+      opengraph: false,
+      twitter: false,
+      yandex: false,
+      windows: false
+    }
+  })
 ];
 
 if (isProduction) {

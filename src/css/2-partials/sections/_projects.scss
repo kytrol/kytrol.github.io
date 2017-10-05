@@ -6,6 +6,7 @@
 }
 
 figure {
+  border-radius: $xxs;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -13,7 +14,7 @@ figure {
   width: 100%;
   margin: 0;
   overflow: hidden;
-  padding: 1.6rem;
+  padding: $m;
   position: relative;
 
   &:first-of-type {
@@ -57,8 +58,7 @@ figure {
   }
 
   & > .icon {
-    font-size: 4.8rem;
-    margin-left: -2.4rem;
+    margin-left: -$l;
     opacity: .54;
     position: absolute;
     bottom: 0;
@@ -84,14 +84,14 @@ figcaption {
   }
 
   & > h1 {
-    margin: 0 0 .8rem -17rem;
+    margin: 0 0 $s -17rem;
     transition: all 250ms $swift-bounce 150ms;
   }
 
   & > p {
     flex-basis: 100%;
     margin-top: 0;
-    margin-bottom: .4rem;
+    margin-bottom: $xs;
     padding-right: 2rem;
   }
 

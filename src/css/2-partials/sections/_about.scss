@@ -5,13 +5,13 @@
   align-items: center;
   flex-wrap: wrap;
   justify-content: space-between;
-  font-size: 1.5rem;
+  font-size: $m;
   overflow: hidden;
 
   & > p {
     background-color: rgba($teal-800, .78);
     margin: 4.8rem 0 0 0;
-    padding: 1.6rem;
+    padding: $m;
     transition: background-color 250ms $swift 125ms;
   }
 }
@@ -27,25 +27,15 @@
 
 button {
   align-self: flex-end;
-  background-color: $red-900;
-  border: .4rem solid $red-600;
-  border-radius: 0;
+  background-color: $purple-600;
+  border: 0;
+  border-radius: $xxs;
   color: $teal-50;
   font-family: inherit;
-  font-size: 1.6rem;
+  font-size: $m;
   letter-spacing: .05em;
   outline: 0;
-  padding: .8em;
-  transition: box-shadow 250ms $swift, border 250ms $swift 125ms, padding 250ms $swift, background-color 250ms $swift 125ms;
-
-  &:hover {
-    border: .4rem solid $red-900;
-    box-shadow: 0 0 0 3rem $red-600 inset, 0 0 0 1.2rem $teal-50 inset, 0 0 0 .4rem $red-600;
-  }
-
-  &:active {
-    box-shadow: 0 0 0 3rem $red-600 inset, 0 0 0 1.2rem $teal-50 inset, 0 0 0 -1.2rem $red-600;
-  }
+  padding: 1.2rem;
 }
 
 #email {
@@ -64,18 +54,18 @@ button {
   }
 
   &::before {
-    background-color: rgba($red-600, .54);
+    background-color: $purple-translucent;
     content: 'troutkt@mail.uc.edu';
     font-size: 1.5rem;
-    padding: .4rem;
+    padding: $xs;
     text-transform: lowercase;
     top: 3rem;
   }
 
   &::after {
-    border-color: rgba($red-600, .54) transparent transparent transparent;
+    border-color: $purple-translucent transparent transparent transparent;
     border-style: solid;
-    border-width: .8rem .8rem 0 .8rem;
+    border-width: $s $s 0 $s;
     content: '';
     top: 5.6rem;
   }
@@ -112,11 +102,12 @@ button {
   #about {
     align-items: flex-end;
     background-attachment: fixed;
-    background-image: url(../assets/img/head/peep.jpg);
-    background-position: center;
+    background-image: url(../assets/img/head/forest.jpg);
+    background-position: right bottom;
 
     & > p {
-      background-color: rgba($red-900, .54);
+      background-color: $purple-translucent;
+      border-radius: $xxs;
       font-size: 2.2rem;
       margin-bottom: 2rem;
       margin-left: 4rem;
@@ -133,34 +124,34 @@ button {
   }
 
   button {
-    background-color: $red-600;
-    border: .4rem solid $red-900;
+    background-color: $purple-900;
+    border: $xs solid $purple-600;
     cursor: pointer;
 
     &:hover {
-      border: .4rem solid $red-600;
-      box-shadow: 0 0 0 3rem $red-900 inset, 0 0 0 1.2rem $teal-50 inset, 0 0 0 .4rem $red-900;
+      border: $xs solid $purple-900;
+      box-shadow: 0 0 0 3rem $purple-600 inset, 0 0 0 1.2rem $teal-50 inset, 0 0 0 $xs $purple-600;
     }
 
     &:active {
-      box-shadow: 0 0 0 3rem $red-900 inset, 0 0 0 1.2rem $teal-50 inset, 0 0 0 -1.2rem $red-900;
+      box-shadow: 0 0 0 3rem $purple-600 inset, 0 0 0 1.2rem $teal-50 inset, 0 0 0 -1.2rem $purple-600;
     }
   }
 
   #email {
     &::before {
-      background-color: rgba($red-900, .54);
+      background-color: $purple-translucent;
     }
 
     &::after {
-      border-top-color: rgba($red-900, .54);
+      border-top-color: $purple-translucent;
     }
   }
 }
 
 @media (min-width: 1030px) {
   #about > p {
-    font-size: 2.4rem;
+    font-size: $l;
     margin-left: 8rem;
     transition: margin 300ms $swift;
   }
@@ -215,7 +206,7 @@ button {
 
   #email {
     &::before {
-      padding: .8rem;
+      padding: $s;
     }
 
     &::after {
