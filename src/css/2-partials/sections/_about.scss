@@ -30,12 +30,18 @@ button {
   background-color: $purple-600;
   border: 0;
   border-radius: $xxs;
+  box-shadow: 0 -.4rem 0 0 $purple-900 inset, 0 $xs 0 0 $purple-900 inset;
   color: $teal-50;
   font-family: inherit;
   font-size: $m;
-  letter-spacing: .05em;
+  letter-spacing: .1rem;
   outline: 0;
   padding: 1.2rem;
+  transition: box-shadow 250ms $swift-bounce;
+
+  &:hover {
+    box-shadow: 0 3rem $purple-900 inset, 0 -3rem $purple-900 inset;
+  }
 }
 
 #email {
@@ -101,41 +107,35 @@ button {
 @media (min-width: 880px) {
   #about {
     align-items: flex-end;
+    justify-content: center;
     background-attachment: fixed;
+    flex-direction: column;
     background-image: url(../assets/img/head/forest.jpg);
     background-position: right bottom;
 
     & > p {
       background-color: $purple-translucent;
       border-radius: $xxs;
+      box-sizing: border-box;
       font-size: 2.2rem;
-      margin-bottom: 2rem;
-      margin-left: 4rem;
+      margin-bottom: $l;
+      margin-right: $l;
       width: 40%;
     }
   }
 
   .btns {
     width: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 40%;
 
-    a:first-child {
-      margin-right: 4rem;
-    }
+    margin: $xl $l $l 0;
   }
 
   button {
-    background-color: $purple-900;
-    border: $xs solid $purple-600;
     cursor: pointer;
-
-    &:hover {
-      border: $xs solid $purple-900;
-      box-shadow: 0 0 0 3rem $purple-600 inset, 0 0 0 1.2rem $teal-50 inset, 0 0 0 $xs $purple-600;
-    }
-
-    &:active {
-      box-shadow: 0 0 0 3rem $purple-600 inset, 0 0 0 1.2rem $teal-50 inset, 0 0 0 -1.2rem $purple-600;
-    }
   }
 
   #email {
@@ -150,10 +150,19 @@ button {
 }
 
 @media (min-width: 1030px) {
-  #about > p {
-    font-size: $l;
-    margin-left: 8rem;
-    transition: margin 300ms $swift;
+  #about {
+    align-items: flex-start;
+
+    & > p {
+      font-size: $l;
+      margin-left: 6rem;
+      transition: margin 300ms $swift;
+    }
+  }
+
+  .btns {
+    align-self: normal;
+    margin-left: 6rem;
   }
 }
 
@@ -161,13 +170,15 @@ button {
   #about {
     & > p {
       font-size: 2.6rem;
-      margin-left: 10rem;
     }
+  }
 
-    a {
-      margin-left: 4rem;
-      margin-right: 4rem;
-    }
+  .btns {
+    margin-top: 4.8rem;
+  }
+
+  button {
+    font-size: $l;
   }
 
   #email {
@@ -182,28 +193,6 @@ button {
 }
 
 @media (min-width: 1220px) {
-  #about {
-    & > p {
-      align-self: center;
-    }
-
-    a {
-      margin-top: 5rem;
-      margin-bottom: 5rem;
-    }
-  }
-
-  .btns {
-    align-items: center;
-    align-self: flex-end;
-    flex-direction: column;
-    justify-content: center;
-  }
-
-  button {
-    align-self: auto;
-  }
-
   #email {
     &::before {
       padding: $s;
