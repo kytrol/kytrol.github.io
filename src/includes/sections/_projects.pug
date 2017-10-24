@@ -8,12 +8,12 @@ section#projects.border-box
           include ../_udj-record
         else
           svg
-            use(xlink:href='build/assets/img/icon/defs.svg#impulse')
+            use(xlink:href=`${require('../../assets/img/icon/defs.svg')}#impulse`)
         svg.icon
-          use(xlink:href='build/assets/img/icon/defs.svg#expand')
+          use(xlink:href=`${require('../../assets/img/icon/defs.svg')}#expand`)
         figcaption.border-box
           h1= proj.name
           a(href=`https://github.com/${proj.uri}` target='_blank') 
             svg.icon
-              use(xlink:href='build/assets/img/icon/defs.svg#github')
+              use(xlink:href=`${require('../../assets/img/icon/defs.svg')}#github`)
           p= proj.description
