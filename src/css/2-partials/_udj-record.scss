@@ -1,6 +1,6 @@
 /* Styles for Vinyl Record */
 .record {
-  background-color: $black;
+  background-color: $udj-black;
   box-shadow: $shadow;
   position: relative;
   z-index: 1;
@@ -9,7 +9,7 @@
 }
 
 .ring {
-  border-color: $grey-800 $grey;
+  border-color: $udj-grey-800 $udj-grey;
   border-style: solid;
   border-width: .3rem;
 
@@ -22,8 +22,8 @@
 }
 
 .inner {
-  background-color: $black;
-  border: 1rem solid $green;
+  background-color: $udj-black;
+  border: 1rem solid $udj-green;
 
   @include absolute-center(4.2);
 }

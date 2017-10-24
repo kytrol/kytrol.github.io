@@ -36,5 +36,8 @@ export const getSectionInViewport = () => {
     if (currPosition <= (sectionNum - i) * viewportHeight && currPosition >= (sectionNum - j) * viewportHeight - viewportHeight / 2) {
       return i;
     }
+
   }
+  
+  return sectionNum - 1;
 };

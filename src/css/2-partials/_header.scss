@@ -58,6 +58,10 @@ nav {
   }
 }
 
+#projects-icon > span {
+  color: $purple-900;
+}
+
 .focused {
   & > span {
     opacity: 1;

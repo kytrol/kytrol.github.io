@@ -1,8 +1,7 @@
 @import '../_udj-record';
 
 #projects {
-  background-color: $blue-grey;
-  flex: 0 1 100%;
+  background-color: $imp-blue-grey;
 }
 
 figure {
@@ -10,7 +9,7 @@ figure {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 50vh;
+  min-height: 33.33vh;
   width: 100%;
   margin: 0;
   overflow: hidden;
@@ -18,18 +17,26 @@ figure {
   position: relative;
 
   &:first-of-type {
-    background-color: $blue-grey;
+    background-color: $ps-tan;
 
     & > figcaption {
-      background-color: rgba($pink, .54);
+      background-color: rgba($ps-green, .54);
+    }
+  }
+
+  &:nth-of-type(2) {
+    background-color: $imp-blue-grey;
+
+    & > figcaption {
+      background-color: rgba($imp-pink, .54);
     }
   }
 
   &:last-of-type {
-    background-color: $deep-purple;
+    background-color: $udj-deep-purple;
 
     & > figcaption {
-      background-color: rgba($green, .73);
+      background-color: rgba($udj-green, .73);
     }
   }
 
@@ -42,7 +49,7 @@ figure {
       bottom: 0;
 
       & > h1 {
-        margin-left: 0;
+        transform: translate(0);
       }
     }
   }
@@ -51,10 +58,6 @@ figure {
     z-index: 2;
 
     @include eq-dimen(16);
-  }
-
-  & > h1 {
-    position: absolute;
   }
 
   & > .icon {
@@ -72,10 +75,10 @@ figcaption {
   flex-wrap: wrap;
   justify-content: space-between;
   font-size: 1.8rem;
-  padding: 1.2rem;
+  padding: $m;
   position: absolute;
   left: 0;
-  bottom: -16rem;
+  bottom: -18rem;
   transition: bottom 250ms $swift;
   width: 100vw;
 
@@ -84,8 +87,9 @@ figcaption {
   }
 
   & > h1 {
-    margin: 0 0 $s -17rem;
-    transition: all 250ms $swift-bounce 150ms;
+    margin: 0 0 $s 0;
+    transform: translate(-20rem);
+    transition: transform 250ms $swift-bounce 150ms;
   }
 
   & > p {
@@ -97,7 +101,9 @@ figcaption {
 
   & > a {
     cursor: default;
-    margin-right: 4.8rem;
+    position: absolute;
+    top: $s;
+    left: 80%;
   }
 }
 
@@ -119,7 +125,7 @@ figcaption {
   }
 }
 
-@media (min-width: 880px) {
+@media (min-width: 1018px) {
   #projects {
     background-color: $teal-600;
     display: flex;
@@ -131,7 +137,7 @@ figcaption {
   figure {
     box-shadow: $shadow;
     height: 55vh;
-    width: 40vw;
+    width: 27vw;
 
     & > .icon {
       display: none;
@@ -139,7 +145,7 @@ figcaption {
   }
 
   figcaption {
-    width: 40vw;
+    width: 27vw;
 
     & > a {
       cursor: pointer;
