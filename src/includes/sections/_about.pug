@@ -4,5 +4,15 @@ div.ie-flex-fix
       | with front-end web development, building responsive, interactive web applications. During my free time, 
       | I can be found out on the volleyball court, shopping around to enhance my personal style, or praising webpack.
     div.btns  
-      a(href=require('../../assets/file/Trout-Resume-2017.pdf') target='_blank'): button.capital Resume
-      a(href='mailto:troutkt@mail.uc.edu'): button#email.capital Email
+      a(href=require('../../assets/file/Trout-Resume-2017.pdf') target='_blank')
+        button.capital
+          svg
+            use(xlink:href=`${require('../../assets/img/icon/defs.svg')}#download`)
+          span Resume
+      a(href='mailto:troutkt@mail.uc.edu')
+        div#email
+          button.capital
+            svg
+              use(xlink:href=`${require('../../assets/img/icon/defs.svg')}#email`)
+            span Email
+          span troutkt@mail.uc.edu

@@ -10,9 +10,8 @@
 
   & > p {
     background-color: rgba($teal-800, .78);
-    margin: 4.8rem 0 0 0;
+    margin: 5.2rem 0 0 0;
     padding: $m;
-    transition: background-color 250ms $swift 125ms;
   }
 }
 
@@ -30,66 +29,68 @@ button {
   background-color: $purple-600;
   border: 0;
   border-radius: $xxs;
-  box-shadow: 0 -.4rem 0 0 $purple-900 inset, 0 $xs 0 0 $purple-900 inset;
   color: $teal-50;
-  font-family: inherit;
   font-size: $m;
   letter-spacing: .1rem;
   outline: 0;
+  overflow: hidden;
   padding: 1.2rem;
-  transition: box-shadow 250ms $swift-bounce;
+  position: relative;
+  z-index: 2;
+
+  & > svg {
+    height: $l;
+    width: $l;
+    margin-top: -1.2rem;
+    margin-left: -1.2rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-10rem);
+    transition: transform 200ms $swift;
+    will-change: transform;
+  }
+
+  & > span {
+    display: block;
+    transform: translate(0);
+    transition: transform 200ms $swift;
+    will-change: transform;
+  }
 
   &:hover {
-    box-shadow: 0 3rem $purple-900 inset, 0 -3rem $purple-900 inset;
+    & > span {
+      transform: translate(12rem);
+    }
+
+    & > svg {
+      transform: translate(0);
+    }
   }
 }
 
 #email {
   position: relative;
 
-  &::before,
-  &::after {
-    display: block;
-    opacity: 0;
+  &:hover {
+    & > span {
+      transform: translate(-50%, -5.4rem) scale(1);
+    }
+  }
+
+  & > span {
+    background-color: $purple-600;
+    border-radius: $xxs;
+    font-size: 1.4rem;
+    padding: $xs;
     pointer-events: none;
     position: absolute;
+    top: 50%;
     left: 50%;
-    transform: translateX(-50%) rotate(50deg) scale(0.2);
-    transform-origin: center bottom;
-    transition: transform 250ms $swift-bounce, top 250ms $swift-bounce, opacity 125ms $swift;
-  }
-
-  &::before {
-    background-color: $purple-translucent;
-    content: 'troutkt@mail.uc.edu';
-    font-size: 1.5rem;
-    padding: $xs;
-    text-transform: lowercase;
-    top: 3rem;
-  }
-
-  &::after {
-    border-color: $purple-translucent transparent transparent transparent;
-    border-style: solid;
-    border-width: $s $s 0 $s;
-    content: '';
-    top: 5.6rem;
-  }
-
-  &:hover {
-    &::before,
-    &::after {
-      opacity: 1;
-      transform: translateX(-50%) scale(1);
-    }
-
-    &::before {
-      top: -4.2rem;
-    }
-
-    &::after {
-      top: -1.7rem;
-    }
+    transform: translate(-50%, -50%) scale(.2);
+    transition: transform 200ms $swift;
+    will-change: transform;
+    z-index: 1;
   }
 }
 
@@ -98,13 +99,14 @@ button {
   button {
     font-size: 2rem;
   }
-
-  #email:hover::before {
-    transform: translateX(-50%) scale(1);
-  }
 }
 
 @media (min-width: 880px) {
+  #about > p,
+  .btns {
+    width: 40%;
+  }
+
   #about {
     align-items: flex-end;
     justify-content: center;
@@ -117,21 +119,22 @@ button {
       background-color: $purple-translucent;
       border-radius: $xxs;
       box-sizing: border-box;
-      font-size: 2.2rem;
+      font-size: 2rem;
       margin-bottom: $l;
       margin-right: $l;
-      width: 40%;
     }
   }
 
   .btns {
-    width: auto;
     display: flex;
     align-items: center;
     justify-content: space-around;
-    width: 40%;
+    margin: 0 $l $l 0;
+  }
 
-    margin: $xl $l $l 0;
+  button,
+  #email > span {
+    background-color: $purple-translucent;
   }
 
   button {
@@ -139,30 +142,34 @@ button {
   }
 
   #email {
-    &::before {
-      background-color: $purple-translucent;
+    &:hover {
+      & > span {
+        transform: translate(-50%, 120%) scale(1);
+      }
     }
 
-    &::after {
-      border-top-color: $purple-translucent;
+    & > span {
+      font-size: $m;
     }
   }
 }
 
 @media (min-width: 1030px) {
+  #about > p,
+  .btns {
+    margin-left: 6rem;
+  }
+
   #about {
     align-items: flex-start;
 
     & > p {
       font-size: $l;
-      margin-left: 6rem;
-      transition: margin 300ms $swift;
     }
   }
 
   .btns {
-    align-self: normal;
-    margin-left: 6rem;
+    align-self: flex-start;
   }
 }
 
@@ -173,43 +180,7 @@ button {
     }
   }
 
-  .btns {
-    margin-top: 4.8rem;
-  }
-
   button {
     font-size: $l;
-  }
-
-  #email {
-    &::before {
-      font-size: 2rem;
-    }
-
-    &:hover::before {
-      top: -4.7rem;
-    }
-  }
-}
-
-@media (min-width: 1220px) {
-  #email {
-    &::before {
-      padding: $s;
-    }
-
-    &::after {
-      border-width: 1rem 1rem 0 1rem;
-    }
-
-    &:hover {
-      &::before {
-        top: -5.8rem;
-      }
-
-      &::after {
-        top: -2rem;
-      }
-    }
   }
 }

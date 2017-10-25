@@ -256,7 +256,8 @@ input,
 optgroup,
 select,
 textarea {
-  font-family: sans-serif; /* 1 */
+  // font-family: sans-serif; /* 1 */
+  font-family: inherit;
   font-size: 100%; /* 1 */
   line-height: 1.15; /* 1 */
   margin: 0; /* 2 */
@@ -462,14 +463,26 @@ template {
   display: none;
 }
 
+/* Custom Styles
+   ========================================================================== */
+
+/**
+ * Remove left padding.
+ */
 ul {
   padding-left: 0;
 }
 
+/**
+ * Remove list style.
+ */
 li {
   list-style-type: none;
 }
 
+/**
+ * Remove underline and blue color.
+ */
 a {
   color: inherit;
   text-decoration: none;
