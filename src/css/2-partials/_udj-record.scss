@@ -3,7 +3,7 @@
   background-color: $udj-black;
   box-shadow: $shadow;
   position: relative;
-  z-index: 1;
+  z-index: 4;
 
   @include eq-dimen(16);
 }

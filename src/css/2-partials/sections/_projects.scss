@@ -42,11 +42,11 @@ figure {
 
   &:hover {
     & > .icon {
-      bottom: -4rem;
+      transform: translateY(4rem);
     }
 
     & > figcaption {
-      bottom: 0;
+      transform: translateY(0);
 
       & > h1 {
         transform: translate(0);
@@ -55,8 +55,6 @@ figure {
   }
 
   & > svg {
-    z-index: 2;
-
     @include eq-dimen(16);
   }
 
@@ -66,7 +64,8 @@ figure {
     position: absolute;
     bottom: 0;
     left: 50%;
-    transition: bottom 200ms $swift;
+    transform: translateY(0);
+    transition: transform 200ms $swift;
   }
 }
 
@@ -78,13 +77,10 @@ figcaption {
   padding: $m;
   position: absolute;
   left: 0;
-  bottom: -18rem;
-  transition: bottom 250ms $swift;
+  bottom: 0;
+  transition: transform 250ms $swift;
+  transform: translateY(16rem);
   width: 100vw;
-
-  & > * {
-    z-index: 2;
-  }
 
   & > h1 {
     margin: 0 0 $s 0;

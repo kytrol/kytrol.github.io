@@ -36,7 +36,12 @@ button {
   overflow: hidden;
   padding: 1.2rem;
   position: relative;
-  z-index: 2;
+  z-index: 8;
+
+  & > svg,
+  & > span {
+    transition: transform 200ms $swift;
+  }
 
   & > svg {
     height: $l;
@@ -47,15 +52,11 @@ button {
     top: 50%;
     left: 50%;
     transform: translate(-10rem);
-    transition: transform 200ms $swift;
-    will-change: transform;
   }
 
   & > span {
     display: block;
     transform: translate(0);
-    transition: transform 200ms $swift;
-    will-change: transform;
   }
 
   &:hover {
@@ -89,8 +90,7 @@ button {
     left: 50%;
     transform: translate(-50%, -50%) scale(.2);
     transition: transform 200ms $swift;
-    will-change: transform;
-    z-index: 1;
+    z-index: 7;
   }
 }
 
