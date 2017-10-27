@@ -104,7 +104,7 @@ module.exports = (env) => {
         test: /\.jpg$/,
         use: [{
           loader: 'file-loader',
-          options: cssAsset('image/jpeg')
+          options: htmlAssetOpts('image/jpeg')
         },
         {
           loader: 'img-loader',

@@ -1,5 +1,5 @@
 #about {
-  background: url(../assets/img/head/tree-2x.jpg) no-repeat center bottom;
+  background: none no-repeat center bottom;
   background-size: cover;
   display: flex;
   align-items: center;
@@ -7,11 +7,29 @@
   justify-content: space-between;
   font-size: $m;
   overflow: hidden;
+  position: relative;
 
   & > p {
     background-color: rgba($teal-800, .78);
     margin: 5.2rem 0 0 0;
     padding: $m;
+    z-index: 1;
+  }
+}
+
+#bg-cover {
+  background-color: $tree-bg;
+  height: 100vh;
+  width: 100%;
+  opacity: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: opacity 500ms $swift;
+  z-index: 0;
+
+  &.hide {
+    opacity: 0;
   }
 }
 
@@ -88,7 +106,7 @@ button {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%) scale(.2);
+    transform: translate(-50%, -50%) scale(0);
     transition: transform 200ms $swift;
     z-index: 7;
   }
@@ -112,7 +130,6 @@ button {
     justify-content: center;
     background-attachment: fixed;
     flex-direction: column;
-    background-image: url(../assets/img/head/forest.jpg);
     background-position: right bottom;
 
     & > p {
@@ -123,6 +140,10 @@ button {
       margin-bottom: $l;
       margin-right: $l;
     }
+  }
+
+  #bg-cover {
+    background-color: $forest-green;
   }
 
   .btns {
@@ -182,5 +203,12 @@ button {
 
   button {
     font-size: $l;
+  }
+}
+
+// Don't fade in header image for IE11.
+@media screen and (-ms-high-contrast: active), screen and (-ms-high-contrast: none) {
+  #bg-cover {
+    display: none;
   }
 }

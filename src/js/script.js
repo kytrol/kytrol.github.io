@@ -7,13 +7,16 @@ svg4everybody();
 import '../css/styles.scss';
 import '../assets/img/icon/defs.svg';
 
+import { getElementByClass, dropClass } from './components/ele-util';
 import { animateIconOverlay, animateArrow } from './components/animator';
 import { bindLinks, bindIcons } from './components/navigation';
-import { getElementByClass, dropClass } from './components/ele-util';
+import { bindHeaderLoad, bindHeaderResize } from './components/header';
 
 document.addEventListener('DOMContentLoaded', () => {
   bindLinks();
   bindIcons();
+  bindHeaderLoad();
+  bindHeaderResize();
 
   const arrow = getElementByClass('arrow');
 
