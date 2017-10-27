@@ -2,7 +2,7 @@
 header {
   position: fixed;
   width: 100%;
-  z-index: 10;
+  z-index: 1;
 }
 
 .logo {
@@ -10,7 +10,6 @@ header {
   position: absolute;
   top: $xl;
   left: 3.6rem;
-  z-index: 1;
 }
 
 nav {
@@ -50,8 +49,6 @@ nav {
     transition: transform 250ms $swift-bounce, opacity 200ms $swift;
     transform: translate(-50%, -50%) rotate(-15deg) scale(0.2);
     user-select: none;
-    // will-change: transform;
-    z-index: -1;
   }
 
   & > .icon {
@@ -67,7 +64,6 @@ nav {
   & > span {
     opacity: 1;
     transform: translate(-50%, -50%) rotate(-45deg) scale(1);
-    z-index: 1;
   }
 
   & > .icon {
@@ -84,7 +80,6 @@ nav {
   transform: translateY(-7.2rem);
   transition: transform 200ms $swift-bounce, opacity 200ms $swift;
   will-change: transform;
-  z-index: 1;
 
   @include eq-dimen(0);
 }
@@ -111,7 +106,6 @@ nav {
     height: 100vh;
     width: 12rem;
     position: fixed;
-    z-index: 1;
 
     li {
       cursor: pointer;
