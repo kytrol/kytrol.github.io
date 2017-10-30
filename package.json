@@ -1,6 +1,6 @@
 {
   "name": "kyletrout.io",
-  "version": "2.1.1",
+  "version": "2.2.1",
   "description": "Personal website",
   "repository": {
     "type": "git",
@@ -12,8 +12,9 @@
   },
   "homepage": "https://github.com/KyTrol/kytrol.github.io#readme",
   "scripts": {
-    "build": "webpack --env=prod",
-    "dev": "webpack-dev-server --env=dev",
+    "build": "webpack --env.env=prod",
+    "build:analyze": "npm run build -- --env.addons=analyze",
+    "dev": "webpack-dev-server --env.env=dev",
     "lint": "eslint . --ignore-pattern=build/"
   },
   "dependencies": {
