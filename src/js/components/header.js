@@ -49,7 +49,8 @@ export const bindHeaderResize = () => {
       const bgCover = document.getElementById('bg-cover');
       dropClass(bgCover, 'hide');
 
-      loadImg(imgSrc);
+      const OPACITY_TRANSITION_DURATION = 500;
+      setTimeout(() => loadImg(imgSrc), OPACITY_TRANSITION_DURATION);
     }
   }, DEBOUNCE_WAIT);
 };

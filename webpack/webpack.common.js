@@ -134,7 +134,7 @@ module.exports = (env) => {
       new webpack.ProgressPlugin(),
       new FaviconsWebpackPlugin({
         logo: path.join(paths.src, paths.favicon, 'trout.png'),
-        prefix: path.join(paths.favicon, 'favicon-'),
+        prefix: path.join(paths.favicon, '/'),
         background: 'rgba(0, 0, 0, 0)',
         emitStats: false,
         inject: true,
