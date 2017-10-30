@@ -7,6 +7,7 @@ svg4everybody();
 import '../css/styles.scss';
 import '../assets/img/icon/defs.svg';
 
+import debounce from 'debounce';
 import { getElementByClass, dropClass } from './components/ele-util';
 import { animateIconOverlay, animateArrow } from './components/animator';
 import { bindLinks, bindIcons } from './components/navigation';
@@ -26,7 +27,9 @@ document.addEventListener('DOMContentLoaded', () => {
     animateArrow();
   }
 
-  window.onscroll = () => {
+  const DEBOUNCE_WAIT = 100;
+
+  window.onscroll = debounce(() => {
     const isMobileView = !!getElementByClass('menu').offsetHeight;
 
     // Animate text overlays for mobile icons.
@@ -38,5 +41,5 @@ document.addEventListener('DOMContentLoaded', () => {
       animateArrow();
       dropClass(arrow, 'hide');
     }
-  };
+  }, DEBOUNCE_WAIT);
 });

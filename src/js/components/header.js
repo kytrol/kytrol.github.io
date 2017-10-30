@@ -1,3 +1,4 @@
+import debounce from 'debounce';
 import { addClass, dropClass } from './ele-util';
 
 const MAX_MOBILE_WIDTH = 880;
@@ -37,7 +38,9 @@ export const bindHeaderLoad = () => {
 };
 
 export const bindHeaderResize = () => {
-  window.onresize = () => {
+  const DEBOUNCE_WAIT = 300;
+
+  window.onresize = debounce(() => {
     const aboutSection = document.getElementById('about');
     const currentImg = aboutSection.style.backgroundImage;
     const imgSrc = getImgSrc();
@@ -48,5 +51,5 @@ export const bindHeaderResize = () => {
 
       loadImg(imgSrc);
     }
-  };
+  }, DEBOUNCE_WAIT);
 };
