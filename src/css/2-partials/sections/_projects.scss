@@ -9,9 +9,9 @@ figure {
   display: flex;
   align-items: center;
   justify-content: center;
+  margin: 0;
   min-height: 33.33vh;
   width: 100%;
-  margin: 0;
   overflow: hidden;
   padding: $m;
   position: relative;
@@ -40,59 +40,32 @@ figure {
     }
   }
 
-  &:hover {
-    & > .icon {
-      transform: translateY(4rem);
-    }
-
-    & > figcaption {
-      transform: translateY(0);
-
-      & > h1 {
-        transform: translate(0);
-      }
-    }
-  }
-
   & > svg {
     @include eq-dimen(16);
-  }
-
-  & > .icon {
-    margin-left: -$l;
-    opacity: .54;
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateY(0);
-    transition: transform 200ms $swift;
   }
 }
 
 figcaption {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
   font-size: 1.8rem;
   padding: $m;
   position: absolute;
-  left: 0;
   bottom: 0;
-  transition: transform 250ms $swift;
-  transform: translateY(17rem);
+  left: 0;
   width: 100vw;
 
+  & > h1,
+  & > p {
+    position: relative;
+    z-index: 2;
+  }
+
   & > h1 {
+    display: inline-block;
     margin: 0 0 $s 0;
-    transform: translate(-20rem);
-    transition: transform 250ms $swift-bounce 150ms;
   }
 
   & > p {
-    flex-basis: 100%;
-    margin-top: 0;
-    margin-bottom: $xs;
-    padding-right: 2rem;
+    margin: 0;
   }
 
   & > a {
@@ -104,20 +77,16 @@ figcaption {
 }
 
 @media (min-width: 410px) {
-  figure {
-    & > svg {
-      height: 22rem;
-      width: 24rem;
-    }
+  figure > svg {
+    height: 22rem;
+    width: 24rem;
   }
 }
 
 @media (min-width: 585px) {
-  figure {
-    & > svg {
-      height: 24rem;
-      width: 26rem;
-    }
+  figure > svg {
+    height: 24rem;
+    width: 26rem;
   }
 }
 
@@ -134,10 +103,6 @@ figcaption {
     box-shadow: $shadow;
     height: 55vh;
     width: 27vw;
-
-    & > .icon {
-      display: none;
-    }
   }
 
   figcaption {
