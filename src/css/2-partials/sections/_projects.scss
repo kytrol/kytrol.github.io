@@ -19,6 +19,10 @@ figure {
   &:first-of-type {
     background-color: $ps-tan;
 
+    &::before {
+      background-color: $ps-green;
+    }
+
     & > figcaption {
       background-color: rgba($ps-green, .54);
     }
@@ -26,6 +30,10 @@ figure {
 
   &:nth-of-type(2) {
     background-color: $imp-blue-grey;
+
+    &::before {
+      background-color: $imp-pink;
+    }
 
     & > figcaption {
       background-color: rgba($imp-pink, .54);
@@ -35,8 +43,29 @@ figure {
   &:last-of-type {
     background-color: $udj-deep-purple;
 
+    &::before {
+      background-color: $udj-green;
+    }
+
     & > figcaption {
       background-color: rgba($udj-green, .73);
+    }
+  }
+
+  &::before {
+    content: '';
+    height: $xs;
+    width: 102%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: transform 200ms $swift;
+    transform: scale(0);
+  }
+
+  &:hover {
+    &::before {
+      transform: scale(1);
     }
   }
 
