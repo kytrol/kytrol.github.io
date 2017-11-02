@@ -1,11 +1,9 @@
-'use strict';
+import webpack from 'webpack';
+import path from 'path';
+import ExtractTextPlugin from 'extract-text-webpack-plugin';
+import autoprefixer from 'autoprefixer';
 
-const webpack = require('webpack');
-const path = require('path');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const autoprefixer = require('autoprefixer');
-
-module.exports = {
+export default {
   output: {
     publicPath: 'build/'
   },

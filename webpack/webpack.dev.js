@@ -1,10 +1,8 @@
-'use strict';
+import webpack from 'webpack';
+import autoprefixer from 'autoprefixer';
+import { paths } from './util';
 
-const webpack = require('webpack');
-const autoprefixer = require('autoprefixer');
-const { paths } = require('./util');
-
-module.exports = {
+export default {
   devtool: 'cheap-module-eval-source-map',
   devServer: {
     contentBase: [paths.build, paths.pug],

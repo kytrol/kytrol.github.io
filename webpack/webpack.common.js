@@ -1,12 +1,10 @@
-'use strict';
+import path from 'path';
+import webpack from 'webpack';
+import HtmlWebpackPlugin from 'html-webpack-plugin';
+import FaviconsWebpackPlugin from 'favicons-webpack-plugin';
+import { paths, cssAssetOpts, htmlAssetOpts } from './util';
 
-const path = require('path');
-const webpack = require('webpack');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
-const { paths, cssAssetOpts, htmlAssetOpts } = require('./util');
-
-module.exports = (env) => {
+export default (env) => {
   const isProduction = env === 'prod';
   const cssAsset = cssAssetOpts(isProduction);
 
@@ -26,18 +24,7 @@ module.exports = (env) => {
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        use: {
-          loader: 'babel-loader',
-          query: {
-            presets: [
-              ['env', {
-                targets: {
-                  ie: 11
-                }
-              }]
-            ]
-          }
-        }
+        loader: 'babel-loader'
       },
       {
         test: /\.woff2?$/,
