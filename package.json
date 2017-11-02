@@ -28,6 +28,7 @@
     "babel-preset-env": "^1.6.0",
     "css-loader": "^0.28.0",
     "eslint": "^3.17.1",
+    "eslint-config-google": "^0.9.1",
     "eslint-loader": "^1.6.1",
     "exports-loader": "^0.6.4",
     "extract-text-webpack-plugin": "^2.1.0",
