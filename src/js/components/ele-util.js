@@ -9,8 +9,8 @@ export const addClass = (ele, className) => {
 
 /**
  * Removes a class from an element.
- * @param  {Node}   ele        Target element
- * @param  {String} className  Class to remove
+ * @param {Node}   ele        Target element
+ * @param {String} className  Class to remove
  */
 export const dropClass = (ele, className) => {
   ele.classList.remove(className);
@@ -56,3 +56,10 @@ export const getSectionInViewport = () => {
 
   return sectionNum - 1;
 };
+
+/**
+ * Retrieves name of section from id.
+ * @param  {String} id  Id of section
+ * @return {String}     Section name
+ */
+export const getSectionName = id => id.split('-')[0];

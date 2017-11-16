@@ -1,4 +1,4 @@
-import { getElementByClass } from './ele-util';
+import { getElementByClass, getSectionName } from './ele-util';
 
 /**
  * Bind click event to mobile nav icons.
@@ -6,37 +6,38 @@ import { getElementByClass } from './ele-util';
 export const bindIcons = () => {
   const icons = getElementByClass('menu').getElementsByClassName('icon-wrap');
 
-  Array.from(icons).forEach(icon => {
-    icon.onclick = _ => {
-      const sectionId = icon.id.split('-')[0];
+  for (let i = 0; i < icons.length; i++) {
+    icons[i].onclick = _ => {
+      const sectionName = getSectionName(icons[i].id);
 
       // Scroll window to top of section
-      const position = document.getElementById(sectionId).offsetTop;
+      const position = document.getElementById(sectionName).offsetTop;
       window.scroll(0, position);
     };
-  });
+  }
 };
 
 /**
  * Smoothly scrolls window to given section.
- * @param  {String} targetId  Id of section to scroll to
+ * @param {String} targetId  Id of section to scroll to
  */
 const scrollToSection = targetId => {
   const startPos = window.pageYOffset;
   const startTime = window.performance.now();
   const endPos = document.getElementById(targetId).offsetTop;
-  const duration = 250;
   let distance = endPos - startPos;
   const scrollingUp = distance < 0;
 
   window.requestAnimationFrame(animateScroll);
 
+  const DURATION = 250;
+
   /**
    * Scrolls window based on time elapsed since link was clicked.
-   * @param  {DOMHighResTimeStamp} timestamp  Current time passed in by requestAnimationFrame
+   * @param {DOMHighResTimeStamp} timestamp  Current time passed in by requestAnimationFrame
    */
   function animateScroll(timestamp) {
-    const currTime = (timestamp - startTime) / duration;
+    const currTime = (timestamp - startTime) / DURATION;
     let currPosition;
 
     // Change distance to negative if scrolling up
@@ -72,9 +73,9 @@ export { scrollToSection };
 export const bindLinks = () => {
   const links = getElementByClass('links').children;
 
-  Array.from(links).forEach(link => {
-    link.onclick = function() {
-      scrollToSection(this.id.split('-')[0]);
+  for (let i = 0; i < links.length; i++) {
+    links[i].onclick = function() {
+      scrollToSection(getSectionName(this.id));
     };
-  });
+  }
 };

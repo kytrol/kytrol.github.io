@@ -4,11 +4,12 @@ const rootPath = path.join(__dirname, '..');
 const src = path.join(rootPath, 'src');
 
 export const paths = {
-  src,
   build: path.join(rootPath, 'build'),
-  pug: path.join(src, 'index.pug'),
+  css: path.join('css', 'bundle.css'),
+  favicon: path.join('assets', 'img', 'favicon'),
   js: name => path.join('js', `${name}.js`),
-  favicon: path.join('assets', 'img', 'favicon')
+  pug: path.join(src, 'index.pug'),
+  src
 };
 
 /**
@@ -35,9 +36,7 @@ export const cssAssetOpts = isProduction => mimetype => (
 
 /**
  * Applies correct options to an asset referenced in HTML file.
- * @param  {String}  mimetype  Mimetype of asset
- * @return {Object}            Options for loader
+ * @param  {String} mimetype  Mimetype of asset
+ * @return {Object}           Options for loader
  */
-export const htmlAssetOpts = mimetype => Object.assign({}, baseOpts(mimetype), {
-  publicPath: ''
-});
+export const htmlAssetOpts = mimetype => baseOpts(mimetype);

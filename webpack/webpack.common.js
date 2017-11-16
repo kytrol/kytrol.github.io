@@ -4,7 +4,7 @@ import HtmlWebpackPlugin from 'html-webpack-plugin';
 import FaviconsWebpackPlugin from 'favicons-webpack-plugin';
 import { paths, cssAssetOpts, htmlAssetOpts } from './util';
 
-export default (env) => {
+export default env => {
   const isProduction = env === 'prod';
   const cssAsset = cssAssetOpts(isProduction);
 

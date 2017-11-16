@@ -28,7 +28,7 @@ function setImgSrc(src) {
 
 /**
  * Sets background img once img has fully loaded.
- * @param  {String} imgSrc  Relative path of img
+ * @param {String} imgSrc  Relative path of img
  */
 function loadImg(imgSrc) {
   const img = new Image();

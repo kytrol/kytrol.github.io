@@ -1,7 +1,7 @@
 import webpack from 'webpack';
-import path from 'path';
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
 import autoprefixer from 'autoprefixer';
+import { paths } from './util';
 
 export default {
   output: {
@@ -29,6 +29,6 @@ export default {
   },
   plugins: [
     new webpack.optimize.UglifyJsPlugin(),
-    new ExtractTextPlugin(path.join('css', 'bundle.css'))
+    new ExtractTextPlugin(paths.css)
   ]
 };

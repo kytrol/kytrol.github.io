@@ -1,4 +1,8 @@
-import { addClass, dropClass, hasClass, getElementByClass, getSectionInViewport } from './ele-util';
+import {
+  addClass, dropClass, hasClass,
+  getElementByClass, getSectionInViewport,
+  getSectionName
+ } from './ele-util';
 
 /**
  * Slides arrow to current section in view.
@@ -6,7 +10,7 @@ import { addClass, dropClass, hasClass, getElementByClass, getSectionInViewport 
 export const animateArrow = () => {
   const sectionIndex = getSectionInViewport();
   const links = getElementByClass('links').children;
-  const currSectionName = links[sectionIndex].id.split('-')[0];
+  const currSectionName = getSectionName(links[sectionIndex].id);
 
   const arrow = getElementByClass('arrow');
 
@@ -50,9 +54,9 @@ export const animateIconOverlay = () => {
   addClass(currIcon, 'focused');
 
   // Remove focus class from previously focused elements
-  Array.from(icons).forEach(icon => {
-    if (icon !== currIcon && icon.id !== 'about-icon') {
-      dropClass(icon, 'focused');
+  for (let i = 0; i < icons.length; i++) {
+    if (icons[i] !== currIcon && icons[i].id !== 'about-icon') {
+      dropClass(icons[i], 'focused');
     }
-  });
+  }
 };
