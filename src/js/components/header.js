@@ -1,7 +1,7 @@
 import debounce from 'debounce';
 import { addClass, dropClass } from './ele-util';
 
-const MAX_MOBILE_WIDTH = 880;
+const MAX_MOBILE_WIDTH = 1018;
 
 /**
  * Determines which background image should be used based on viewport.
@@ -34,11 +34,11 @@ function loadImg(imgSrc) {
   const img = new Image();
 
   // Set background img and fade out solid background once img has loaded
-  img.onload = () => {
+  img.onload = _ => {
     const bgCover = document.getElementById('bg-cover');
-    requestAnimationFrame(() => {
+    requestAnimationFrame(_ => {
       setImgSrc(imgSrc);
-      requestAnimationFrame(() => addClass(bgCover, 'hide'));
+      requestAnimationFrame(_ => addClass(bgCover, 'hide'));
     });
   };
 
@@ -60,7 +60,7 @@ export const bindHeaderLoad = () => {
 export const bindHeaderResize = () => {
   const DEBOUNCE_WAIT = 300;
 
-  window.onresize = debounce(() => {
+  window.onresize = debounce(_ => {
     const aboutSection = document.getElementById('about');
     const currentImg = aboutSection.style.backgroundImage;
     const imgSrc = getImgSrc();
@@ -72,8 +72,8 @@ export const bindHeaderResize = () => {
       dropClass(bgCover, 'hide');
 
       // Apply new img to background
-      const OPACITY_TRANSITION_DURATION = 500;
-      setTimeout(() => loadImg(imgSrc), OPACITY_TRANSITION_DURATION);
+      const OPACITY_TRANSITION_DURATION = 400;
+      setTimeout(_ => loadImg(imgSrc), OPACITY_TRANSITION_DURATION);
     }
   }, DEBOUNCE_WAIT);
 };

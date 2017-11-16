@@ -13,6 +13,8 @@ main {
 }
 
 a {
+  @include no-highlight();
+
   display: inline-block;
 }
 
@@ -69,7 +71,7 @@ section {
   @include eq-dimen(4.8);
 }
 
-@media (min-width: 880px) {
+@media (min-width: 1018px) {
   section {
     margin-left: 11.9rem;
 

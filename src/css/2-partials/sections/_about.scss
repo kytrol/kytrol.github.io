@@ -25,7 +25,7 @@
   position: absolute;
   top: 0;
   left: 0;
-  transition: opacity 500ms $swift;
+  transition: opacity 400ms $swift;
 
   &.hide {
     opacity: 0;
@@ -116,7 +116,7 @@ button {
   }
 }
 
-@media (min-width: 880px) {
+@media (min-width: 1018px) {
   #about > p,
   .btns {
     width: 40%;
@@ -172,10 +172,23 @@ button {
   }
 }
 
-@media (min-width: 1030px) {
+@media (min-width: 1155px) {
+  #about {
+    & > p {
+      font-size: 2.6rem;
+    }
+  }
+
+  button {
+    font-size: $l;
+  }
+}
+
+@media (min-width: 1445px) {
   #about > p,
   .btns {
     margin-left: 6rem;
+    width: 30%;
   }
 
   #about {
@@ -188,18 +201,6 @@ button {
 
   .btns {
     align-self: flex-start;
-  }
-}
-
-@media (min-width: 1155px) {
-  #about {
-    & > p {
-      font-size: 2.6rem;
-    }
-  }
-
-  button {
-    font-size: $l;
   }
 }
 

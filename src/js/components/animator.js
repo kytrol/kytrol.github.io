@@ -50,9 +50,9 @@ export const animateIconOverlay = () => {
   addClass(currIcon, 'focused');
 
   // Remove focus class from previously focused elements
-  for (let i = 0; i < icons.length; i++) {
-    if (icons[i] !== currIcon && icons[i].id !== 'about-icon') {
-      dropClass(icons[i], 'focused');
+  Array.from(icons).forEach(icon => {
+    if (icon !== currIcon && icon.id !== 'about-icon') {
+      dropClass(icon, 'focused');
     }
-  }
+  });
 };

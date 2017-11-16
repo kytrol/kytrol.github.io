@@ -6,22 +6,22 @@ import { getElementByClass } from './ele-util';
 export const bindIcons = () => {
   const icons = getElementByClass('menu').getElementsByClassName('icon-wrap');
 
-  for (let i = 0; i < icons.length; i++) {
-    icons[i].onclick = function() {
-      const sectionId = icons[i].id.split('-')[0];
+  Array.from(icons).forEach(icon => {
+    icon.onclick = _ => {
+      const sectionId = icon.id.split('-')[0];
 
       // Scroll window to top of section
       const position = document.getElementById(sectionId).offsetTop;
       window.scroll(0, position);
     };
-  }
+  });
 };
 
 /**
  * Smoothly scrolls window to given section.
  * @param  {String} targetId  Id of section to scroll to
  */
-const scrollToSection = (targetId) => {
+const scrollToSection = targetId => {
   const startPos = window.pageYOffset;
   const startTime = window.performance.now();
   const endPos = document.getElementById(targetId).offsetTop;
@@ -71,9 +71,10 @@ export { scrollToSection };
  */
 export const bindLinks = () => {
   const links = getElementByClass('links').children;
-  for (let i = 0; i < links.length; i++) {
-    links[i].onclick = function() {
+
+  Array.from(links).forEach(link => {
+    link.onclick = function() {
       scrollToSection(this.id.split('-')[0]);
     };
-  }
+  });
 };

@@ -13,7 +13,7 @@ import { animateIconOverlay, animateArrow } from './components/animator';
 import { bindLinks, bindIcons } from './components/navigation';
 import { bindHeaderLoad, bindHeaderResize } from './components/header';
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', _ => {
   // Bind necessary handlers
   bindLinks();
   bindIcons();
@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Animate necessary elements on scroll
   const DEBOUNCE_WAIT = 100;
-  window.onscroll = debounce(() => {
+  window.onscroll = debounce(_ => {
     const isMobileView = !!getElementByClass('menu').offsetHeight;
 
     // Animate text overlays for mobile icons
