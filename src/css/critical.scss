@@ -1,0 +1,6 @@
+@import './1-modules/_all';
+
+// Critical css to be inlined in head of document.
+@import './2-partials/critical/_base-critical';
+@import './2-partials/critical/_header-critical';
+@import './2-partials/critical/_about-critical';

@@ -4,6 +4,7 @@
 svg4everybody();
 
 // Import static assets for webpack.
+import '../css/critical.scss';
 import '../css/styles.scss';
 import '../assets/img/icon/defs.svg';
 

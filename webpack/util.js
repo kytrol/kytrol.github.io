@@ -5,7 +5,7 @@ const src = path.join(rootPath, 'src');
 
 export const paths = {
   build: path.join(rootPath, 'build'),
-  css: path.join('css', 'bundle.css'),
+  css: name => path.join('css', `${name}.css`),
   favicon: path.join('assets', 'img', 'favicon'),
   js: name => path.join('js', `${name}.js`),
   pug: path.join(src, 'index.pug'),

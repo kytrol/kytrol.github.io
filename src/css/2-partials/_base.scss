@@ -1,15 +1,7 @@
 // Base styles and classes
-html {
-  font-size: 62.5%;
-}
-
 body {
   color: $teal-50;
   font-family: 'Palanquin Dark', sans-serif;
-}
-
-main {
-  margin: 0;
 }
 
 a {
@@ -20,63 +12,19 @@ a {
 
 section {
   background-color: $teal-400;
-  font-size: 2rem;
-  min-height: 100vh;
 
   &:nth-of-type(odd) {
     background-color: $teal-600;
   }
-
-  & > p {
-    line-height: 1.2em;
-  }
 }
-
-.capital { text-transform: uppercase; }
 
 .center { text-align: center; }
-.left { text-align: left; }
-.right { text-align: right; }
-
-.block-center {
-  margin-left: auto;
-  margin-right: auto;
-}
+.right  { text-align: right; }
 
 .hide {
   opacity: 0;
 }
 
-.no-display {
-  display: none;
-}
-
-.fix-position {
-  position: fixed;
-}
-
-.border-box {
-  box-sizing: border-box;
-}
-
-.ie-flex-fix {
-  display: flex;
-}
-
 .circle {
   border-radius: 50%;
-}
-
-.icon {
-  @include eq-dimen(4.8);
-}
-
-@media (min-width: 1018px) {
-  section {
-    margin-left: 11.9rem;
-
-    & > p {
-      margin: 0;
-    }
-  }
 }

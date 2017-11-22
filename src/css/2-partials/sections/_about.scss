@@ -1,30 +1,9 @@
 #about {
   background: none no-repeat center bottom;
   background-size: cover;
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  font-size: $m;
-  overflow: hidden;
-  position: relative;
-
-  & > p {
-    background-color: rgba($teal-800, .78);
-    margin: 5.2rem 0 0 0;
-    padding: $m;
-    z-index: 1;
-  }
 }
 
 #bg-cover {
-  background-color: $tree-bg;
-  height: 100vh;
-  width: 100%;
-  opacity: 1;
-  position: absolute;
-  top: 0;
-  left: 0;
   transition: opacity 400ms $swift;
 
   &.hide {
@@ -32,47 +11,10 @@
   }
 }
 
-.btns {
-  align-self: flex-end;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  margin: 2rem 4rem;
-}
-
 button {
-  align-self: flex-end;
-  background-color: $purple-600;
-  border: 0;
-  border-radius: $xxs;
-  color: $teal-50;
-  font-size: $m;
-  letter-spacing: .1rem;
-  outline: 0;
-  overflow: hidden;
-  padding: 1.2rem;
-  position: relative;
-
   & > svg,
   & > span {
     transition: transform 200ms $swift;
-  }
-
-  & > svg {
-    height: $l;
-    width: $l;
-    margin-top: -1.2rem;
-    margin-left: -1.2rem;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-10rem);
-  }
-
-  & > span {
-    display: block;
-    transform: translate(0);
   }
 
   &:hover {
@@ -87,12 +29,8 @@ button {
 }
 
 #email {
-  position: relative;
-
-  &:hover {
-    & > span {
-      transform: translate(-50%, -5.4rem) scale(1);
-    }
+  &:hover > span {
+    transform: translate(-50%, -5.4rem) scale(1);
   }
 
   & > span {
@@ -101,56 +39,16 @@ button {
     font-size: 1.4rem;
     padding: $xs;
     pointer-events: none;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) scale(0);
     transition: transform 200ms $swift;
   }
 }
 
-@media (min-width: 410px) {
-  #about,
-  button {
-    font-size: 2rem;
-  }
-}
-
 @media (min-width: 1018px) {
-  #about > p,
-  .btns {
-    width: 40%;
-  }
-
   #about {
-    align-items: flex-end;
-    justify-content: center;
     background-attachment: fixed;
-    flex-direction: column;
     background-position: right bottom;
-
-    & > p {
-      background-color: $purple-translucent;
-      border-radius: $xxs;
-      box-sizing: border-box;
-      font-size: 2rem;
-      margin-bottom: $l;
-      margin-right: $l;
-    }
   }
 
-  #bg-cover {
-    background-color: $forest-green;
-  }
-
-  .btns {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    margin: 0 $l $l 0;
-  }
-
-  button,
   #email > span {
     background-color: $purple-translucent;
   }
@@ -160,53 +58,12 @@ button {
   }
 
   #email {
-    &:hover {
-      & > span {
-        transform: translate(-50%, 120%) scale(1);
-      }
+    &:hover > span {
+      transform: translate(-50%, 120%) scale(1);
     }
 
     & > span {
       font-size: $m;
     }
-  }
-}
-
-@media (min-width: 1155px) {
-  #about {
-    & > p {
-      font-size: 2.6rem;
-    }
-  }
-
-  button {
-    font-size: $l;
-  }
-}
-
-@media (min-width: 1445px) {
-  #about > p,
-  .btns {
-    margin-left: 6rem;
-    width: 30%;
-  }
-
-  #about {
-    align-items: flex-start;
-
-    & > p {
-      font-size: $l;
-    }
-  }
-
-  .btns {
-    align-self: flex-start;
-  }
-}
-
-// Don't fade in header image for IE11.
-@media screen and (-ms-high-contrast: active), screen and (-ms-high-contrast: none) {
-  #bg-cover {
-    display: none;
   }
 }

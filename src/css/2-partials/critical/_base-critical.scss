@@ -1,0 +1,44 @@
+// Critical base styles
+html {
+  font-size: 62.5%;
+}
+
+body {
+  color: $teal-50;
+  margin: 0;
+}
+
+section {
+  font-size: 2rem;
+  min-height: 100vh;
+
+  & > p {
+    line-height: 1.2em;
+  }
+}
+
+.capital {
+  text-transform: uppercase;
+}
+
+.border-box {
+  box-sizing: border-box;
+}
+
+.ie-flex-fix {
+  display: flex;
+}
+
+.icon {
+  @include eq-dimen(4.8);
+}
+
+@media (min-width: 1018px) {
+  section {
+    margin-left: 11.9rem;
+
+    & > p {
+      margin: 0;
+    }
+  }
+}

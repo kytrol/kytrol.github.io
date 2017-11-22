@@ -1,20 +1,5 @@
 // Styles for the header and nav
-header {
-  position: fixed;
-  width: 100%;
-  z-index: 3;
-}
-
-.logo {
-  display: none;
-  position: absolute;
-  top: $xl;
-  left: 3.6rem;
-}
-
 nav {
-  display: none;
-
   & > ul {
     margin-top: 0;
     margin-bottom: 0;
@@ -22,19 +7,6 @@ nav {
 
   li {
     @include no-highlight();
-
-    margin: $l 0 $l $s;
-  }
-}
-
-.menu {
-  display: flex;
-  justify-content: space-between;
-  padding: $xxs $xs;
-
-  .icon {
-    cursor: default;
-    display: block;
   }
 }
 
@@ -44,33 +16,29 @@ nav {
   & > span {
     color: $teal-50;
     font-size: $m;
-    opacity: 0;
-    position: absolute;
     top: 50%;
     left: 50%;
-    transition: transform 250ms $swift-bounce, opacity 200ms $swift;
-    transform: translate(-50%, -50%) rotate(-15deg) scale(0.2);
+    transition: transform 250ms $swift-bounce;
     user-select: none;
   }
 
   & > .icon {
     transition: opacity 250ms $swift;
   }
+
+  &.focused {
+    & > span {
+      transform: translate(-50%, -50%) rotate(-45deg) scale(1);
+    }
+
+    & > .icon {
+      opacity: .37;
+    }
+  }
 }
 
 #projects-icon > span {
   color: $purple-900;
-}
-
-.focused {
-  & > span {
-    opacity: 1;
-    transform: translate(-50%, -50%) rotate(-45deg) scale(1);
-  }
-
-  & > .icon {
-    opacity: .37;
-  }
 }
 
 .arrow {
@@ -81,7 +49,6 @@ nav {
   margin-left: $s;
   transform: translateY(-7.2rem);
   transition: transform 200ms $swift-bounce, opacity 200ms $swift;
-  will-change: transform;
 
   @include eq-dimen(0);
 }
@@ -91,26 +58,7 @@ nav {
 .arrow-projects { transform: translateY(4.8rem); }
 
 @media (min-width: 1018px) {
-  header {
-    display: none;
-  }
-
-  .logo {
-    display: block;
-  }
-
-  nav {
-    background-color: $purple-900;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    font-size: 2rem;
-    height: 100vh;
-    width: 12rem;
-    position: fixed;
-
-    li {
-      cursor: pointer;
-    }
+  nav li {
+    cursor: pointer;
   }
 }
