@@ -2,6 +2,7 @@ import path from 'path';
 import webpack from 'webpack';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import FaviconsWebpackPlugin from 'favicons-webpack-plugin';
+import ScriptExtHtmlWebpackPlugin from 'script-ext-html-webpack-plugin';
 import { paths, cssAssetOpts, htmlAssetOpts } from './util';
 
 export default env => {
@@ -114,6 +115,9 @@ export default env => {
         template: paths.pug,
         filename: isProduction ? '../index.html' : 'index.html',
         minify: false
+      }),
+      new ScriptExtHtmlWebpackPlugin({
+        defaultAttribute: 'defer'
       }),
       new webpack.ProvidePlugin({
         svg4everybody: 'imports-loader?this=>global!exports-loader?global.svg4everybody!svg4everybody'
