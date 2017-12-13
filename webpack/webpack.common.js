@@ -3,7 +3,29 @@ import webpack from 'webpack';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import FaviconsWebpackPlugin from 'favicons-webpack-plugin';
 import ScriptExtHtmlWebpackPlugin from 'script-ext-html-webpack-plugin';
-import { paths, cssAssetOpts, htmlAssetOpts } from './util';
+import { paths } from './util';
+
+/**
+ * Inserts asset's mimtype into options object.
+ * @param  {String} mimetype  Mimetype of asset
+ * @return {Object}           Options for loader
+ */
+const baseOpts = mimetype => ({
+  context: paths.src,
+  name: '[path][name].[ext]',
+  mimetype
+});
+
+/**
+ * Applies correct options to an asset referenced in CSS file.
+ * @param  {Boolean}  isProduction  Whether env is production or development
+ * @return {Function}               Used to insert mimetype of asset into options
+ */
+const cssAssetOpts = isProduction => mimetype => (
+  Object.assign({}, baseOpts(mimetype), {
+    publicPath: isProduction ? '../' : ''
+  })
+);
 
 export default env => {
   const isProduction = env === 'prod';
@@ -52,14 +74,14 @@ export default env => {
         test: /\.pdf$/,
         use: {
           loader: 'file-loader',
-          options: htmlAssetOpts('application/pdf')
+          options: baseOpts('application/pdf')
         }
       },
       {
         test: /\.svg$/,
         use: [{
           loader: 'file-loader',
-          options: htmlAssetOpts('image/svg+xml')
+          options: baseOpts('image/svg+xml')
         },
         {
           loader: 'img-loader',
@@ -82,7 +104,7 @@ export default env => {
         test: /\.png$/,
         use: [{
           loader: 'file-loader',
-          options: htmlAssetOpts('image/png')
+          options: baseOpts('image/png')
         },
         {
           loader: 'img-loader?minimize'
@@ -92,7 +114,7 @@ export default env => {
         test: /\.jpg$/,
         use: [{
           loader: 'file-loader',
-          options: htmlAssetOpts('image/jpeg')
+          options: baseOpts('image/jpeg')
         },
         {
           loader: 'img-loader',

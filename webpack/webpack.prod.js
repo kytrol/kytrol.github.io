@@ -26,7 +26,7 @@ const cssLoaderOpts = {
 
 export default {
   output: {
-    publicPath: 'build/'
+    publicPath: paths.public
   },
   module: {
     rules: [{
@@ -41,11 +41,17 @@ export default {
     }]
   },
   plugins: [
-    new webpack.optimize.UglifyJsPlugin(),
+    new webpack.optimize.UglifyJsPlugin({
+      compress: {
+        drop_console: true,
+        warnings: false
+      },
+      output: {
+        comments: false
+      }
+    }),
     criticalCss,
     externalCss,
-    // NOTE: Due to a bug in style-ext-html-webpack-plugin, a <link> is generated
-    // for the internal styles. Awaiting fix, for now there is a 404 in the browser.
     new StyleExtHtmlWebpackPlugin(critCssPath)
   ]
 };
