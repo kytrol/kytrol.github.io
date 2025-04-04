@@ -1,11 +1,14 @@
-@import '../_udj-record';
+@use '../_udj-record';
+@use "../../1-modules/mixins";
+@use "../../1-modules/variables";
+
 
 #projects {
-  background-color: $imp-blue-grey;
+  background-color: variables.$imp-blue-grey;
 }
 
 figure {
-  border-radius: $xxs;
+  border-radius: variables.$xxs;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -13,53 +16,53 @@ figure {
   min-height: 33.33vh;
   width: 100%;
   overflow: hidden;
-  padding: $m;
+  padding: variables.$m;
   position: relative;
 
   &:first-of-type {
-    background-color: $ps-tan;
+    background-color: variables.$ps-tan;
 
     &::before {
-      background-color: $ps-green;
+      background-color: variables.$ps-green;
     }
 
     & > figcaption {
-      background-color: rgba($ps-green, .54);
+      background-color: rgba(variables.$ps-green, .54);
     }
   }
 
   &:nth-of-type(2) {
-    background-color: $imp-blue-grey;
+    background-color: variables.$imp-blue-grey;
 
     &::before {
-      background-color: $imp-pink;
+      background-color: variables.$imp-pink;
     }
 
     & > figcaption {
-      background-color: rgba($imp-pink, .54);
+      background-color: rgba(variables.$imp-pink, .54);
     }
   }
 
   &:last-of-type {
-    background-color: $udj-deep-purple;
+    background-color: variables.$udj-deep-purple;
 
     &::before {
-      background-color: $udj-green;
+      background-color: variables.$udj-green;
     }
 
     & > figcaption {
-      background-color: rgba($udj-green, .73);
+      background-color: rgba(variables.$udj-green, .73);
     }
   }
 
   &::before {
     content: '';
-    height: $xs;
+    height: variables.$xs;
     width: 102%;
     position: absolute;
     top: 0;
     left: 0;
-    transition: transform 200ms $swift;
+    transition: transform 200ms variables.$swift;
     transform: scale(0);
   }
 
@@ -70,13 +73,13 @@ figure {
   }
 
   & > svg {
-    @include eq-dimen(16);
+    @include mixins.eq-dimen(16);
   }
 }
 
 figcaption {
   font-size: 1.8rem;
-  padding: $m;
+  padding: variables.$m;
   position: absolute;
   bottom: 0;
   left: 0;
@@ -90,7 +93,7 @@ figcaption {
 
   & > h1 {
     display: inline-block;
-    margin: 0 0 $s 0;
+    margin: 0 0 variables.$s 0;
   }
 
   & > p {
@@ -100,7 +103,7 @@ figcaption {
   & > a {
     cursor: default;
     position: absolute;
-    top: $s;
+    top: variables.$s;
     left: 80%;
     z-index: 2;
   }
@@ -122,7 +125,7 @@ figcaption {
 
 @media (min-width: 1018px) {
   #projects {
-    background-color: $teal-600;
+    background-color: variables.$teal-600;
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -130,7 +133,7 @@ figcaption {
   }
 
   figure {
-    box-shadow: $shadow;
+    box-shadow: variables.$shadow;
     height: 55vh;
     width: 27vw;
   }

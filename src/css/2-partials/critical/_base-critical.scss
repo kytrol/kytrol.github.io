@@ -1,10 +1,13 @@
+@use "../../1-modules/_variables";
+@use "../../1-modules/_mixins";
+
 // Critical base styles
 html {
   font-size: 62.5%;
 }
 
 body {
-  color: $teal-50;
+  color: variables.$teal-50;
   margin: 0;
 }
 
@@ -30,7 +33,7 @@ section {
 }
 
 .icon {
-  @include eq-dimen(4.8);
+  @include mixins.eq-dimen(4.8);
 }
 
 @media (min-width: 1018px) {

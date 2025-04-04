@@ -11,10 +11,10 @@ function getImgSrc() {
   const useMobileImg = window.innerWidth < MAX_MOBILE_WIDTH;
 
   if (useMobileImg) {
-    return require('../../assets/img/head/tree.jpg');
+    return '../../assets/img/head/tree.jpg';
   }
 
-  return require('../../assets/img/head/forest.jpg');
+  return '../../assets/img/head/forest.jpg';
 }
 
 /**

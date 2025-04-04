@@ -1,3 +1,5 @@
+@use "sass:math";
+
 @mixin eq-dimen($height) {
   height: $height * 1rem;
   width: $height * 1rem;
@@ -10,8 +12,8 @@
 }
 
 @mixin absolute-center($height) {
-  margin-top: -$height / 2 * 1rem;
-  margin-left: -$height / 2 * 1rem;
+  margin-top: math.div(-$height, 2) * 1rem;
+  margin-left: math.div(-$height, 2) * 1rem;
   position: absolute;
   left: 50%;
   top: 50%;

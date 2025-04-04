@@ -1,48 +1,51 @@
+@use "../1-modules/mixins";
+@use "../1-modules/variables";
+
 /* Styles for Vinyl Record */
 .record {
-  background-color: $udj-black;
-  box-shadow: $shadow;
+  background-color: variables.$udj-black;
+  box-shadow: variables.$shadow;
   position: relative;
   z-index: 1;
 
-  @include eq-dimen(16);
+  @include mixins.eq-dimen(16);
 }
 
 .ring {
-  border-color: $udj-grey-800 $udj-grey;
+  border-color: variables.$udj-grey-800 variables.$udj-grey;
   border-style: solid;
   border-width: .3rem;
 
 
   @for $i from 1 through 8 {
     &:nth-of-type(#{$i}) {
-      @include ring-dimen($i, 14);
+      @include mixins.ring-dimen($i, 14);
     }
   }
 }
 
 .inner {
-  background-color: $udj-black;
-  border: 1rem solid $udj-green;
+  background-color: variables.$udj-black;
+  border: 1rem solid variables.$udj-green;
 
-  @include absolute-center(4.2);
+  @include mixins.absolute-center(4.2);
 }
 
 .dot {
   background-color: white;
 
-  @include absolute-center(1.2);
+  @include mixins.absolute-center(1.2);
 }
 
 @media (min-width: 410px) {
   .record {
-    @include eq-dimen(24);
+    @include mixins.eq-dimen(24);
   }
 
   .ring {
     @for $i from 1 through 8 {
       &:nth-of-type(#{$i}) {
-        @include ring-dimen($i, 22);
+        @include mixins.ring-dimen($i, 22);
       }
     }
   }
@@ -50,10 +53,10 @@
   .inner {
     border-width: 2.2rem;
 
-    @include absolute-center(7.2);
+    @include mixins.absolute-center(7.2);
   }
 
   .dot {
-    @include absolute-center(1.6);
+    @include mixins.absolute-center(1.6);
   }
 }
