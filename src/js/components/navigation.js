@@ -7,7 +7,7 @@ export const bindIcons = () => {
   const icons = getElementByClass('menu').getElementsByClassName('icon-wrap');
 
   for (let i = 0; i < icons.length; i++) {
-    icons[i].onclick = _ => {
+    icons[i].onclick = () => {
       const sectionName = getSectionName(icons[i].id);
 
       // Scroll window to top of section
@@ -48,7 +48,10 @@ const scrollToSection = targetId => {
     }
 
     // If the destination has been reached or exceeded, stop animating
-    if ((currPosition <= endPos && scrollingUp) || (currPosition >= endPos && !scrollingUp)) { // eslint-disable-line max-len
+    if (
+      (currPosition <= endPos && scrollingUp) ||
+      (currPosition >= endPos && !scrollingUp)
+    ) {
       // Ensure the final position is always aligned to the top of target section
       if (currPosition !== endPos) {
         window.scroll(0, endPos);
@@ -74,7 +77,7 @@ export const bindLinks = () => {
   const links = getElementByClass('links').children;
 
   for (let i = 0; i < links.length; i++) {
-    links[i].onclick = function() {
+    links[i].onclick = function () {
       scrollToSection(getSectionName(this.id));
     };
   }

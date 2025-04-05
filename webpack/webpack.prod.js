@@ -10,48 +10,52 @@ const criticalCss = new ExtractTextPlugin(critCssPath);
 const externalCss = new ExtractTextPlugin(paths.css('bundle'));
 
 const cssLoaderOpts = {
-  use: [{
-    loader: 'css-loader?minimize'
-  },
-  {
-    loader: 'postcss-loader',
-    options: {
-      plugins: [autoprefixer()]
-    }
-  },
-  {
-    loader: 'sass-loader'
-  }]
+  use: [
+    {
+      loader: 'css-loader?minimize',
+    },
+    {
+      loader: 'postcss-loader',
+      options: {
+        plugins: [autoprefixer()],
+      },
+    },
+    {
+      loader: 'sass-loader',
+    },
+  ],
 };
 
 export default {
   output: {
-    publicPath: paths.public
+    publicPath: paths.public,
   },
   module: {
-    rules: [{
-      test: /critical\.scss/,
-      exclude: /node_modules/,
-      use: criticalCss.extract(cssLoaderOpts)
-    },
-    {
-      test: /styles\.scss/,
-      exclude: /node_modules/,
-      use: externalCss.extract(cssLoaderOpts)
-    }]
+    rules: [
+      {
+        test: /critical\.scss/,
+        exclude: /node_modules/,
+        use: criticalCss.extract(cssLoaderOpts),
+      },
+      {
+        test: /styles\.scss/,
+        exclude: /node_modules/,
+        use: externalCss.extract(cssLoaderOpts),
+      },
+    ],
   },
   plugins: [
     new webpack.optimize.UglifyJsPlugin({
       compress: {
         drop_console: true,
-        warnings: false
+        warnings: false,
       },
       output: {
-        comments: false
-      }
+        comments: false,
+      },
     }),
     criticalCss,
     externalCss,
-    new StyleExtHtmlWebpackPlugin(critCssPath)
-  ]
+    new StyleExtHtmlWebpackPlugin(critCssPath),
+  ],
 };

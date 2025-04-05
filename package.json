@@ -14,15 +14,24 @@
   "scripts": {
     "build": "vite build",
     "dev": "vite --port=3000",
-    "lint": "eslint . --ignore-pattern=build/",
-    "preview": "vite preview"
+    "lint": "eslint . --ignore-pattern=*build/ && echo No lint errors detected. | chalk --stdin greenBright",
+    "preview": "vite build && vite preview --port=3001"
   },
   "dependencies": {
-    "debounce": "^1.0.2",
-    "svg4everybody": "^2.1.8"
+    "debounce": "^1.0.2"
   },
   "devDependencies": {
+    "@eslint/js": "^9.24.0",
+    "autoprefixer": "^10.4.21",
+    "chalk-cli": "^5.0.1",
+    "eslint": "^9.24.0",
+    "eslint-config-prettier": "^10.1.1",
+    "globals": "^16.0.0",
     "sass-embedded": "^1.86.3",
-    "vite": "^6.2.5"
+    "sharp": "^0.34.0",
+    "svgo": "^3.3.2",
+    "vite": "^6.2.5",
+    "vite-plugin-eslint": "^1.8.1",
+    "vite-plugin-image-optimizer": "^1.1.8"
   }
 }

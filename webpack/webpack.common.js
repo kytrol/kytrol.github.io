@@ -13,7 +13,7 @@ import { paths } from './util';
 const baseOpts = mimetype => ({
   context: paths.src,
   name: '[path][name].[ext]',
-  mimetype
+  mimetype,
 });
 
 /**
@@ -21,11 +21,10 @@ const baseOpts = mimetype => ({
  * @param  {Boolean}  isProduction  Whether env is production or development
  * @return {Function}               Used to insert mimetype of asset into options
  */
-const cssAssetOpts = isProduction => mimetype => (
+const cssAssetOpts = isProduction => mimetype =>
   Object.assign({}, baseOpts(mimetype), {
-    publicPath: isProduction ? '../' : ''
-  })
-);
+    publicPath: isProduction ? '../' : '',
+  });
 
 export default env => {
   const isProduction = env === 'prod';
@@ -35,114 +34,123 @@ export default env => {
     entry: path.join(paths.src, paths.js('script')),
     output: {
       filename: paths.js('bundle'),
-      path: paths.build
+      path: paths.build,
     },
     module: {
-      rules: [{
-        test: /\.js$/,
-        exclude: /node_modules/,
-        enforce: 'pre',
-        loader: 'eslint-loader',
-      },
-      {
-        test: /\.js$/,
-        exclude: /node_modules/,
-        loader: 'babel-loader'
-      },
-      {
-        test: /\.woff2?$/,
-        use: {
-          loader: 'file-loader',
-          options: cssAsset('application/font-[ext]')
-        }
-      },
-      {
-        test: /\.[ot]tf$/,
-        use: {
-          loader: 'file-loader',
-          options: cssAsset('application/octet-stream')
-        }
-      },
-      {
-        test: /\.eot$/,
-        use: {
-          loader: 'file-loader',
-          options: cssAsset('application/vnd.ms-fontobject')
-        }
-      },
-      {
-        test: /\.pdf$/,
-        use: {
-          loader: 'file-loader',
-          options: baseOpts('application/pdf')
-        }
-      },
-      {
-        test: /\.svg$/,
-        use: [{
-          loader: 'file-loader',
-          options: baseOpts('image/svg+xml')
+      rules: [
+        {
+          test: /\.js$/,
+          exclude: /node_modules/,
+          enforce: 'pre',
+          loader: 'eslint-loader',
         },
         {
-          loader: 'img-loader',
-          options: {
-            svgo: {
-              plugins: [
-                { removeUselessDefs: false },
-                { cleanupIDs: false },
-                { removeTitle: true },
-                { removeDesc: true },
-                { sortAttrs: true },
-                { removeDimensions: true },
-                { removeAttrs: { attrs: 'stroke.*' } }
-              ]
-            }
-          }
-        }]
-      },
-      {
-        test: /\.png$/,
-        use: [{
-          loader: 'file-loader',
-          options: baseOpts('image/png')
+          test: /\.js$/,
+          exclude: /node_modules/,
+          loader: 'babel-loader',
         },
         {
-          loader: 'img-loader?minimize'
-        }]
-      },
-      {
-        test: /\.jpg$/,
-        use: [{
-          loader: 'file-loader',
-          options: baseOpts('image/jpeg')
+          test: /\.woff2?$/,
+          use: {
+            loader: 'file-loader',
+            options: cssAsset('application/font-[ext]'),
+          },
         },
         {
-          loader: 'img-loader',
-          options: {
-            minimize: true,
-            mozjpeg: {
-              progressive: true,
-              quality: 70
-            }
-          }
-        }]
-      },
-      {
-        test: /\.pug$/,
-        use: 'pug-loader?pretty=true'
-      }]
+          test: /\.[ot]tf$/,
+          use: {
+            loader: 'file-loader',
+            options: cssAsset('application/octet-stream'),
+          },
+        },
+        {
+          test: /\.eot$/,
+          use: {
+            loader: 'file-loader',
+            options: cssAsset('application/vnd.ms-fontobject'),
+          },
+        },
+        {
+          test: /\.pdf$/,
+          use: {
+            loader: 'file-loader',
+            options: baseOpts('application/pdf'),
+          },
+        },
+        {
+          test: /\.svg$/,
+          use: [
+            {
+              loader: 'file-loader',
+              options: baseOpts('image/svg+xml'),
+            },
+            {
+              loader: 'img-loader',
+              options: {
+                svgo: {
+                  plugins: [
+                    { removeUselessDefs: false },
+                    { cleanupIDs: false },
+                    { removeTitle: true },
+                    { removeDesc: true },
+                    { sortAttrs: true },
+                    { removeDimensions: true },
+                    { removeAttrs: { attrs: 'stroke.*' } },
+                  ],
+                },
+              },
+            },
+          ],
+        },
+        {
+          test: /\.png$/,
+          use: [
+            {
+              loader: 'file-loader',
+              options: baseOpts('image/png'),
+            },
+            {
+              loader: 'img-loader?minimize',
+            },
+          ],
+        },
+        {
+          test: /\.jpg$/,
+          use: [
+            {
+              loader: 'file-loader',
+              options: baseOpts('image/jpeg'),
+            },
+            {
+              loader: 'img-loader',
+              options: {
+                minimize: true,
+                mozjpeg: {
+                  progressive: true,
+                  quality: 70,
+                },
+              },
+            },
+          ],
+        },
+        {
+          test: /\.pug$/,
+          use: 'pug-loader?pretty=true',
+        },
+      ],
     },
     plugins: [
       new HtmlWebpackPlugin({
         template: paths.pug,
         filename: isProduction ? '../index.html' : 'index.html',
-        minify: false
+        minify: false,
       }),
       new ScriptExtHtmlWebpackPlugin({
-        defaultAttribute: 'defer'
+        defaultAttribute: 'defer',
       }),
       new webpack.ProvidePlugin({
-        svg4everybody: 'imports-loader?this=>global!exports-loader?global.svg4everybody!svg4everybody'
+        svg4everybody:
+          'imports-loader?this=>global!exports-loader?global.svg4everybody!svg4everybody',
       }),
       new webpack.ProgressPlugin(),
       new FaviconsWebpackPlugin({
@@ -162,9 +170,9 @@ export default env => {
           opengraph: false,
           twitter: false,
           yandex: false,
-          windows: false
-        }
-      })
-    ]
+          windows: false,
+        },
+      }),
+    ],
   };
 };

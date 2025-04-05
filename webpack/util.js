@@ -10,5 +10,5 @@ export const paths = {
   js: name => path.join('js', `${name}.js`),
   public: path.join('build', '/'),
   pug: path.join(src, 'index.pug'),
-  src
+  src,
 };

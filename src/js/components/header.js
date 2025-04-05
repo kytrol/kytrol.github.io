@@ -1,6 +1,9 @@
 import debounce from 'debounce';
 import { addClass, dropClass } from './ele-util';
 
+import treeImgPath from '../../assets/img/head/tree.jpg';
+import forestImgPath from '../../assets/img/head/forest.jpg';
+
 const MAX_MOBILE_WIDTH = 1018;
 
 /**
@@ -11,10 +14,10 @@ function getImgSrc() {
   const useMobileImg = window.innerWidth < MAX_MOBILE_WIDTH;
 
   if (useMobileImg) {
-    return '../../assets/img/head/tree.jpg';
+    return treeImgPath;
   }
 
-  return '../../assets/img/head/forest.jpg';
+  return forestImgPath;
 }
 
 /**
@@ -34,11 +37,11 @@ function loadImg(imgSrc) {
   const img = new Image();
 
   // Set background img and fade out solid background once img has loaded
-  img.onload = _ => {
+  img.onload = () => {
     const bgCover = document.getElementById('bg-cover');
-    requestAnimationFrame(_ => {
+    requestAnimationFrame(() => {
       setImgSrc(imgSrc);
-      requestAnimationFrame(_ => addClass(bgCover, 'hide'));
+      requestAnimationFrame(() => addClass(bgCover, 'hide'));
     });
   };
 
@@ -58,9 +61,9 @@ export const bindHeaderLoad = () => {
  * If necessary, adjust background-image when window is resized.
  */
 export const bindHeaderResize = () => {
-  const DEBOUNCE_WAIT = 300;
+  const DEBOUNCE_WAIT_MS = 300;
 
-  window.onresize = debounce(_ => {
+  window.onresize = debounce(() => {
     const aboutSection = document.getElementById('about');
     const currentImg = aboutSection.style.backgroundImage;
     const imgSrc = getImgSrc();
@@ -73,7 +76,7 @@ export const bindHeaderResize = () => {
 
       // Apply new img to background
       const OPACITY_TRANSITION_DURATION = 400;
-      setTimeout(_ => loadImg(imgSrc), OPACITY_TRANSITION_DURATION);
+      setTimeout(() => loadImg(imgSrc), OPACITY_TRANSITION_DURATION);
     }
-  }, DEBOUNCE_WAIT);
+  }, DEBOUNCE_WAIT_MS);
 };

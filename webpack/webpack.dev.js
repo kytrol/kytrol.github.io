@@ -9,30 +9,32 @@ export default {
     watchContentBase: true,
     hot: true,
     inline: true,
-    port: 3001
+    port: 3001,
   },
   output: {
-    publicPath: '/'
+    publicPath: '/',
   },
   module: {
-    rules: [{
-      test: /\.scss$/,
-      exclude: /node_modules/,
-      use: [
-        { loader: 'style-loader?sourceMap' },
-        { loader: 'css-loader?sourceMap' },
-        {
-          loader: 'postcss-loader',
-          options: {
-            plugins: [autoprefixer()]
-          }
-        },
-        { loader: 'sass-loader?sourceMap' }
-      ]
-    }]
+    rules: [
+      {
+        test: /\.scss$/,
+        exclude: /node_modules/,
+        use: [
+          { loader: 'style-loader?sourceMap' },
+          { loader: 'css-loader?sourceMap' },
+          {
+            loader: 'postcss-loader',
+            options: {
+              plugins: [autoprefixer()],
+            },
+          },
+          { loader: 'sass-loader?sourceMap' },
+        ],
+      },
+    ],
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
-    new webpack.NamedModulesPlugin()
-  ]
+    new webpack.NamedModulesPlugin(),
+  ],
 };
