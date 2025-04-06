@@ -1,10 +1,12 @@
+@use "../../1-modules/variables";
+
 #about {
   background: none no-repeat center bottom;
   background-size: cover;
 }
 
 #bg-cover {
-  transition: opacity 400ms $swift;
+  transition: opacity 400ms variables.$swift;
 
   &.hide {
     opacity: 0;
@@ -14,7 +16,7 @@
 button {
   & > svg,
   & > span {
-    transition: transform 200ms $swift;
+    transition: transform 200ms variables.$swift;
   }
 
   &:hover {
@@ -34,12 +36,12 @@ button {
   }
 
   & > span {
-    background-color: $purple-600;
-    border-radius: $xxs;
+    background-color: variables.$purple-600;
+    border-radius: variables.$xxs;
     font-size: 1.4rem;
-    padding: $xs;
+    padding: variables.$xs;
     pointer-events: none;
-    transition: transform 200ms $swift;
+    transition: transform 200ms variables.$swift;
   }
 }
 
@@ -50,7 +52,7 @@ button {
   }
 
   #email > span {
-    background-color: $purple-translucent;
+    background-color: variables.$purple-translucent;
   }
 
   button {
@@ -63,7 +65,7 @@ button {
     }
 
     & > span {
-      font-size: $m;
+      font-size: variables.$m;
     }
   }
 }

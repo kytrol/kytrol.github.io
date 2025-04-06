@@ -1,7 +1,7 @@
-@import './0-vendor/_normalize';
-@import './0-vendor/_palanquin-dark';
-@import './1-modules/_all';
+@use '0-vendor/_normalize';
+@use '0-vendor/_palanquin-dark';
+@use '1-modules/_all';
 
-@import './2-partials/_base';
-@import './2-partials/_header';
-@import './2-partials/_sections';
+@use '2-partials/_base';
+@use '2-partials/_header';
+@use '2-partials/_sections';

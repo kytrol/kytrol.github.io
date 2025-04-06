@@ -1,26 +1,28 @@
+@use "../../1-modules/variables";
+
 #work {
-  background-color: $teal-800;
+  background-color: variables.$teal-800;
   display: flex;
   flex-wrap: wrap;
 }
 
 .work {
-  background-color: $teal-600;
+  background-color: variables.$teal-600;
   display: flex;
   align-items: center;
   flex-wrap: wrap;
   justify-content: center;
   min-height: 33.33vh;
-  padding: $m;
+  padding: variables.$m;
   position: relative;
   width: 100%;
 
   &:nth-of-type(2) {
-    background-color: $teal-700;
+    background-color: variables.$teal-700;
   }
 
   &:last-of-type {
-    background-color: $teal-800;
+    background-color: variables.$teal-800;
   }
 }
 

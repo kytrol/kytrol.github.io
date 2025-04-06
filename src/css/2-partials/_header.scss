@@ -1,3 +1,6 @@
+@use "../1-modules/mixins";
+@use "../1-modules/variables";
+
 // Styles for the header and nav
 nav {
   & > ul {
@@ -6,7 +9,7 @@ nav {
   }
 
   li {
-    @include no-highlight();
+    @include mixins.no-highlight();
   }
 }
 
@@ -14,16 +17,16 @@ nav {
   position: relative;
 
   & > span {
-    color: $teal-50;
-    font-size: $m;
+    color: variables.$teal-50;
+    font-size: variables.$m;
     top: 50%;
     left: 50%;
-    transition: transform 250ms $swift-bounce;
+    transition: transform 250ms variables.$swift-bounce;
     user-select: none;
   }
 
   & > .icon {
-    transition: opacity 250ms $swift;
+    transition: opacity 250ms variables.$swift;
   }
 
   &.focused {
@@ -38,19 +41,19 @@ nav {
 }
 
 #projects-icon > span {
-  color: $purple-900;
+  color: variables.$purple-900;
 }
 
 .arrow {
-  border-color: $purple-900 $purple-600 $purple-900 transparent;
+  border-color: variables.$purple-900 variables.$purple-600 variables.$purple-900 transparent;
   border-style: solid;
   border-width: .9rem .9rem .9rem 0;
-  margin-right: $xs;
-  margin-left: $s;
+  margin-right: variables.$xs;
+  margin-left: variables.$s;
   transform: translateY(-7.2rem);
-  transition: transform 200ms $swift-bounce, opacity 200ms $swift;
+  transition: transform 200ms variables.$swift-bounce, opacity 200ms variables.$swift;
 
-  @include eq-dimen(0);
+  @include mixins.eq-dimen(0);
 }
 
 .arrow-about    { transform: translateY(-4.5rem); }

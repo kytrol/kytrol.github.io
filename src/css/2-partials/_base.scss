@@ -1,20 +1,23 @@
+@use "../1-modules/mixins";
+@use "../1-modules/variables";
+
 // Base styles and classes
 body {
-  color: $teal-50;
+  color: variables.$teal-50;
   font-family: 'Palanquin Dark', sans-serif;
 }
 
 a {
-  @include no-highlight();
+  @include mixins.no-highlight();
 
   display: inline-block;
 }
 
 section {
-  background-color: $teal-400;
+  background-color: variables.$teal-400;
 
   &:nth-of-type(odd) {
-    background-color: $teal-600;
+    background-color: variables.$teal-600;
   }
 }
 
