@@ -1,7 +1,6 @@
 @use '0-vendor/_normalize';
 @use '0-vendor/_palanquin-dark';
-@use '1-modules/_all';
 
 @use '2-partials/_base';
-@use '2-partials/_header';
-@use '2-partials/_sections';
+@use '2-partials/_nav';
+@use '2-partials/sections/_about';

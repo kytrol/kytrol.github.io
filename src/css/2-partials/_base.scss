@@ -1,28 +1,23 @@
-@use "../1-modules/mixins";
-@use "../1-modules/variables";
+@use '../1-modules/mixins';
+@use '../1-modules/variables';
 
 // Base styles and classes
 body {
-  color: variables.$teal-50;
+  color: variables.$text-color;
   font-family: 'Palanquin Dark', sans-serif;
 }
 
-a {
-  @include mixins.no-highlight();
-
-  display: inline-block;
+h1 {
+  font-size: 8.4rem;
 }
 
-section {
-  background-color: variables.$teal-400;
-
-  &:nth-of-type(odd) {
-    background-color: variables.$teal-600;
-  }
+.center {
+  text-align: center;
 }
 
-.center { text-align: center; }
-.right  { text-align: right; }
+.right {
+  text-align: right;
+}
 
 .hide {
   opacity: 0;
