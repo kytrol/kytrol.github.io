@@ -1,0 +1,359 @@
+html {
+  font-size: 62.5%;
+}
+
+body {
+  color: #ddf8d7;
+  background-color: #001502;
+  margin: 0;
+}
+
+section {
+  font-size: 2rem;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 8.4rem;
+}
+
+h4 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.capital {
+  text-transform: uppercase;
+}
+
+.border-box {
+  box-sizing: border-box;
+}
+
+.icon {
+  height: 4.8rem;
+  width: 4.8rem;
+}
+
+@media (min-width: 1018px) {
+  section {
+    margin-left: 11.9rem;
+  }
+}
+nav {
+  display: none;
+}
+
+.logo {
+  position: absolute;
+  top: 3.2rem;
+  left: 3.6rem;
+  fill: #56c15f;
+}
+
+@media (min-width: 1018px) {
+  nav {
+    background-color: #005317;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    font-size: 2rem;
+    height: 100vh;
+    width: 12rem;
+    position: fixed;
+  }
+  nav > ul {
+    list-style-type: none;
+    padding-left: 0;
+  }
+  nav li {
+    margin: 2.4rem 0 2.4rem 0.8rem;
+  }
+}
+#about {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  font-size: 1.6rem;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+}
+
+#mobile-logo {
+  fill: #56c15f;
+  height: 7.2rem;
+  width: 7.2rem;
+}
+
+@media (min-width: 410px) {
+  #about {
+    font-size: 2rem;
+  }
+}
+@media (min-width: 1018px) {
+  #mobile-logo {
+    display: none;
+  }
+}/*! normalize.css v5.0.0 | MIT License | github.com/necolas/normalize.css */
+/**
+ * 1. Change the default font family in all browsers (opinionated).
+ * 2. Correct the line height in all browsers.
+ * 3. Prevent adjustments of font size after orientation changes in
+ *    IE on Windows Phone and in iOS.
+ */
+/* Document
+   ========================================================================== */
+html {
+  font-family: sans-serif; /* 1 */
+  line-height: 1.15; /* 2 */
+  -ms-text-size-adjust: 100%; /* 3 */
+  -webkit-text-size-adjust: 100%; /* 3 */
+}
+
+/* Sections
+   ========================================================================== */
+/**
+ * Remove the margin in all browsers (opinionated).
+ */
+body {
+  margin: 0;
+}
+
+/**
+ * Correct the font size and margin on `h1` elements within `section` and
+ * `article` contexts in Chrome, Firefox, and Safari.
+ */
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+/* Text-level semantics
+   ========================================================================== */
+/**
+ * 1. Remove the gray background on active links in IE 10.
+ * 2. Remove gaps in links underline in iOS 8+ and Safari 8+.
+ */
+a {
+  background-color: transparent; /* 1 */
+  -webkit-text-decoration-skip: objects; /* 2 */
+  text-decoration: none;
+}
+
+/**
+ * Remove the outline on focused links when they are also active or hovered
+ * in all browsers (opinionated).
+ */
+a:active,
+a:hover {
+  outline-width: 0;
+}
+
+/**
+ * Add the correct font weight in Chrome, Edge, and Safari.
+ */
+b {
+  font-weight: bolder;
+}
+
+/* Embedded content
+   ========================================================================== */
+/**
+ * Remove the border on images inside links in IE 10-.
+ */
+img {
+  border-style: none;
+}
+
+/**
+ * Hide the overflow in IE.
+ */
+svg:not(:root) {
+  overflow: hidden;
+}
+
+/* Forms
+   ========================================================================== */
+/**
+ * 1. Change the font styles in all browsers (opinionated).
+ * 2. Remove the margin in Firefox and Safari.
+ */
+button {
+  font-family: inherit;
+  font-size: 100%; /* 1 */
+  line-height: 1.15; /* 1 */
+  margin: 0; /* 2 */
+}
+
+/**
+ * Remove the inheritance of text transform in Edge, Firefox, and IE.
+ * 1. Remove the inheritance of text transform in Firefox.
+ */
+button { /* 1 */
+  text-transform: none;
+}
+
+/**
+ * 1. Prevent a WebKit bug where (2) destroys native `audio` and `video`
+ *    controls in Android 4.
+ * 2. Correct the inability to style clickable types in iOS and Safari.
+ */
+button,
+html [type=button],
+[type=reset],
+[type=submit] {
+  -webkit-appearance: button; /* 2 */
+}
+
+/**
+ * Remove the inner border and padding in Firefox.
+ */
+button::-moz-focus-inner,
+[type=button]::-moz-focus-inner,
+[type=reset]::-moz-focus-inner,
+[type=submit]::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+/**
+ * Restore the focus styles unset by the previous rule.
+ */
+button:-moz-focusring,
+[type=button]:-moz-focusring,
+[type=reset]:-moz-focusring,
+[type=submit]:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+
+/**
+ * Correct the cursor style of increment and decrement buttons in Chrome.
+ */
+[type=number]::-webkit-inner-spin-button,
+[type=number]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/**
+ * 1. Correct the odd appearance in Chrome and Safari.
+ * 2. Correct the outline style in Safari.
+ */
+[type=search] {
+  -webkit-appearance: textfield; /* 1 */
+  outline-offset: -2px; /* 2 */
+}
+
+/**
+ * Remove the inner padding and cancel buttons in Chrome and Safari on macOS.
+ */
+[type=search]::-webkit-search-cancel-button,
+[type=search]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/**
+ * 1. Correct the inability to style clickable types in iOS and Safari.
+ * 2. Change font properties to `inherit` in Safari.
+ */
+::-webkit-file-upload-button {
+  -webkit-appearance: button; /* 1 */
+  font: inherit; /* 2 */
+}
+
+/* Custom Styles
+   ========================================================================== */
+/**
+ * Remove left padding.
+ */
+ul {
+  padding-left: 0;
+}
+
+/**
+ * Remove list style.
+ */
+li {
+  list-style-type: none;
+}
+
+/**
+ * Remove underline and blue color.
+ */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+@font-face {
+  font-family: "Palanquin Dark";
+  font-weight: 400;
+  font-style: normal;
+  src: url("/assets/Palanquin-Dark-fgAJ-ky6.eot");
+  src: url("/assets/Palanquin-Dark-fgAJ-ky6.eot?#iefix") format("embedded-opentype"), local("Palanquin Dark"), local("Palanquin-Dark"), url("/assets/Palanquin-Dark-BBybRM6n.woff2") format("woff2"), url("/assets/Palanquin-Dark-DFuEIwo7.woff") format("woff"), url("/assets/Palanquin-Dark-DIQDkLqB.ttf") format("truetype"), url("/assets/Palanquin-Dark-C9pzkrSd.svg#PalanquinDark") format("svg");
+}
+@font-face {
+  font-family: "Palanquin Dark";
+  font-weight: 600;
+  font-style: normal;
+  src: url("/assets/Palanquin-Dark-600-DQsHCmsN.eot");
+  src: url("/assets/Palanquin-Dark-600-DQsHCmsN.eot?#iefix") format("embedded-opentype"), local("Palanquin Dark SemiBold"), local("Palanquin-Dark-600"), url("/assets/Palanquin-Dark-600-BUgYA1Ol.woff2") format("woff2"), url("/assets/Palanquin-Dark-600-B8vFd7Ez.woff") format("woff"), url("/assets/Palanquin-Dark-600-BcyHXpVK.ttf") format("truetype"), url("/assets/Palanquin-Dark-600-DlIM0IxH.svg#PalanquinDark") format("svg");
+}
+body {
+  color: #ddf8d7;
+  font-family: "Palanquin Dark", sans-serif;
+}
+
+h1 {
+  font-size: 8.4rem;
+}
+
+.center {
+  text-align: center;
+}
+
+.right {
+  text-align: right;
+}
+
+.hide {
+  opacity: 0;
+}
+
+.circle {
+  border-radius: 50%;
+}
+
+nav > ul {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.arrow {
+  border-color: #005317 #56c15f #005317 transparent;
+  border-style: solid;
+  border-width: 0.9rem 0.9rem 0.9rem 0;
+  margin-right: 0.4rem;
+  margin-left: 0.8rem;
+  transition: transform 200ms cubic-bezier(0.4, 0, 0.2, 1.3), opacity 200ms cubic-bezier(0.4, 0, 0.2, 1);
+  height: 0rem;
+  width: 0rem;
+}
+
+#mask {
+  background-color: #001502;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  -webkit-mask-image: linear-gradient(to bottom, rgb(0, 0, 0), transparent, #001502);
+          mask-image: linear-gradient(to bottom, rgb(0, 0, 0), transparent, #001502);
+}
+
+@media (min-width: 1018px) {
+  h1 {
+    margin-top: 0;
+  }
+}
