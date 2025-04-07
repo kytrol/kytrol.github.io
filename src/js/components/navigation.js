@@ -30,14 +30,14 @@ const scrollToSection = targetId => {
 
   window.requestAnimationFrame(animateScroll);
 
-  const DURATION = 250;
+  const DURATION_MS = 250;
 
   /**
    * Scrolls window based on time elapsed since link was clicked.
    * @param {DOMHighResTimeStamp} timestamp  Current time passed in by requestAnimationFrame
    */
   function animateScroll(timestamp) {
-    const currTime = (timestamp - startTime) / DURATION;
+    const currTime = (timestamp - startTime) / DURATION_MS;
     let currPosition;
 
     // Change distance to negative if scrolling up

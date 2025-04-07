@@ -1,0 +1,26 @@
+@use '../1-modules/mixins';
+@use '../1-modules/variables';
+
+// Styles for the nav
+nav {
+  & > ul {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+}
+
+.arrow {
+  border-color: variables.$primary variables.$accent variables.$primary
+    transparent;
+  border-style: solid;
+  border-width: 0.9rem 0.9rem 0.9rem 0;
+  margin-right: variables.$xs;
+  margin-left: variables.$s;
+  transition: transform 200ms variables.$swift-bounce,
+    opacity 200ms variables.$swift;
+
+  @include mixins.eq-dimen(0);
+}
+
+@media (min-width: 1018px) {
+}

@@ -1,0 +1,35 @@
+@use '../../1-modules/_variables';
+
+// Critical nav styles
+nav {
+  display: none;
+}
+
+.logo {
+  position: absolute;
+  top: variables.$xl;
+  left: 3.6rem;
+  fill: variables.$accent;
+}
+
+@media (min-width: 1018px) {
+  nav {
+    background-color: variables.$primary;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    font-size: 2rem;
+    height: 100vh;
+    width: 12rem;
+    position: fixed;
+
+    & > ul {
+      list-style-type: none;
+      padding-left: 0;
+    }
+
+    li {
+      margin: variables.$l 0 variables.$l variables.$s;
+    }
+  }
+}

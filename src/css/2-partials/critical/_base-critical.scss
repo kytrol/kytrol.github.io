@@ -1,5 +1,5 @@
-@use "../../1-modules/_variables";
-@use "../../1-modules/_mixins";
+@use '../../1-modules/_variables';
+@use '../../1-modules/_mixins';
 
 // Critical base styles
 html {
@@ -7,17 +7,23 @@ html {
 }
 
 body {
-  color: variables.$teal-50;
+  color: variables.$text-color;
+  background-color: variables.$background;
   margin: 0;
 }
 
 section {
   font-size: 2rem;
   min-height: 100vh;
+}
 
-  & > p {
-    line-height: 1.2em;
-  }
+h1 {
+  font-size: 8.4rem;
+}
+
+h4 {
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 .capital {
@@ -28,10 +34,6 @@ section {
   box-sizing: border-box;
 }
 
-.ie-flex-fix {
-  display: flex;
-}
-
 .icon {
   @include mixins.eq-dimen(4.8);
 }
@@ -39,9 +41,5 @@ section {
 @media (min-width: 1018px) {
   section {
     margin-left: 11.9rem;
-
-    & > p {
-      margin: 0;
-    }
   }
 }
