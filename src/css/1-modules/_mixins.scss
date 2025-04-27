@@ -20,8 +20,3 @@
 
   @include eq-dimen($height);
 }
-
-@mixin no-highlight() {
-  -webkit-tap-highlight-color: transparent;
-  user-select: none;
-}
